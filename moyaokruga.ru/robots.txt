@@ -1,0 +1,8 @@
+﻿User-Agent: *
+Allow: /
+Disallow: /rss.aspx
+Disallow: /PlaceAd.aspx
+Disallow: *?topcategoryid=*
+Crawl-delay: 0.5
+Host: moyaokruga.ru
+Sitemap: http://moyaokruga.ru/sitemap.xml

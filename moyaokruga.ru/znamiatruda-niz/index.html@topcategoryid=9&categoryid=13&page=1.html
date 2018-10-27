@@ -1,0 +1,1828 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="head"><meta charset="utf-8" />
+    <!--[if IE]><script src="/content/js/html5.js"></script><![endif]-->
+    <title>
+	Шахунский район, Нижегородская область, Сайт газеты Знамя труда, Официально, Администрация района
+</title><meta name="msvalidate.01" content="6E01D9885E66F67331F30AB61F58400A" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="robots" content="index,follow" /><meta name="keywords" content="новости Администрация района Официально Шахунский район, статьи Администрация района Официально Шахунский район, Нижегородская область" /><meta name="description" content="Новости и статьи о Администрация района Официально Шахунский район, Нижегородская область." /><meta name="yandex-verification" content="540cc30900a511c9" /><link id="image_src" rel="image_src" /><link rel="stylesheet" href="../content/fancybox/jquery.fancybox.css" type="text/css" /><link rel="stylesheet" href="../content/css/style.css" type="text/css" media="screen, projection" /><link rel="stylesheet" href="../content/css/jquery-ui-1.7.3.custom.css" type="text/css" /><link href="http://www.odnoklassniki.ru/oauth/resources.do?type=css" rel="stylesheet" /> 
+    <!--[if lte IE 6 ]><script type="text/javascript">window.location.href="/content/ie6_close/index_ru.html";</script><![endif]-->
+    <!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="/content/css/all_ie.css" /><![endif]-->
+    <!--[if lt IE 9]><script type="text/javascript" src="/content/js/pie.js"></script><![endif]-->
+    <script src="../content/js/jquery-1.7.1.min.js"></script>
+	<script src="../content/fancybox/jquery.fancybox.js"></script>
+    <script src="../Scripts/jquery-ui-1.8.14.custom.min.js"></script>
+    <script src="../content/js/jquery-ui-1.7.3.custom.min.js"></script>
+	<script src="../content/js/jquery.mousewheel.js"></script>
+	<script src="../content/js/jquery.jscrollpane.min.js"></script>
+    <script src="../content/js/main.js"></script>
+    <script src="http://userapi.com/js/api/openapi.js" type="text/javascript" charset="windows-1251"></script>
+    <script src="http://www.odnoklassniki.ru/oauth/resources.do?type=js" type="text/javascript" charset="utf-8"></script> 
+
+    <script type="text/javascript">
+    // This is called with the results from from FB.getLoginStatus().
+      function statusChangeCallback(response) {
+        //console.log('statusChangeCallback');
+        //console.log(response);
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+          // Logged into your app and Facebook.
+          testAPI();
+        } else if (response.status === 'not_authorized') {
+          // The person is logged into Facebook, but not your app.
+          document.getElementById('status').innerHTML = 'Please log ' +
+            'into this app.';
+        } else {
+          // The person is not logged into Facebook, so we're not sure if
+          // they are logged into this app or not.
+          document.getElementById('status').innerHTML = 'Please log ' +
+            'into Facebook.';
+        }
+      }
+
+      // This function is called when someone finishes with the Login
+      // Button.  See the onlogin handler attached to it in the sample
+      // code below.
+      function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+        });
+      }
+
+      window.fbAsyncInit = function () {
+          FB.init({
+              appId: '337069893014830',
+              cookie: true,  // enable cookies to allow the server to access 
+              // the session
+              xfbml: true,  // parse social plugins on this page
+              version: 'v2.0' // use version 2.0
+          });
+
+          // Now that we've initialized the JavaScript SDK, we call 
+          // FB.getLoginStatus().  This function gets the state of the
+          // person visiting this page and can return one of three states to
+          // the callback you provide.  They can be:
+          //
+          // 1. Logged into your app ('connected')
+          // 2. Logged into Facebook, but not your app ('not_authorized')
+          // 3. Not logged into Facebook and can't tell if they are logged into
+          //    your app or not.
+          //
+          // These three cases are handled in the callback function.
+
+          //FB.getLoginStatus(function (response) {
+          //    statusChangeCallback(response);
+          //});
+
+      };
+
+      // Load the SDK asynchronously
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+      // Here we run a very simple test of the Graph API after login is
+      // successful.  See statusChangeCallback() for when this call is made.
+      function testAPI() {
+        //console.log('Welcome!  Fetching your information.... ');
+          FB.api('/me', function (response) {
+
+            $.ajax({
+                     type: "POST",
+                     url: "/BusinessLogic/GetUser.asmx/LoginFacebookUser",
+                     data: "{'firstName':'" + response.first_name + "','lastName':'" + response.last_name + "','email':'" + response.email + "','id':'" + response.id + "'}",
+                     contentType: "application/json; charset=utf-8",
+                     dataType: "json",
+                     success: function (data) {
+                         if (data.d) {
+                             $('#dialog').dialog("close");
+                             location.reload();
+                         }
+                         else {
+                             $('#spanRed').css("display", "block");
+                         }
+                     }
+                 });
+
+            //console.log('Successful login for: ' + response.name);
+            //document.getElementById('status').innerHTML =
+            //'Thanks for logging in, ' + response.name + '!';
+            //alert(response.email);
+            //alert(response.last_name);
+            //alert(response.first_name);
+            //alert(response.id);
+            //console.log('Successful login for: ' + response);
+        });
+      }
+
+
+        $(document).ready(function () {
+            startTime();
+        });
+
+		function startTime() {
+			var tm = new Date();
+			var h = tm.getHours();
+			var m = tm.getMinutes();
+            var s = tm.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+			var day = tm.getDate();
+			var month = tm.getMonth() + 1;
+			var year = tm.getFullYear();
+            if(document.getElementById('timeTag') != null)
+                document.getElementById('timeTag').innerHTML = day + "." + month + "." + year + "&nbsp;&nbsp;&nbsp;" + h + ":" + m;
+            else if (document.getElementById('timeTag2') != null)
+                document.getElementById('timeTag2').innerHTML = day + "." + month + "." + year + "&nbsp;&nbsp;&nbsp;" + h + ":" + m;
+			if (document.getElementById("hour") != null)
+			    document.getElementById('hour').innerHTML = h;
+            if (document.getElementById("minutes") != null)
+                document.getElementById('minutes').innerHTML = m;
+            if (document.getElementById("seconds") != null)
+			    document.getElementById('seconds').innerHTML = s;
+			t = setTimeout('startTime()', 1000);
+		}
+
+		function checkTime(i) {
+			if (i < 10) {
+				i = "0" + i;
+			}
+			return i;
+
+        }
+
+        function OpenDialog() {
+             $('#divPasswordVisible').css("display", "block");
+             $('#dialog').dialog({ title: "Вход" });
+             $('#dialog').css("min-height", "0px");
+         }
+
+         function UserEnter() {
+             //if (Page_IsValid) {
+                 $.ajax({
+                     type: "POST",
+                     url: "/BusinessLogic/Enter.asmx/GetUser2",
+                     data: "{'Password':'" + $("#txtPassword").val() + "','Login':'" + $("#txtLogin").val() + "'}",
+                     contentType: "application/json; charset=utf-8",
+                     dataType: "json",
+                     success: function (data) {
+                         if (data.d.Success && !data.d.IsFromAdmin) {
+                             $('#dialog').dialog("close");
+                             location.reload();
+                         }
+                         else if (data.d.Success && data.d.IsFromAdmin) {
+                             window.location.href = "http://admin.moyaokruga.ru/Actions/ExtLogin.aspx?Password=" + $("#txtPassword").val() + "&Login=" + $("#txtLogin").val();
+                         }
+                         else {
+                             $('#spanRed').css("display", "block");
+                         }
+                     }
+                 });
+             //}
+         }
+
+ </script>
+    <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5059676217578986",
+        enable_page_level_ads: true
+    });
+</script>
+ </head>
+<body id="bodyContainer" class="other">
+<form method="post" action="http://moyaokruga.ru/znamiatruda-niz/Default.aspx?topcategoryid=9&amp;categoryid=13&amp;page=1" id="form1">
+<input type="hidden" name="ScriptManager1_HiddenField" id="ScriptManager1_HiddenField" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTM2NTU1NzUxMQ8WCB4KQ2F0ZWdvcnlJZAINHgxDYXRlZ29yeU5hbWUFJ9CQ0LTQvNC40L3QuNGB0YLRgNCw0YbQuNGPINGA0LDQudC+0L3QsB4PVG9wQ2F0ZWdvcnlOYW1lBRTQntGE0LjRhtC40LDQu9GM0L3Qvh4KUGFnZU51bWJlcgIBFgJmD2QWAmYPZBYEAgEPZBYEAgUPFgIeB2NvbnRlbnQF/QHQvdC+0LLQvtGB0YLQuCDQkNC00LzQuNC90LjRgdGC0YDQsNGG0LjRjyDRgNCw0LnQvtC90LAg0J7RhNC40YbQuNCw0LvRjNC90L4g0KjQsNGF0YPQvdGB0LrQuNC5INGA0LDQudC+0L0sINGB0YLQsNGC0YzQuCDQkNC00LzQuNC90LjRgdGC0YDQsNGG0LjRjyDRgNCw0LnQvtC90LAg0J7RhNC40YbQuNCw0LvRjNC90L4g0KjQsNGF0YPQvdGB0LrQuNC5INGA0LDQudC+0L0sINCd0LjQttC10LPQvtGA0L7QtNGB0LrQsNGPINC+0LHQu9Cw0YHRgtGMZAIGDxYCHwQFqAHQndC+0LLQvtGB0YLQuCDQuCDRgdGC0LDRgtGM0Lgg0L4g0JDQtNC80LjQvdC40YHRgtGA0LDRhtC40Y8g0YDQsNC50L7QvdCwINCe0YTQuNGG0LjQsNC70YzQvdC+INCo0LDRhdGD0L3RgdC60LjQuSDRgNCw0LnQvtC9LCDQndC40LbQtdCz0L7RgNC+0LTRgdC60LDRjyDQvtCx0LvQsNGB0YLRjC5kAgMPZBYCZg9kFhgCBQ8WAh4JaW5uZXJodG1sZWQCBg8WAh4EaHJlZgUFL3Zzay9kAgcPFgIfBQWiAdCe0LHRidC10YHRgtCy0LXQvdC90L4t0L/QvtC70LjRgtC40YfQtdGB0LrQsNGPINCz0LDQt9C10YLQsCDQs9C+0YDQvtC00YHQutC+0LPQviDQvtC60YDRg9Cz0LAg0LPQvtGA0L7QtCDQqNCw0YXRg9C90YzRjyDQndC40LbQtdCz0L7RgNC+0LTRgdC60L7QuSDQvtCx0LvQsNGB0YLQuGQCCA8WAh8FBa4BNjA2OTEwINCd0LjQttC10LPQvtGA0L7QtNGB0LrQsNGPINC+0LHQu9Cw0YHRgtGMLCDQsy4g0KjQsNGF0YPQvdGM0Y8s0YPQuy4g0JPQsNCz0LDRgNC40L3QsCwgMTU8YnIvPiDRgtC10LvQtdGE0L7QvTogKzcgKDgzMTUyKSAyLTU3LTYwPGJyLz4gZS1tYWlsOiB6bmFteWF0cnVkYTIwMTFAeWFuZGV4LnJ1ZAIKDxYCHwYFES96bmFtaWF0cnVkYS1uaXovFgJmDxYCHgNzcmMFMi9pbWcvbG9nby81M2ZkNzYyNS0wOWE3LTQwMGItOGE5ZS0zYzVkZGQwNWI3NWQuanBnZAIMDxYCHwUFrgE2MDY5MTAg0J3QuNC20LXQs9C+0YDQvtC00YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINCzLiDQqNCw0YXRg9C90YzRjyzRg9C7LiDQk9Cw0LPQsNGA0LjQvdCwLCAxNTxici8+INGC0LXQu9C10YTQvtC9OiArNyAoODMxNTIpIDItNTctNjA8YnIvPiBlLW1haWw6IHpuYW15YXRydWRhMjAxMUB5YW5kZXgucnVkAg0PZBYEAgEPFgIfBwUyL2ltZy9sb2dvL2ZmYjFjMTcwLWQ0NTAtNDVhNC05NjBlLWJlMjk0NWRhY2I0YS5qcGdkAgIPFgIfBgURL3puYW1pYXRydWRhLW5pei8WAmYPFgIfBwUyL2ltZy9sb2dvLzUzZmQ3NjI1LTA5YTctNDAwYi04YTllLTNjNWRkZDA1Yjc1ZC5qcGdkAhMPZBYCZg9kFgICAw8WAh8FBfk8DQoJPGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xJz7QndC+0LLQvtGB0YLQuDwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTInPtCe0YTQuNGG0LjQsNC70YzQvdC+PC9hPjx1bD48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTEyJmNhdGVnb3J5aWQ9MjMxJz7QodC70YPQttCx0LAg0L3QvtCy0L7RgdGC0LXQuTwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTImY2F0ZWdvcnlpZD00MzInPtCf0YDQsNCy0LjRgtC10LvRjNGB0YLQstC+INCd0LjQttC10LPQvtGA0L7QtNGB0LrQvtC5INC+0LHQu9Cw0YHRgtC4PC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMiZjYXRlZ29yeWlkPTEzJz7QkNC00LzQuNC90LjRgdGC0YDQsNGG0LjRjyDRgNCw0LnQvtC90LA8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTEyJmNhdGVnb3J5aWQ9MTQnPtCW0JrQpTwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTImY2F0ZWdvcnlpZD0xNjQnPtCR0LvQsNCz0L7Rg9GB0YLRgNC+0LnRgdGC0LLQvjwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTImY2F0ZWdvcnlpZD0xNSc+0J7RgtC60YDRi9GC0YvQuSDQtNC40LDQu9C+0LM8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTEyJmNhdGVnb3J5aWQ9MTM2Jz7QntGE0LjRhtC40LDQu9GM0L3Ri9C1INC00L7QutGD0LzQtdC90YLRizwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTImY2F0ZWdvcnlpZD0xNjMnPtCh0L7QsdGL0YLQuNGPPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMiZjYXRlZ29yeWlkPTMyMic+0JjQvdGE0L7RgNC80LDRhtC40Y88L2E+PC9saT48L3VsPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xNic+0J7QsdGJ0LXRgdGC0LLQvjwvYT48dWw+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xNiZjYXRlZ29yeWlkPTEzOCc+0K3QutGB0L/RgNC10YHRgTwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTYmY2F0ZWdvcnlpZD0xMjcnPtCf0YDQvtC40YHRiNC10YHRgtCy0LjRjzwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTYmY2F0ZWdvcnlpZD0yMCc+0JfQsNC60L7QvSDQuCDQv9GA0LDQstC+PC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xNiZjYXRlZ29yeWlkPTEzMCc+0JjQvdGC0LXRgNCy0YzRjjwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTYmY2F0ZWdvcnlpZD0xMDcnPtCf0LXRgNGB0L7QvdCwPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xNiZjYXRlZ29yeWlkPTEwOCc+0J/RgNCw0LLQvtGB0LvQsNCy0LjQtTwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTYmY2F0ZWdvcnlpZD0xOSc+0J/QsNGC0YAuINCy0L7RgdC/0LjRgtCw0L3QuNC1PC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xNiZjYXRlZ29yeWlkPTI0Myc+0J/RgNC+0YLQuNCy0L7QtNC10LnRgdGC0LLQuNC1INGC0LXRgNGA0L7RgNC40LfQvNGDPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xNiZjYXRlZ29yeWlkPTEzMyc+0K3QutC+0LvQvtCz0LjRjzwvYT48L2xpPjwvdWw+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTExNSc+0K3QutC+0L3QvtC80LjQutCwPC9hPjx1bD48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTExNSZjYXRlZ29yeWlkPTMxOSc+0KDQsNCx0L7RgtCwINC4INCy0LDQutCw0L3RgdC40Lg8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTExNSZjYXRlZ29yeWlkPTMyMSc+0J3QtdC00LLQuNC20LjQvNC+0YHRgtGMPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMTUmY2F0ZWdvcnlpZD0xMTYnPtCh0LXQu9GM0YHQutC+0LUg0YXQvtC30Y/QudGB0YLQstC+PC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMTUmY2F0ZWdvcnlpZD0xMTcnPtCf0YDQvtC80YvRiNC70LXQvdC90L7RgdGC0Yw8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTExNSZjYXRlZ29yeWlkPTExOCc+0KLQvtGA0LPQvtCy0LvRjzwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTE1JmNhdGVnb3J5aWQ9MTE5Jz7QotGA0LDQvdGB0L/QvtGA0YI8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTExNSZjYXRlZ29yeWlkPTEyMCc+0KPRgdC70YPQs9C4PC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMTUmY2F0ZWdvcnlpZD0xMjQnPtCh0LLRj9C30Yw8L2E+PC9saT48L3VsPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0yNyc+0JrRg9C70YzRgtGD0YDQsDwvYT48dWw+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0yNyZjYXRlZ29yeWlkPTMzNCc+0JzQtdGA0L7Qv9GA0LjRj9GC0LjRjzwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MjcmY2F0ZWdvcnlpZD0zMic+0JjRgdC60YPRgdGB0YLQstC+PC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0yNyZjYXRlZ29yeWlkPTMxJz7QmtC90LjQs9C4PC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0yNyZjYXRlZ29yeWlkPTMwJz7QnNGD0LfRi9C60LA8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTI3JmNhdGVnb3J5aWQ9MTYxJz7QmtGA0LDQtdCy0LXQtNC10L3QuNC1PC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0yNyZjYXRlZ29yeWlkPTE2Mic+0KLQtdCw0YLRgDwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MjcmY2F0ZWdvcnlpZD0yOSc+0JrQuNC90L48L2E+PC9saT48L3VsPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0zNic+0J7QsdGA0LDQt9C+0LLQsNC90LjQtTwvYT48dWw+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0zNiZjYXRlZ29yeWlkPTM4Jz7QodCw0LQ8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTM2JmNhdGVnb3J5aWQ9MzknPtCo0LrQvtC70LA8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTM2JmNhdGVnb3J5aWQ9NDAnPtCf0L7RgdC70LUg0YjQutC+0LvRizwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MzYmY2F0ZWdvcnlpZD0xMzInPtCU0L7Qv9C+0LvQvdC40YLQtdC70YzQvdC+0LUg0L7QsdGA0LDQt9C+0LLQsNC90LjQtTwvYT48L2xpPjwvdWw+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTEwOSc+0JfQtNC+0YDQvtCy0YzQtTwvYT48dWw+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMDkmY2F0ZWdvcnlpZD0xMTAnPtCd0LDRiNCwINC80LXQtNC40YbQuNC90LA8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTEwOSZjYXRlZ29yeWlkPTEyNic+0KLQvtGH0LrQsCDQt9GA0LXQvdC40Y88L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTEwOSZjYXRlZ29yeWlkPTExMSc+0J7QsdGA0LDQtyDQttC40LfQvdC4PC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMDkmY2F0ZWdvcnlpZD0xMTMnPtCh0L7QsdGL0YLQuNGPPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMDkmY2F0ZWdvcnlpZD0xMTQnPtCd0LDRiNC4INGB0L/QvtGA0YLRgdC80LXQvdGLPC9hPjwvbGk+PC91bD48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9NTAnPtCh0L/QtdGG0L/RgNC+0LXQutGC0Ys8L2E+PHVsPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9NTAmY2F0ZWdvcnlpZD00NDQnPtCY0Lcg0YHQstC10LbQtdCz0L4g0L3QvtC80LXRgNCwPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD01MCZjYXRlZ29yeWlkPTM3MSc+0JfQsNGJ0LjRgtCwINGC0YDRg9C00L7QstGL0YUg0L/RgNCw0LI8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTUwJmNhdGVnb3J5aWQ9NDQ3Jz7Qn9C+0LfQtNGA0LDQstC70LXQvdC40Y88L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTUwJmNhdGVnb3J5aWQ9MzM1Jz7QltC40LvQsC3QsdGL0LvQsCDQtNC10YDQtdCy0L3RjzwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9NTAmY2F0ZWdvcnlpZD0zMzMnPtCi0YPRgNC40LfQvDwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9NTAmY2F0ZWdvcnlpZD0xMzQnPtCd0LDRgNC+0LTQvdGL0Lkg0LrQvtGA0YA8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTUwJmNhdGVnb3J5aWQ9NjEnPtCS0L7Qv9GA0L7RgS3QvtGC0LLQtdGCPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD01MCZjYXRlZ29yeWlkPTU3Jz7QmtC+0L3QutGD0YDRgdGLPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD01MCZjYXRlZ29yeWlkPTEzNSc+0J/QvtC30LTRgNCw0LLQu9GP0LXQvCE8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTUwJmNhdGVnb3J5aWQ9NTUnPtCi0LLQvtGA0YfQtdGB0YLQstC+INC30LXQvNC70Y/QutC+0LI8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTUwJmNhdGVnb3J5aWQ9NTMnPtCf0L7RgtGA0LXQsdC40YLQtdC70Y48L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTUwJmNhdGVnb3J5aWQ9NDA3Jz7Qn9Cw0LzRj9GC0L3Ri9C1INC00LDRgtGLPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD01MCZjYXRlZ29yeWlkPTUyJz7Qn9C+0LTQstC40LMg0LLQviDQuNC80Y8g0J/QvtCx0LXQtNGLPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD01MCZjYXRlZ29yeWlkPTI0NSc+0JTQtdGC0Lgg0L4g0LLQvtC50L3QtTwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9NTAmY2F0ZWdvcnlpZD01MSc+0JzRg9C20YHQutC40LUg0LfQsNCx0L7RgtGLPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9w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AQ9kFgICAQ8WBB8GBUNodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovQXJ0aWNsZXMuYXNweD9hcnRpY2xlSWQ9MjA2MjU4HwUFdjxpbWcgc3JjPScvaW1nL2ltYWdlX3NxdWFyZS9hYmE4ZTk4Zi00NzkyLTQ3ZTQtYTNlMS1hNjg2MTRiOGJlOGIuSlBHJyAvPtCX0LAg0LfQsNGB0LvRg9Cz0Lgg0LIg0YDQsNC30LLQuNGC0LjQuCDQkNCf0JpkAgIPZBYCAgEPZBYCAgEPZBYCAgEPFgQfBgVDaHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6L0FydGljbGVzLmFzcHg/YXJ0aWNsZUlkPTIwNTAxNR8FBYwBPGltZyBzcmM9Jy9pbWcvaW1hZ2Vfc3F1YXJlLzc2NGE2ZDAxLTY4MWUtNDU0Yy1hYjBhLTg2ODk3OTQ4MDAzYi5qcGcnIC8+MjbCoNC+0LrRgtGP0LHRgNGPwqDigJQg0JzQtdC20LTRg9C90LDRgNC+0LTQvdGL0Lkg0LTQtdC90Ywg0YLQtdGJ0LhkAgQPZBYGAgEPFgIfBwUyL2ltZy9sb2dvLzYzMTI1MGVkLWQ1YzUtNDExMC05ZWYwLTMxOGU3ZmUzMDE0Ni5wbmdkAgMPFgIfBQWyCA0KCTxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS9nYXpldGF6bmFtaWEvQXJ0aWNsZXMuYXNweD9hcnRpY2xlSWQ9MjA2NDkyJz48c3BhbiBjbGFzcz0naWNvbi1uZXcgYWRyLW5ldy1yb24nPjwvc3Bhbj7QktC+0LvQvtC00LDRgNGB0LrQuNC5INGA0LDQudC+0L06INCW0LjQt9C90Ywg0LjQtNC10YIg0Lgg0YHRgtCw0LLQuNGCINC90L7QstGL0LUg0LfQsNC00LDRh9C4PC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3Zlc3RuaWstbm4vQXJ0aWNsZXMuYXNweD9hcnRpY2xlSWQ9MjA2NDg1Jz48c3BhbiBjbGFzcz0naWNvbi1uZXcgYWRyLW5ldy1yb24nPjwvc3Bhbj7QodC+0YHQvdC+0LLRgdC60LjQuSDRgNCw0LnQvtC9OiDQkNCz0YDQvtC/0YDQvtC8INC60LDRgNC00LjQvdCw0LvRjNC90L4g0LjQt9C80LXQvdC40LvRgdGPPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3NuLWdhemV0YS9BcnRpY2xlcy5hc3B4P2FydGljbGVJZD0yMDYxNDInPjxzcGFuIGNsYXNzPSdpY29uLW5ldyBhZHItbmV3LXJvbic+PC9zcGFuPtCh0L7QutC+0LvRjNGB0LrQuNC5INGA0LDQudC+0L06INChINC80L7Qu9C+0LTQtdGG0LrQuNC8INC30LDQtNC+0YDQvtC8PC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3BvYmVkYWtueWFnaW5pbm8vQXJ0aWNsZXMuYXNweD9hcnRpY2xlSWQ9MjA2MzkyJz48c3BhbiBjbGFzcz0naWNvbi1uZXcgYWRyLW5ldy1yb24nPjwvc3Bhbj7QmtC90Y/Qs9C40L3QuNC90YHQutC40Lkg0YDQsNC50L7QvTog0JTQtdGC0YHQutC40Lkg0YHQv9C+0YDRgiDQsiDRgNC10LPQuNC+0L3QtTwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS9rb3Zlcm5vdi1zaW5uL0FydGljbGVzLmFzcHg/YXJ0aWNsZUlkPTIwNjM5MCc+PHNwYW4gY2xhc3M9J2ljb24tbmV3IGFkci1uZXctcm9uJz48L3NwYW4+0JrQvtCy0LXRgNC90LjQvdGB0LrQuNC5INGA0LDQudC+0L06INCS0YDQtdC80Y8g0LHRi9GC0Ywg0LDQstGC0L7QvNC+0LHQuNC70LjRgdGC0L7QvDwvYT48L2xpPmQCBQ8WAh8FBaoIDQoJPGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L29yZGpvbi1yYWJvY2h5L0FydGljbGVzLmFzcHg/YXJ0aWNsZUlkPTIwNjQwMic+PHNwYW4gY2xhc3M9J2ljb24tbmV3IGFkci1uZXctcm9uJz48L3NwYW4+0KDQtdGB0L/Rg9Cx0LvQuNC60LAg0KXQsNC60LDRgdC40Y86INCSINCl0LDQutCw0YHQuNC4IDUzMCDQvdC+0LLQvtGA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Zj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTEyJmNhdGVnb3J5aWQ9NDMyJz7Qn9GA0LDQstC40YLQtdC70YzRgdGC0LLQviDQndC40LbQtdCz0L7RgNC+0LTRgdC60L7QuSDQvtCx0LvQsNGB0YLQuDwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTImY2F0ZWdvcnlpZD0xMyc+0JDQtNC80LjQvdC40YHRgtGA0LDRhtC40Y8g0YDQsNC50L7QvdCwPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMiZjYXRlZ29yeWlkPTE0Jz7QltCa0KU8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTEyJmNhdGVnb3J5aWQ9MTY0Jz7QkdC70LDQs9C+0YPRgdGC0YDQvtC50YHRgtCy0L48L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTEyJmNhdGVnb3J5aWQ9MTUnPtCe0YLQutGA0YvRgtGL0Lkg0LTQuNCw0LvQvtCzPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMiZjYXRlZ29yeWlkPTEzNic+0J7RhNC40YbQuNCw0LvRjNC90YvQtSDQtNC+0LrRg9C80LXQvdGC0Ys8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTEyJmNhdGVnb3J5aWQ9MTYzJz7QodC+0LHRi9GC0LjRjzwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTImY2F0ZWdvcnlpZD0zMjInPtCY0L3RhNC+0YDQvNCw0YbQuNGPPC9hPjwvbGk+PC91bD48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTYnPtCe0LHRidC10YHRgtCy0L48L2E+PHVsPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTYmY2F0ZWdvcnlpZD0xMzgnPtCt0LrRgdC/0YDQtdGB0YE8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTE2JmNhdGVnb3J5aWQ9MTI3Jz7Qn9GA0L7QuNGB0YjQtdGB0YLQstC40Y88L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTE2JmNhdGVnb3J5aWQ9MjAnPtCX0LDQutC+0L0g0Lgg0L/RgNCw0LLQvjwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTYmY2F0ZWdvcnlpZD0xMzAnPtCY0L3RgtC10YDQstGM0Y48L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTE2JmNhdGVnb3J5aWQ9MTA3Jz7Qn9C10YDRgdC+0L3QsDwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTYmY2F0ZWdvcnlpZD0xMDgnPtCf0YDQsNCy0L7RgdC70LDQstC40LU8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTE2JmNhdGVnb3J5aWQ9MTknPtCf0LDRgtGALiDQstC+0YHQv9C40YLQsNC90LjQtTwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTYmY2F0ZWdvcnlpZD0yNDMnPtCf0YDQvtGC0LjQstC+0LTQtdC50YHRgtCy0LjQtSDRgtC10YDRgNC+0YDQuNC30LzRgzwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTYmY2F0ZWdvcnlpZD0xMzMnPtCt0LrQvtC70L7Qs9C40Y88L2E+PC9saT48L3VsPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMTUnPtCt0LrQvtC90L7QvNC40LrQsDwvYT48dWw+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMTUmY2F0ZWdvcnlpZD0zMTknPtCg0LDQsdC+0YLQsCDQuCDQstCw0LrQsNC90YHQuNC4PC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMTUmY2F0ZWdvcnlpZD0zMjEnPtCd0LXQtNCy0LjQttC40LzQvtGB0YLRjDwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTE1JmNhdGVnb3J5aWQ9MTE2Jz7QodC10LvRjNGB0LrQvtC1INGF0L7Qt9GP0LnRgdGC0LLQvjwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTE1JmNhdGVnb3J5aWQ9MTE3Jz7Qn9GA0L7QvNGL0YjQu9C10L3QvdC+0YHRgtGMPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMTUmY2F0ZWdvcnlpZD0xMTgnPtCi0L7RgNCz0L7QstC70Y88L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTExNSZjYXRlZ29yeWlkPTExOSc+0KLRgNCw0L3RgdC/0L7RgNGCPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMTUmY2F0ZWdvcnlpZD0xMjAnPtCj0YHQu9GD0LPQuDwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTE1JmNhdGVnb3J5aWQ9MTI0Jz7QodCy0Y/Qt9GMPC9hPjwvbGk+PC91bD48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MjcnPtCa0YPQu9GM0YLRg9GA0LA8L2E+PHVsPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MjcmY2F0ZWdvcnlpZD0zMzQnPtCc0LXRgNC+0L/RgNC40Y/RgtC40Y88L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTI3JmNhdGVnb3J5aWQ9MzInPtCY0YHQutGD0YHRgdGC0LLQvjwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MjcmY2F0ZWdvcnlpZD0zMSc+0JrQvdC40LPQuDwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MjcmY2F0ZWdvcnlpZD0zMCc+0JzRg9C30YvQutCwPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0yNyZjYXRlZ29yeWlkPTE2MSc+0JrRgNCw0LXQstC10LTQtdC90LjQtTwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MjcmY2F0ZWdvcnlpZD0xNjInPtCi0LXQsNGC0YA8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTI3JmNhdGVnb3J5aWQ9MjknPtCa0LjQvdC+PC9hPjwvbGk+PC91bD48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MzYnPtCe0LHRgNCw0LfQvtCy0LDQvdC40LU8L2E+PHVsPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MzYmY2F0ZWdvcnlpZD0zOCc+0KHQsNC0PC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0zNiZjYXRlZ29yeWlkPTM5Jz7QqNC60L7Qu9CwPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0zNiZjYXRlZ29yeWlkPTQwJz7Qn9C+0YHQu9C1INGI0LrQvtC70Ys8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTM2JmNhdGVnb3J5aWQ9MTMyJz7QlNC+0L/QvtC70L3QuNGC0LXQu9GM0L3QvtC1INC+0LHRgNCw0LfQvtCy0LDQvdC40LU8L2E+PC9saT48L3VsPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMDknPtCX0LTQvtGA0L7QstGM0LU8L2E+PHVsPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTA5JmNhdGVnb3J5aWQ9MTEwJz7QndCw0YjQsCDQvNC10LTQuNGG0LjQvdCwPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMDkmY2F0ZWdvcnlpZD0xMjYnPtCi0L7Rh9C60LAg0LfRgNC10L3QuNGPPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD0xMDkmY2F0ZWdvcnlpZD0xMTEnPtCe0LHRgNCw0Lcg0LbQuNC30L3QuDwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTA5JmNhdGVnb3J5aWQ9MTEzJz7QodC+0LHRi9GC0LjRjzwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9MTA5JmNhdGVnb3J5aWQ9MTE0Jz7QndCw0YjQuCDRgdC/0L7RgNGC0YHQvNC10L3RizwvYT48L2xpPjwvdWw+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTUwJz7QodC/0LXRhtC/0YDQvtC10LrRgtGLPC9hPjx1bD48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTUwJmNhdGVnb3J5aWQ9NDQ0Jz7QmNC3INGB0LLQtdC20LXQs9C+INC90L7QvNC10YDQsDwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9NTAmY2F0ZWdvcnlpZD0zNzEnPtCX0LDRidC40YLQsCDRgtGA0YPQtNC+0LLRi9GFINC/0YDQsNCyPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD01MCZjYXRlZ29yeWlkPTQ0Nyc+0J/QvtC30LTRgNCw0LLQu9C10L3QuNGPPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD01MCZjYXRlZ29yeWlkPTMzNSc+0JbQuNC70LAt0LHRi9C70LAg0LTQtdGA0LXQstC90Y88L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTUwJmNhdGVnb3J5aWQ9MzMzJz7QotGD0YDQuNC30Lw8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTUwJmNhdGVnb3J5aWQ9MTM0Jz7QndCw0YDQvtC00L3Ri9C5INC60L7RgNGAPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD01MCZjYXRlZ29yeWlkPTYxJz7QktC+0L/RgNC+0YEt0L7RgtCy0LXRgjwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9NTAmY2F0ZWdvcnlpZD01Nyc+0JrQvtC90LrRg9GA0YHRizwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9NTAmY2F0ZWdvcnlpZD0xMzUnPtCf0L7Qt9C00YDQsNCy0LvRj9C10LwhPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD01MCZjYXRlZ29yeWlkPTU1Jz7QotCy0L7RgNGH0LXRgdGC0LLQviDQt9C10LzQu9GP0LrQvtCyPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD01MCZjYXRlZ29yeWlkPTUzJz7Qn9C+0YLRgNC10LHQuNGC0LXQu9GOPC9hPjwvbGk+PGxpPjxhIGhyZWY9J2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei8/dG9wY2F0ZWdvcnlpZD01MCZjYXRlZ29yeWlkPTQwNyc+0J/QsNC80Y/RgtC90YvQtSDQtNCw0YLRizwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9NTAmY2F0ZWdvcnlpZD01Mic+0J/QvtC00LLQuNCzINCy0L4g0LjQvNGPINCf0L7QsdC10LTRizwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9NTAmY2F0ZWdvcnlpZD0yNDUnPtCU0LXRgtC4INC+INCy0L7QudC90LU8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTUwJmNhdGVnb3J5aWQ9NTEnPtCc0YPQttGB0LrQuNC1INC30LDQsdC+0YLRizwvYT48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovP3RvcGNhdGVnb3J5aWQ9NTAmY2F0ZWdvcnlpZD0xMzcnPtCQ0YDRhdC40LI8L2E+PC9saT48bGk+PGEgaHJlZj0naHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6Lz90b3BjYXRlZ29yeWlkPTUwJmNhdGVnb3J5aWQ9MjQ0Jz7QpNC+0YLQvtGE0LDQutGCPC9hPjwvbGk+PC91bD48L2xpPjxsaT48YSBocmVmPSdodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovYWRzLmFzcHgnPtCi0L7QstCw0YDRiyDQuCDQo9GB0LvRg9Cz0Lg8L2E+PC9saT5kAhcPZBYIAgEPFgIfBQUV0JfQvdCw0LzRjyDRgtGA0YPQtNCwZAICD2QWBAIBDxYCHwUFFdCX0L3QsNC80Y8g0YLRgNGD0LTQsGQCAw8WAh8FBaIB0J7QsdGJ0LXRgdGC0LLQtdC90L3Qvi3Qv9C+0LvQuNGC0LjRh9C10YHQutCw0Y8g0LPQsNC30LXRgtCwINCz0L7RgNC+0LTRgdC60L7Qs9C+INC+0LrRgNGD0LPQsCDQs9C+0YDQvtC0INCo0LDRhdGD0L3RjNGPINCd0LjQttC10LPQvtGA0L7QtNGB0LrQvtC5INC+0LHQu9Cw0YHRgtC4ZAIEDxYCHwUFrgLQn9CYIOKEliDQotCjNTItMDA4MTYsIDI4LjAyLjIwMTMsINCj0L/RgNCw0LLQu9C10L3QuNC1INCk0LXQtNC10YDQsNC70YzQvdC+0Lkg0YHQu9GD0LbQsdGLINC/0L4g0L3QsNC00LfQvtGA0YMg0LIg0YHRhNC10YDQtSDRgdCy0Y/Qt9C4LCDQuNC90YTQvtGA0LzQsNGG0LjQvtC90L3Ri9GFINGC0LXRhdC90L7Qu9C+0LPQuNC5LCDQuCDQvNCw0YHRgdC+0LLRi9GFINC60L7QvNC80YPQvdC40LrQsNGG0LjQuSDQv9C+INCf0YDQuNCy0L7Qu9C20YHQutC+0LzRgyDRhNC10LTQtdGA0LDQu9GM0L3QvtC80YMg0L7QutGA0YPQs9GDLmQCBQ8WAh8KBQx3aWR0aDo1NDBweDsWDAIBDxYCHwYFP2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei9PZmZpY2VQYWdlLmFzcHg/cGFnZXR5cGU9MWQCAw8WAh8GBT9odHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovT2ZmaWNlUGFnZS5hc3B4P3BhZ2V0eXBlPTJkAgUPFgIfBgU/aHR0cDovL21veWFva3J1Z2EucnUvem5hbWlhdHJ1ZGEtbml6L09mZmljZVBhZ2UuYXNweD9wYWdldHlwZT0zZAIHDxYCHwYFP2h0dHA6Ly9tb3lhb2tydWdhLnJ1L3puYW1pYXRydWRhLW5pei9PZmZpY2VQYWdlLmFzcHg/cGFnZXR5cGU9NGQCCQ8WAh8GBTJodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovUGFydG5lcnMuYXNweGQCCw8WAh8GBTNodHRwOi8vbW95YW9rcnVnYS5ydS96bmFtaWF0cnVkYS1uaXovUHVyY2hhc2VzLmFzcHhkGAEFNWN0bDAwJGN0bDAwJE1haW5NYXN0ZXJDb250ZW50UGxhY2VIb2xkZXIkbmV3UmVjYXB0Y2hhDwUkZGExNGM2ZDEtMGM3OS00MThlLWFhZDEtOTBhMWIwZjk0OTM1ZDtgNvpblqhDWntO+PNGtqRzVXwV" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+var __cultureInfo = {"name":"ru-RU","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":",","IsReadOnly":false,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":" ","CurrencySymbol":"р.","NaNSymbol":"NaN","CurrencyNegativePattern":5,"NumberNegativePattern":1,"PercentPositivePattern":1,"PercentNegativePattern":1,"NegativeInfinitySymbol":"-бесконечность","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":".","NumberGroupSeparator":" ","CurrencyPositivePattern":1,"PositiveInfinitySymbol":"бесконечность","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":",","PercentGroupSeparator":" ","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"","Calendar":{"MinSupportedDateTime":"\/Date(-62135596800000)\/","MaxSupportedDateTime":"\/Date(253402289999999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":false},"DateSeparator":".","FirstDayOfWeek":1,"CalendarWeekRule":0,"FullDateTimePattern":"d MMMM yyyy \u0027г.\u0027 H:mm:ss","LongDatePattern":"d MMMM yyyy \u0027г.\u0027","LongTimePattern":"H:mm:ss","MonthDayPattern":"MMMM dd","PMDesignator":"","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"dd.MM.yyyy","ShortTimePattern":"H:mm","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM yyyy","AbbreviatedDayNames":["Вс","Пн","Вт","Ср","Чт","Пт","Сб"],"ShortestDayNames":["Вс","Пн","Вт","Ср","Чт","Пт","Сб"],"DayNames":["воскресенье","понедельник","вторник","среда","четверг","пятница","суббота"],"AbbreviatedMonthNames":["янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек",""],"MonthNames":["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь",""],"IsReadOnly":false,"NativeCalendarName":"григорианский календарь","AbbreviatedMonthGenitiveNames":["янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек",""],"MonthGenitiveNames":["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря",""]},"eras":[1,"A.D.",null,0]};//]]>
+</script>
+
+<script src="../ScriptResource.axd@d=H7rJdlKpMDkPfCcdxuf7ORE5JZ5rwpoYIf9tGMQ2HdRhvyefE0jp41xasd_1cTIKcY_1b-fQ4rAOtEF194uGAg4KDHM9d0AlK3x3FCbLDCX-OuXReIDUwun5SMw8AQUd67SKfg2&amp;t=3a1336b1" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('Не удалось загрузить клиентскую инфраструктуру ASP.NET Ajax .');
+//]]>
+</script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+ 
+ 
+   <div id="wrapper">
+    
+  <header id="header-main" class="clearfix">
+   
+		<div class="top">
+        
+			<div class="c-container clearfix">
+              
+				<div class="r-top" style="width:460px;">
+                    <div style="float:left;">
+                    <a id="specialVersion" style="font-weight:bold;color:#0f74be;" href="index.html@topcategoryid=9&amp;categoryid=13&amp;page=1.html">Версия&nbsp;для&nbsp;слабовидящих</a>
+                        <script>var path = window.location.pathname; var host = window.location.hostname;
+                            if (window.location.search != "")
+                                path = path + encodeURIComponent(window.location.search);
+                            document.getElementById("specialVersion").href = "http://finevision.ru/?hostname=" + host + "&path=" + path;
+                    </script>
+					<time id="timeTag2"></time> | 
+                    <div id="pnlRegistration" style="display:inline">
+	
+                    <a href="index.html@topcategoryid=9&amp;categoryid=13&amp;page=1.html#" onclick="OpenDialog()">Вход</a> | <a href="http://moyaokruga.ru/UserRegistration.aspx" id="reg">Регистрация</a>
+                    
+</div>
+                    
+                    </div>
+                    <div style="font-size:30px;color:#0f74be;font-weight:bold;float:right;">
+                        
+                        16+
+                        
+                    </div>
+                    <div style="clear:both;"></div>
+				</div>
+				<div id="cTop" class="c-top"></div>
+			</div>		
+            
+		</div>
+        
+		<div class="c-container clearfix">
+            <div id="lHeader" class="l-header" style="width:400px;">
+				<div class="logo-sity">
+					<img src="../img/logo/ffb1c170-d450-45a4-960e-be2945dacb4a.jpg" id="imgBlazon" width="65" height="75" /><a href="index.html" id="aLogo" style="margin-left:20px"><img src="../img/logo/53fd7625-09a7-400b-8a9e-3c5ddd05b75d.jpg" id="imgLogo" width="300" height="75" /></a>
+				</div>
+			</div>
+			<div class="r-header">
+				<a href="http://moyaokruga.ru/selectregion.aspx" class="all-region">Выбрать регион</a>
+                <div class="c-header">
+                  <article>
+                      <h1>
+                  Общественно-политическая газета городского округа город Шахунья Нижегородской области
+                     
+                    </h1>
+					</article>
+                
+					<address>
+                    606910 Нижегородская область, г. Шахунья,ул. Гагарина, 15<br/> телефон: +7 (83152) 2-57-60<br/> e-mail: znamyatruda2011@yandex.ru
+                    </address>
+                
+                </div>
+			</div>
+            
+		</div>
+        
+        <div id="dialog">
+                    <div id="divPasswordVisible" style="display:none">
+                        <table width="100%" id="userEnter">
+                            <tr>
+                                <td align="right" style="padding:2px;font-family: 'PT Sans', sans-serif;font-size:14px;">
+                                    Логин
+                                </td>
+                                <td align="left" style="padding:2px">
+                                    <input name="ctl00$ctl00$txtLogin" type="text" id="txtLogin" style="width:200" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">&nbsp;
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" style="padding:2px;font-family: 'PT Sans', sans-serif;font-size:14px;">
+                                    Пароль
+                                </td>
+                                <td align="left" style="padding:2px">
+                                    <input name="ctl00$ctl00$txtPassword" type="text" id="txtPassword" style="width:200" mode="Password" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">&nbsp;
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <div style="color:Red; display:none;" id="spanRed">
+                                        Неправильный логин или пароль
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center" style="padding:2px">
+                                    <input onclick="yaCounter23768680.reachGoal('VHOD');UserEnter(); if (typeof(Page_ClientValidate) == 'function') Page_ClientValidate('passwordGroup'); " name="ctl00$ctl00$Submit1" type="submit" id="Submit1" class="btn" ValidationGroup="passwordGroup" value="Войти" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  colspan="2" align="center">
+                                <div style="float:left;margin-left:25px;">
+                                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                                </fb:login-button>
+                                <div id="status">
+                                </div>
+                                </div>
+                                <div id="login_button" onclick="openWindow();" style="float:left;margin-left:65px;"></div>
+                                 <script language="javascript">
+                                     //VK.Auth.login(authInfo);
+                                     function openWindow() {
+                                         window.open("https://oauth.vk.com/authorize?client_id=2921520&scope=email&redirect_uri=http://moyaokruga.ru/znamiatruda-niz/vklogin.aspx&response_type=code&v=",
+                                         "vklogin", "toolbar=no,resizable=no,scrollbars=no,width=660,height=380");
+                                     }
+
+                                    /*VK.init({
+                                      apiId: 2921520
+                                    });
+                                    function authInfo(response) {
+                                      if (response.session) {
+                                          //alert('user: '+response.session.mid);
+                                          alert(response.session.sid);
+                                          alert(response.session.user.first_name);
+                                          alert(response.session.user.last_name);
+                                          alert(response.session.user.email);
+                                      } else {
+                                        alert('not auth');
+                                      }
+                                    }*/
+                                    //VK.Auth.getLoginStatus(authInfo);
+                                     VK.UI.button('login_button');
+
+                                     function openWindowOD() { 
+                                        //var vnd = window.open("http://www.odnoklassniki.ru/oauth/authorize?client_id=1092917504&response_type=code&redirect_uri=http://moyaokruga.ru/znamiatruda-niz/odlogin.aspx",
+                                        //     "odlogin", "toolbar=no,resizable=no,scrollbars=no,width=660,height=380");
+                                         //return false;
+                                         window.location.href = "http://www.odnoklassniki.ru/oauth/authorize?client_id=1092917504&response_type=code&redirect_uri=http://moyaokruga.ru/znamiatruda-niz/odlogin.aspx";
+                                     }
+                                 </script>
+                                 <div style="clear:both"/>
+                                 <br/>
+                                 <a style="display:none" href="http://www.odnoklassniki.ru/oauth/authorize?client_id=1092917504&response_type=code&redirect_uri=http://moyaokruga.ru/znamiatruda-niz/odlogin.aspx"></a>
+                                 <a class="odkl-oauth-lnk" href="index.html@topcategoryid=9&amp;categoryid=13&amp;page=1.html" onclick="ODKL.Oauth2(this, 1092917504, 'SET_STATUS;VALUABLE_ACCESS', 'http://moyaokruga.ru/znamiatruda-niz/odlogin.aspx');return false;"></a> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+        <nav id="ctlTopMenu_menuTopContainer" class="menu clearfix">
+	
+	<ul id="ctlTopMenu_divTopMenu" class="clearfix">
+	<li><a href='index.html@topcategoryid=1.html'>Новости</a></li><li><a href='index.html@topcategoryid=12.html'>Официально</a><ul><li><a href='index.html@topcategoryid=12&amp;categoryid=231.html'>Служба новостей</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=432.html'>Правительство Нижегородской области</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=13.html'>Администрация района</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=14.html'>ЖКХ</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=164.html'>Благоустройство</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=15.html'>Открытый диалог</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=136.html'>Официальные документы</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=163.html'>События</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=322.html'>Информация</a></li></ul></li><li><a href='index.html@topcategoryid=16.html'>Общество</a><ul><li><a href='index.html@topcategoryid=16&amp;categoryid=138.html'>Экспресс</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=127.html'>Происшествия</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=20.html'>Закон и право</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=130.html'>Интервью</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=107.html'>Персона</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=108.html'>Православие</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=19.html'>Патр. воспитание</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=243.html'>Противодействие терроризму</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=133.html'>Экология</a></li></ul></li><li><a href='index.html@topcategoryid=115.html'>Экономика</a><ul><li><a href='index.html@topcategoryid=115&amp;categoryid=319.html'>Работа и вакансии</a></li><li><a href='index.html@topcategoryid=115&amp;categoryid=321.html'>Недвижимость</a></li><li><a href='index.html@topcategoryid=115&amp;categoryid=116.html'>Сельское хозяйство</a></li><li><a href='index.html@topcategoryid=115&amp;categoryid=117.html'>Промышленность</a></li><li><a href='index.html@topcategoryid=115&amp;categoryid=118.html'>Торговля</a></li><li><a href='index.html@topcategoryid=115&amp;categoryid=119.html'>Транспорт</a></li><li><a href='index.html@topcategoryid=115&amp;categoryid=120.html'>Услуги</a></li><li><a href='index.html@topcategoryid=115&amp;categoryid=124.html'>Связь</a></li></ul></li><li><a href='index.html@topcategoryid=27.html'>Культура</a><ul><li><a href='index.html@topcategoryid=27&amp;categoryid=334.html'>Мероприятия</a></li><li><a href='index.html@topcategoryid=27&amp;categoryid=32.html'>Искусство</a></li><li><a href='index.html@topcategoryid=27&amp;categoryid=31.html'>Книги</a></li><li><a href='index.html@topcategoryid=27&amp;categoryid=30.html'>Музыка</a></li><li><a href='index.html@topcategoryid=27&amp;categoryid=161.html'>Краеведение</a></li><li><a href='index.html@topcategoryid=27&amp;categoryid=162.html'>Театр</a></li><li><a href='index.html@topcategoryid=27&amp;categoryid=29.html'>Кино</a></li></ul></li><li><a href='index.html@topcategoryid=36.html'>Образование</a><ul><li><a href='index.html@topcategoryid=36&amp;categoryid=38.html'>Сад</a></li><li><a href='index.html@topcategoryid=36&amp;categoryid=39.html'>Школа</a></li><li><a href='index.html@topcategoryid=36&amp;categoryid=40.html'>После школы</a></li><li><a href='index.html@topcategoryid=36&amp;categoryid=132.html'>Дополнительное образование</a></li></ul></li><li><a href='index.html@topcategoryid=109.html'>Здоровье</a><ul><li><a href='index.html@topcategoryid=109&amp;categoryid=110.html'>Наша медицина</a></li><li><a href='index.html@topcategoryid=109&amp;categoryid=126.html'>Точка зрения</a></li><li><a href='index.html@topcategoryid=109&amp;categoryid=111.html'>Образ жизни</a></li><li><a href='index.html@topcategoryid=109&amp;categoryid=113.html'>События</a></li><li><a href='index.html@topcategoryid=109&amp;categoryid=114.html'>Наши спортсмены</a></li></ul></li><li><a href='index.html@topcategoryid=50.html'>Спецпроекты</a><ul><li><a href='index.html@topcategoryid=50&amp;categoryid=444.html'>Из свежего номера</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=371.html'>Защита трудовых прав</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=447.html'>Поздравления</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=335.html'>Жила-была деревня</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=333.html'>Туризм</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=134.html'>Народный корр</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=61.html'>Вопрос-ответ</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=57.html'>Конкурсы</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=135.html'>Поздравляем!</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=55.html'>Творчество земляков</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=53.html'>Потребителю</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=407.html'>Памятные даты</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=52.html'>Подвиг во имя Победы</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=245.html'>Дети о войне</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=51.html'>Мужские заботы</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=137.html'>Архив</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=244.html'>Фотофакт</a></li></ul></li><li><a href='ads.aspx.html'>Товары и Услуги</a></li></ul>
+</nav>
+
+
+    </header><!-- #header-->
+   
+   
+ <section id="middle">
+        <div id="container">
+        <div id="content" class="home-center">				
+                            
+    <section id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_hotArticle_newMain" class="articles-main">
+						<a href="Articles.aspx@articleId=203287.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_hotArticle_mainLink"><img src="../img/image_hot_new/44f6d059-25b1-4628-8650-1f8a47ec0b57.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_hotArticle_mainPhoto" /></a>
+						<header><a href="Articles.aspx@articleId=203287.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_hotArticle_titleLink">Отчитались не все</a><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_hotArticle_timeText">25.10.2018</time></header>
+						<blockquote>
+<p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_hotArticle_mainText">На заседании антинаркотической комиссии, состояшевшемся 11 октября в администрации округа,  не был рассмотрен первый вопрос  – &quot;Организация и проведение операции &quot;Мак-2018&quot;. Докладчик из ОМВД России по г. Шахунья не явился.</p>
+<p><a href="Articles.aspx@articleId=203287.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_hotArticle_readNextLink">Читать дальше</a></p>
+						</blockquote>
+					</section>
+
+<header id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_hotArticle_ctlArticleTags_popularHeader" class="head-main cntr">ПОПУЛЯРНОЕ</header>
+	<div id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_hotArticle_ctlArticleTags_popularContent" class="popular clearfix">
+		<div class="block">
+			<ul id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_hotArticle_ctlArticleTags_leftTags">
+			<li><a href='Articles.aspx@articleId=134336.html'>Ценят за человечность</a></li><li><a href='Articles.aspx@articleId=126478.html'>Будничный героизм</a></li><li><a href='Articles.aspx@articleId=132768.html'>Из Туманино –  в Кентукки</a></li><li><a href='Articles.aspx@articleId=137542.html'>Бойцы невидимого фронта</a></li><li><a href='Articles.aspx@articleId=154067.html'>"Идет охота на волков…"?</a></li><li><a href='Articles.aspx@articleId=127960.html'>И без труда рыбка ловится</a></li></ul>
+		</div>
+		<div class="block">
+			<ul id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_hotArticle_ctlArticleTags_rightTags">
+			<li><a href='Articles.aspx@articleId=166842.html'>В их руках – жизнь</a></li><li><a href='Articles.aspx@articleId=127508.html'>Небо — его обитель</a></li><li><a href='Articles.aspx@articleId=156402.html'>"Пациенты здесь золотые!"</a></li><li><a href='Articles.aspx@articleId=146407.html'>Чемпион из Вахтана</a></li><li><a href='Articles.aspx@articleId=176827.html'>"Поезд здоровья"</a></li><li><a href='Articles.aspx@articleId=167972.html'>Под грифом "секретно"</a></li></ul>
+		</div>
+	</div>
+
+
+
+   	
+    
+       	
+        
+       	
+	<div class="news-container">
+	<div id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_panelArticles" class="news-container">
+	
+	
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl00_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=203287.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl00_ctl00_articleLink"><img src="../img/image_hot_new/44f6d059-25b1-4628-8650-1f8a47ec0b57.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl00_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl00_ctl00_articleTime">25.10.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl00_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=203287.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl00_ctl00_articleHeader">Отчитались не все</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl00_ctl00_articleText">На заседании антинаркотической комиссии, состояшевшемся 11 октября в администрации округа,  не был рассмотрен первый вопрос  – &quot;Организация и...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl01_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=202990.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl01_ctl00_articleLink"><img src="../img/image_hot_new/d7460115-da84-4901-9765-7800a32c61f7.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl01_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl01_ctl00_articleTime">23.10.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl01_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=202990.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl01_ctl00_articleHeader">Три дня – по сигналу</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl01_ctl00_articleText">По всей стране, в том числе и в г.о.г. Шахунья, с 1 по 3 октября проводилась всероссийская штабная тренировка. Каждый день поступали различные...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl02_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=201852.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl02_ctl00_articleLink"><img src="../img/image_hot_new/44f6d059-25b1-4628-8650-1f8a47ec0b57.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl02_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl02_ctl00_articleTime">17.10.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl02_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=201852.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl02_ctl00_articleHeader">Внесли изменения</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl02_ctl00_articleText">Очередное заседание Совета депутатов (СД) г.о.г.&#160;Шахунья, состоявшееся 28&#160;сентября под председательством О.А. Дахно, было непродолжительным...</p>
+	</div>
+</article>
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl02_ctl01_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=199964.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl02_ctl01_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl02_ctl01_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl02_ctl01_articleTime">12.10.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl02_ctl01_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=199964.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl02_ctl01_articleHeader">Скоординировали действия</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl02_ctl01_articleText">В повестке заседания комиссии по профилактике правонарушений, которое прошло 20 сентября под председательством первого заместителя главы...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl03_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=198481.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl03_ctl00_articleLink"><img src="../img/image_hot_new/6a8d99c6-9866-4ace-8ee8-6af0d1fee07d.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl03_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl03_ctl00_articleTime">02.10.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl03_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=198481.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl03_ctl00_articleHeader">Заходи&#160;— и&#160;живи!</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl03_ctl00_articleText">Каждая новостройка в&#160;Шахунье&#160;— это хорошая новость для всех жителей. Независимо от&#160;того, станешь ты новоселом или нет.</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl04_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=198600.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl04_ctl00_articleLink"><img src="../img/image_hot_new/daf6a909-beea-45f1-8613-1d97786c590e.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl04_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl04_ctl00_articleTime">02.10.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl04_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=198600.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl04_ctl00_articleHeader">А ты хочешь  быть волонтером?</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl04_ctl00_articleText">О том, что 2018 год Указом президента РФ В.В. Путина объявлен в России Годом добровольца (волонтера), кто-то слышал, а кто-то нет.</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl05_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=196895.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl05_ctl00_articleLink"><img src="../img/image_hot_new/5fbc43aa-a4ed-424a-aada-5758fd780f05.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl05_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl05_ctl00_articleTime">27.09.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl05_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=196895.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl05_ctl00_articleHeader">При взаимной ответственности</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl05_ctl00_articleText">Из ямы в&#160;яму, как по&#160;стиральной доске, колея на&#160;колее, заплата на&#160;заплате&#160;— знакомые выражения, не&#160;правда&#160;ли? Редко кто из&#160;россиян не&#160;ругает дороги.</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl06_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=196728.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl06_ctl00_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl06_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl06_ctl00_articleTime">18.09.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl06_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=196728.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl06_ctl00_articleHeader">Навести порядок</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl06_ctl00_articleText">Состоявшееся 24 августа заседание Совета депутатов г.о.г. Шахунья условно можно разделить на две примерно равные по времени, но разные по содержанию...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl07_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=190586.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl07_ctl00_articleLink"><img src="../img/image_hot_new/44f6d059-25b1-4628-8650-1f8a47ec0b57.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl07_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl07_ctl00_articleTime">30.08.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl07_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=190586.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl07_ctl00_articleHeader">Проверили легальность</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl07_ctl00_articleText">Очередное заседание единой межведомственной комиссии по вопросам уровня заработной платы, выплачиваемой работникам юридическими лицами и...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl08_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=185908.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl08_ctl00_articleLink"><img src="../img/image_hot_new/44f6d059-25b1-4628-8650-1f8a47ec0b57.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl08_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl08_ctl00_articleTime">08.08.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl08_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=185908.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl08_ctl00_articleHeader">Жизнь течет&#160;—  бюджет меняется</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl08_ctl00_articleText">Заседание Совета депутатов г. о. г.&#160;Шахунья, состоявшееся 20&#160;июля, стало внеочередным, так как необходимо было внести изменения в&#160;решение о&#160;бюджете...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl09_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=184460.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl09_ctl00_articleLink"><img src="../img/image_hot_new/2b177d97-317c-4311-a9c2-9dad7539e1b0.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl09_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl09_ctl00_articleTime">31.07.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl09_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=184460.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl09_ctl00_articleHeader">В поисках ответов</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl09_ctl00_articleText">Такие рабочие совещания проводятся не&#160;по&#160;заранее составленному графику и&#160;не&#160;ради &quot;галочки&quot;&#160;— ситуация обязывает.</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl10_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=181710.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl10_ctl00_articleLink"><img src="../img/image_hot_new/a00b53f2-db1f-451e-8fa0-9ed7728e001c.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl10_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl10_ctl00_articleTime">20.07.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl10_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=181710.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl10_ctl00_articleHeader">В поиске вектора развития</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl10_ctl00_articleText">Совсем недавно в&#160;наш обиход вошло новое понятие&#160;— &quot;стратегическая сессия&quot;. Что это означает и&#160;с&#160;чем связано?</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl11_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=179892.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl11_ctl00_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl11_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl11_ctl00_articleTime">13.07.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl11_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=179892.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl11_ctl00_articleHeader">Обсуждали активно</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl11_ctl00_articleText">В последнем перед традиционными июльскими каникулами заседании Совета депутатов г.о.г.&#160;Шахунья, состоявшемся под председательством О.А. Дахно...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl12_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=179893.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl12_ctl00_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl12_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl12_ctl00_articleTime">12.07.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl12_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=179893.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl12_ctl00_articleHeader">Освободить от&#160;налогов</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl12_ctl00_articleText">В администрации городского округа 19&#160;июня под председательством и.о. главы МСУ А.Д. Серова прошли заседания двух комиссий. На&#160;первом из&#160;них шел...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl13_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=176977.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl13_ctl00_articleLink"><img src="../img/image_hot_new/f5d8da0a-a0b0-4947-a097-cbb84df9280a.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl13_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl13_ctl00_articleTime">28.06.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl13_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=176977.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl13_ctl00_articleHeader">Тридцать вопросов главе МСУ</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl13_ctl00_articleText">Эта встреча была необычной. Без повестки дня. На&#160;ней не&#160;принимались решения, не&#160;писался протокол. Проходила она в&#160;режиме &quot;вопрос-ответ&quot;.</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl14_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=176733.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl14_ctl00_articleLink"><img src="../img/image_hot_new/f891e71b-20f6-41e5-8bf3-62933ab1f31f.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl14_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl14_ctl00_articleTime">27.06.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl14_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=176733.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl14_ctl00_articleHeader">За эффективность  и развитие</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl14_ctl00_articleText">В городском Дворце культуры 25&#160;мая состоялось мероприятие, посвященное Дню российского предпринимательства. В&#160;зале торжеств собрались представители...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl15_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=176655.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl15_ctl00_articleLink"><img src="../img/image_hot_new/8731d385-3ee9-4e20-b5b9-5348f81875ff.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl15_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl15_ctl00_articleTime">26.06.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl15_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=176655.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl15_ctl00_articleHeader">Стратегия открытости</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl15_ctl00_articleText">Этого человека всегда интересно слушать. Быстрая речь, логичность изложения, образные сравнения вкупе с&#160;занимательными примерами из&#160;жизни облегчают...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl16_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=174267.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl16_ctl00_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl16_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl16_ctl00_articleTime">15.06.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl16_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=174267.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl16_ctl00_articleHeader">Обсудили проблемы</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl16_ctl00_articleText">На очередное заседание Совета депутатов округа, состоявшееся 25&#160;мая,которое провел председатель Совета О. А. Дахно при участии главы МСУ...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl17_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=170816.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl17_ctl00_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl17_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl17_ctl00_articleTime">01.06.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl17_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=170816.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl17_ctl00_articleHeader">Найти и&#160;обезвредить</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl17_ctl00_articleText">Рабочее совещание с&#160;представителями Шахунского филиала АО &quot;НОКК&quot;, МУП &quot;Водоканал&quot; и&#160;ООО &quot;Жилсервис&quot;, прошедшее 15&#160;мая под председательством главы МСУ...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl18_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=167250.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl18_ctl00_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl18_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl18_ctl00_articleTime">14.05.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl18_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=167250.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl18_ctl00_articleHeader">От лесных пожаров</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl18_ctl00_articleText">На очередном заседании КЧС и&#160;ОПБ, которое 28&#160;апреля провел первый заместитель главы администрации г.о. г.&#160;Шахунья А.Д. Серов, рассматривался один...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl19_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=167249.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl19_ctl00_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl19_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl19_ctl00_articleTime">11.05.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl19_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=167249.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl19_ctl00_articleHeader">Об итогах бюджетной деятельности</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl19_ctl00_articleText">Даже граждане, не посвященные в деятельность органов местного самоуправления, знают, что все изменения в социально-экономическом развитии отдельно...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl20_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=162453.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl20_ctl00_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl20_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl20_ctl00_articleTime">23.04.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl20_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=162453.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl20_ctl00_articleHeader">Готовность к сезону</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl20_ctl00_articleText">Плановое заседание комиссии по предупреждению и ликвидации чрезвычайных ситуаций и обеспечению пожарной безопасности г.о.г. Шахунья состоялось 9...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl21_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=161104.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl21_ctl00_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl21_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl21_ctl00_articleTime">18.04.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl21_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=161104.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl21_ctl00_articleHeader">В преддверии чемпионата</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl21_ctl00_articleText">Подготовка к&#160;предстоящему Чемпионату мира по&#160;футболу ведется по&#160;разным направлениям&#160;— необходимо предусмотреть все до&#160;мельчайших нюансов.</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl22_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=160911.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl22_ctl00_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl22_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl22_ctl00_articleTime">16.04.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl22_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=160911.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl22_ctl00_articleHeader">Приняли к&#160;сведению</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl22_ctl00_articleText">Меньше часа понадобилось депутатам Совета депутатов г.о.г.&#160;Шахунья для рассмотрения семи вопросов повестки очередного заседания 30&#160;марта.</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl23_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=160010.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl23_ctl00_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl23_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl23_ctl00_articleTime">04.04.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl23_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=160010.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl23_ctl00_articleHeader">Об исполнении бюджета</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl23_ctl00_articleText">Совет депутатов городского округа город Шахунья Нижегородской области решил:</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl24_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=160011.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl24_ctl00_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl24_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl24_ctl00_articleTime">04.04.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl24_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=160011.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl24_ctl00_articleHeader">Об исполнении бюджета</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl24_ctl00_articleText">Совет депутатов городского округа город Шахунья Нижегородской области решил:</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl25_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=160008.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl25_ctl00_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl25_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl25_ctl00_articleTime">04.04.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl25_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=160008.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl25_ctl00_articleHeader">Об исполнении бюджета</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl25_ctl00_articleText">Совет депутатов городского округа город Шахунья Нижегородской области решил:</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl26_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=160004.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl26_ctl00_articleLink"><img src="../img/image_hot_new/5196cd78-31b2-4219-ad4e-b1f3058975c5.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl26_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl26_ctl00_articleTime">04.04.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl26_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=160004.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl26_ctl00_articleHeader">Об исполнении бюджета</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl26_ctl00_articleText">Совет депутатов городского округа город Шахунья Нижегородской области решил:</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl27_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=157036.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl27_ctl00_articleLink"><img src="../img/image_hot_new/4fe5c031-f21b-4de5-8b79-d786463f130a.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl27_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl27_ctl00_articleTime">26.03.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl27_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=157036.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl27_ctl00_articleHeader">Движение вверх-вниз</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl27_ctl00_articleText">Продолжительным по&#160;времени и&#160;насыщенным разнообразной информацией стало заседание Совета депутатов г.о.г.&#160;Шахунья 16&#160;марта. И&#160;это не&#160;случайно,...</p>
+	</div>
+</article>
+
+
+
+
+
+
+			 
+
+
+
+
+
+			
+
+
+<article id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl28_ctl00_articleTemplate" class="articles clearfix">
+	<a href="Articles.aspx@articleId=157020.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl28_ctl00_articleLink"><img src="../img/image_hot_new/83edd795-3fd9-4ef5-a2db-3797226398b1.jpg" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl28_ctl00_articleImage" /></a>
+	<div class="txt-articles">
+    <header>
+	    <p><time id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl28_ctl00_articleTime">26.03.2018</time> | <a href="index.html@topcategoryid=12&amp;categoryid=13.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl28_ctl00_categoryLink">Администрация района</a></p>
+	    <h3><a href="Articles.aspx@articleId=157020.html" id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl28_ctl00_articleHeader">Выбор сделан. За&#160;Путина!</a></h3>
+    </header>						
+    <p id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_ctl28_ctl00_articleText">С итогами выборов президента России наши соотечественники были ознакомлены по&#160;центральному телевидению утром 19&#160;марта, чуть позднее&#160;узнали, как...</p>
+	</div>
+</article>
+
+
+</div>
+	</div>
+	
+	<div id="MainMasterContentPlaceHolder_DefaultContentPlaceHolder_divPaging" class="pagination"><ul><li class='active'><a href='index.html@topcategoryid=9&amp;categoryid=13&amp;page=1.html#'>1</a></li><li><a href='index.html@topcategoryid=9&amp;categoryid=13&amp;page=2.html'>2</a></li></ul></div>
+		
+            </div>
+        </div><!-- #container -->
+        <aside id="sideLeft">
+         
+            
+
+            <div class="anons">
+                
+<script type="text/javascript">
+    $(document).ready(function () {
+    $('.datepicker').datepicker({
+        /*beforeShowDay: function (date) {
+            var theday = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
+            return [true, $.inArray(theday, datesArray) >= 0 ? "specialDate" : ''];
+        },*/
+        onSelect: function (date, obj) {
+            window.location.href = "SearchArchive.aspx?date=" + date;
+        },
+    });
+});
+</script>
+<style type="text/css">
+.specialDate a{ background-color: #6F0 !important; }
+</style>
+<header>Архив</header>
+<div class="datepicker"></div>
+<br/>
+<article id="eventsContainer" style="overflow:hidden;">
+	
+</article>
+
+
+                
+
+              </div>
+
+             
+
+            <div class="anons">
+                
+
+            </div>
+
+            
+			 <div class="timer">
+				<header>ЗАБЫЛ ВРЕМЯ?</header>
+				<div class="t-timer">
+					<div class="m-time" id="hour">05</div>
+					<span></span>
+					<div class="m-time" id="minutes">24</div>
+					<span></span>
+					<div class="m-time" id="seconds">19</div>
+				</div>
+				<div class="b-timer">
+					<span>ЧАСОВ</span>
+					<span>МИНУТ</span>
+					<span>СЕКУНД</span>
+				</div>
+			 </div>
+             <div id="MainMasterContentPlaceHolder_leftArticles_divLeftArticles" class="white">
+    
+	        <div class="news-foto">
+                
+<div class="banner">
+	<a href="Articles.aspx@articleId=206391.html" id="MainMasterContentPlaceHolder_leftArticles_repLastNews_ctlTizerText_0_newsHyperlink_0"><img src='../img/image_square/b4eeb342-ed59-40eb-8f96-e3a2e97cdc49.jpg' />Открыли малую чашу бассейна СДЮШОР "Заря"</a>
+</div>
+
+            </div>
+        
+	        <div class="news-foto">
+                
+<div class="banner">
+	<a href="Articles.aspx@articleId=206258.html" id="MainMasterContentPlaceHolder_leftArticles_repLastNews_ctlTizerText_1_newsHyperlink_1"><img src='../img/image_square/aba8e98f-4792-47e4-a3e1-a68614b8be8b.JPG' />За заслуги в развитии АПК</a>
+</div>
+
+            </div>
+        
+	        <div class="news-foto">
+                
+<div class="banner">
+	<a href="Articles.aspx@articleId=205015.html" id="MainMasterContentPlaceHolder_leftArticles_repLastNews_ctlTizerText_2_newsHyperlink_2"><img src='../img/image_square/764a6d01-681e-454c-ab0a-86897948003b.jpg' />26 октября — Международный день тещи</a>
+</div>
+
+            </div>
+        
+</div>
+
+
+			
+
+
+
+			
+<nav class="raion-region">
+	<header><figure><img src="../img/logo/631250ed-d5c5-4110-9ef0-318e7fe30146.png" id="MainMasterContentPlaceHolder_ctlLeftMenuRegions_imgRegion" width="28" height="33" /></figure>Районы региона</header>
+	<ul id="MainMasterContentPlaceHolder_ctlLeftMenuRegions_ulRegions">
+	<li><a href='http://moyaokruga.ru/gazetaznamia/Articles.aspx?articleId=206492'><span class='icon-new adr-new-ron'></span>Володарский район: Жизнь идет и ставит новые задачи</a></li><li><a href='http://moyaokruga.ru/vestnik-nn/Articles.aspx?articleId=206485'><span class='icon-new adr-new-ron'></span>Сосновский район: Агропром кардинально изменился</a></li><li><a href='http://moyaokruga.ru/sn-gazeta/Articles.aspx?articleId=206142'><span class='icon-new adr-new-ron'></span>Сокольский район: С молодецким задором</a></li><li><a href='http://moyaokruga.ru/pobedaknyaginino/Articles.aspx?articleId=206392'><span class='icon-new adr-new-ron'></span>Княгининский район: Детский спорт в регионе</a></li><li><a href='http://moyaokruga.ru/kovernov-sinn/Articles.aspx?articleId=206390'><span class='icon-new adr-new-ron'></span>Ковернинский район: Время быть автомобилистом</a></li></ul>
+	<span class="bg-reg-new"></span><span class="map-bg-new"></span>
+</nav>
+<nav class="raion-region raion-rus">
+	<header><figure><img src="../content/img/gerb-rus.png" width="28" height="33" alt="" /></figure>Районы страны</header>
+	<ul id="MainMasterContentPlaceHolder_ctlLeftMenuRegions_ulCountry">
+	<li><a href='http://moyaokruga.ru/ordjon-rabochy/Articles.aspx?articleId=206402'><span class='icon-new adr-new-ron'></span>Республика Хакасия: В Хакасии 530 новорожденных</a></li><li><a href='http://moyaokruga.ru/bolhovskie-kuranty/Articles.aspx?articleId=205073'><span class='icon-new adr-new-ron'></span>Орловская область: Нравственный урок жизни</a></li><li><a href='http://moyaokruga.ru/voljsk/Articles.aspx?articleId=206028'><span class='icon-new adr-new-ron'></span>Республика Марий Эл: Можно вылечить словом</a></li><li><a href='http://moyaokruga.ru/mayak_trud/Articles.aspx?articleId=205500'><span class='icon-new adr-new-ron'></span>Алтайский край: "Оптику" – в сельские больницы</a></li><li><a href='http://moyaokruga.ru/prizyvgazeta/Articles.aspx?articleId=205520'><span class='icon-new adr-new-ron'></span>Псковская область: Идричанки оправдали доверие</a></li></ul>
+	<span class="bg-reg-new"></span><span class="map-bg-new"></span>
+</nav>	
+             
+                
+<nav class="raion-region">
+<header><figure><img src="../content/img/pq_logo.png" width="40" height="30" alt="" /></figure>Бесплатная
+<div style="margin-left:50px;margin-top:-15px;">юридическая помощь</div>
+</header>
+<ul id="MainMasterContentPlaceHolder_ctlLeftMenuPQ_ulMCX">
+<li><a href='http://народныйвопрос.рф/Home/Question/9295'><span class='icon-new adr-new-ron'></span>Восстановление северных надбавок.</a></li><li><a href='http://народныйвопрос.рф/Home/Question/9293'><span class='icon-new adr-new-ron'></span>Страхование заключенного</a></li><li><a href='http://народныйвопрос.рф/Home/Question/9287'><span class='icon-new adr-new-ron'></span>Могут ли меня уволить по состоянию здоровья?</a></li></ul>
+<span class="bg-reg-new"></span><span class="map-bg-new"></span>
+</nav>
+	
+             
+<div class="directory">
+	<header>Справочник</header>
+	<ul>
+    
+		<li><a href="directory.aspx@id=1.html" id="MainMasterContentPlaceHolder_ctlLeftMenuDirectory_ulRep_h2NewsName_0">Администрация</a>
+			<ul>
+                
+						<li><a href="directory.aspx@id=2.html" id="MainMasterContentPlaceHolder_ctlLeftMenuDirectory_ulRep_liRep_0_hypArticle_0">Администрация района</a></li>
+                    
+						<li><a href="directory.aspx@id=5.html" id="MainMasterContentPlaceHolder_ctlLeftMenuDirectory_ulRep_liRep_0_hypArticle_1">Пенсионный фонд</a></li>
+                    
+						<li><a href="directory.aspx@id=8.html" id="MainMasterContentPlaceHolder_ctlLeftMenuDirectory_ulRep_liRep_0_hypArticle_2">Служба занятости</a></li>
+                    
+						<li><a href="directory.aspx@id=6.html" id="MainMasterContentPlaceHolder_ctlLeftMenuDirectory_ulRep_liRep_0_hypArticle_3">Налоговая инспекция</a></li>
+                    
+			</ul>
+		</li>
+    
+		<li><a href="directory.aspx@id=9.html" id="MainMasterContentPlaceHolder_ctlLeftMenuDirectory_ulRep_h2NewsName_1">Правосудие и безопасность</a>
+			<ul>
+                
+						<li><a href="directory.aspx@id=10.html" id="MainMasterContentPlaceHolder_ctlLeftMenuDirectory_ulRep_liRep_1_hypArticle_0">Полиция</a></li>
+                    
+						<li><a href="directory.aspx@id=12.html" id="MainMasterContentPlaceHolder_ctlLeftMenuDirectory_ulRep_liRep_1_hypArticle_1">Прокуратура</a></li>
+                    
+						<li><a href="directory.aspx@id=13.html" id="MainMasterContentPlaceHolder_ctlLeftMenuDirectory_ulRep_liRep_1_hypArticle_2">Суд</a></li>
+                    
+			</ul>
+		</li>
+    
+		<li><a href="directory.aspx@id=35.html" id="MainMasterContentPlaceHolder_ctlLeftMenuDirectory_ulRep_h2NewsName_2">Обществ. орг-ции</a>
+			<ul>
+                
+						<li><a href="directory.aspx@id=37.html" id="MainMasterContentPlaceHolder_ctlLeftMenuDirectory_ulRep_liRep_2_hypArticle_0">Общественные отношения</a></li>
+                    
+			</ul>
+		</li>
+    
+    </ul>
+</div>
+			
+			 
+			<div class="visitors" style="display:none">
+				<header>Уникальные посетители</header>
+				<span class="head-visitors">СЕГОДНЯ</span>
+				<span class="tage-of-visits"><span>25%</span></span>
+				<span class="head-visitors">ЗА НЕДЕЛЮ</span>
+				<span class="tage-of-visits"><span>90%</span></span>
+				<span class="head-visitors">ЗА МЕСЯЦ</span>
+				<span class="tage-of-visits"><span>58%</span></span>
+			</div>
+        </aside><!-- #sideLeft -->
+		<aside id="sideRight">
+
+             
+                <div class="soc-network" align="center">
+                <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Баннер-заглушка-МояОкруга -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:300px;height:250px"
+                     data-ad-client="ca-pub-5059676217578986"
+                     data-ad-slot="7839129756"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                 </div>
+                <br/>
+            
+            <div class="ya-site-form ya-site-form_inited_no" style="width:320px;" onclick="return {'action':'http://moyaokruga.ru/znamiatruda-niz/SearchResults.aspx','arrow':false,'bg':'transparent','fontsize':12,'fg':'#000000','language':'ru','logo':'rb','publicname':'Поиск МояОкруга','suggest':true,'target':'_self','tld':'ru','type':3,'usebigdictionary':false,'searchid':1900805,'input_fg':'#000000','input_bg':'#FFFFFF','input_fontStyle':'normal','input_fontWeight':'normal','input_placeholder':null,'input_placeholderColor':'#000000','input_borderColor':'#7F9DB9'}"><form action="https://yandex.ru/search/site/" method="get" target="_self" accept-charset="utf-8"><input type="hidden" name="searchid" value="1900805"/><input type="hidden" name="l10n" value="ru"/><input type="hidden" name="reqenc" value=""/><input type="search" name="text" value=""/><input type="submit" value="Найти"/></form></div><style type="text/css">.ya-page_js_yes .ya-site-form_inited_no { display: none; }</style><script type="text/javascript">(function (w, d, c) { var s = d.createElement('script'), h = d.getElementsByTagName('script')[0], e = d.documentElement; if ((' ' + e.className + ' ').indexOf(' ya-page_js_yes ') === -1) { e.className += ' ya-page_js_yes'; } s.type = 'text/javascript'; s.async = true; s.charset = 'utf-8'; s.src = (d.location.protocol === 'https:' ? 'https:' : 'http:') + '//site.yandex.net/v2.0/js/all.js'; h.parentNode.insertBefore(s, h); (w[c] || (w[c] = [])).push(function () { Ya.Site.Form.init() }) })(window, document, 'yandex_site_callbacks');</script>
+            <!-- Gismeteo informer START -->
+<link rel="stylesheet" type="text/css" href="https://nst1.gismeteo.ru/assets/flat-ui/legacy/css/informer.min.css">
+    <div id="gsInformerID-1yV60Kh88fi58k" class="gsInformer" style="width:320px;height:227px">
+        <div class="gsIContent">
+            <div id="cityLink">
+                                    <a href="https://www.gismeteo.ru/weather-shakhunya-4322/" target="_blank">Погода в Шахунье</a>
+            </div>
+            <div class="gsLinks">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="leftCol">
+                                <a href="https://www.gismeteo.ru/" target="_blank">
+                                    <img alt="Gismeteo" title="Gismeteo" src="https://nst1.gismeteo.ru/assets/flat-ui/img/logo-mini2.png" align="middle" border="0" />
+                                    <span>Gismeteo</span>
+                                </a>
+                            </div>
+                            <div class="rightCol">
+                                <a href="https://www.gismeteo.ru/weather-shakhunya-4322/2-weeks/" target="_blank">Прогноз на 2 недели</a>
+                            </div>
+                        </td>
+                        </tr>
+                                    </table>
+            </div>
+        </div>
+    </div>
+<script async src="https://www.gismeteo.ru/api/informer/getinformer/?hash=1yV60Kh88fi58k" type="text/javascript"></script>
+<!-- Gismeteo informer END -->
+            
+
+            
+<div class="ad" style="overflow:hidden;">
+				<header>
+					<span class="icon add"></span><a href="AllPrivateAds.aspx.html" id="MainMasterContentPlaceHolder_sltPrivateAds_allPrivateAds">Объявления</a>
+				</header>
+                
+				
+<p align="center"><a href="newad.aspx.html" id="MainMasterContentPlaceHolder_sltPrivateAds_btnPlaceAd" class="btn">Подать объявление</a></p>
+			 </div>
+
+            
+            <img src="../img/zn_truda.jpg" /><br/>
+                
+            
+<div class="directory-main">
+			 	<header>
+					<span class="icon dr"></span><a href="Directory.aspx.html" id="MainMasterContentPlaceHolder_sltDirectory_allPrivateAds">Справочник</a>
+					<div class="sorti" style="display:none">
+						<a href="index.html@topcategoryid=9&amp;categoryid=13&amp;page=1.html#" class="icon sor"></a>
+						<a href="index.html@topcategoryid=9&amp;categoryid=13&amp;page=1.html#" class="icon sor2"></a>
+					</div>
+				</header>
+				<ul>
+                
+                	<li>
+						<a href="DirectoryObject.aspx@Id=7567.html" id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_aDirectoryLink_0">Администрация городского округа город Шахунья</a>
+						<p id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_pDirectoryText_0">606910, Нижегородская обл., г. Шахунья, пл. Советская, 1 <strong>+7 (83152) 2-17-57</strong></p>
+					</li>
+                    
+                	<li>
+						<a href="DirectoryObject.aspx@Id=7569.html" id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_aDirectoryLink_1">Управление Пенсионного фонда России города Шахунья Нижегородской области</a>
+						<p id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_pDirectoryText_1">Нижегородская область, Шахунья, Советская улица, 28 <strong>+7 (83152) 2-72-74</strong></p>
+					</li>
+                    
+                	<li>
+						<a href="DirectoryObject.aspx@Id=7568.html" id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_aDirectoryLink_2">Государственное казенное учреждение &quot;Центр занятости населения города Шахунья Нижегородской области&quot;</a>
+						<p id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_pDirectoryText_2">Нижегородская область, Шахунья, улица Гагарина, 23 <strong>+7 (83152) 2-12-27</strong></p>
+					</li>
+                    
+                	<li>
+						<a href="DirectoryObject.aspx@Id=7576.html" id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_aDirectoryLink_3">Территориально обособленное рабочее место Межрайонной инспекции Федеральной налоговой службы России № 13 по Нижегородской области в городе Шахунья</a>
+						<p id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_pDirectoryText_3">Нижегородская область, Шахунья, Советская улица, 35 <strong>+7 (83152) 2-17-59</strong></p>
+					</li>
+                    
+                	<li>
+						<a href="DirectoryObject.aspx@Id=7571.html" id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_aDirectoryLink_4">Отдел МВД России по городу Шахунья</a>
+						<p id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_pDirectoryText_4">Нижегородская область, Шахунья, улица Гагарина, 18 <strong>+7 (83152) 2-74-75</strong></p>
+					</li>
+                    
+                	<li>
+						<a href="DirectoryObject.aspx@Id=7575.html" id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_aDirectoryLink_5">Отделение ГИБДД отдела МВД России по городу Шахунья</a>
+						<p id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_pDirectoryText_5">Нижегородская область, Шахунья, Яранское шоссе, 6 <strong>+7 (83152) 2-44-70</strong></p>
+					</li>
+                    
+                	<li>
+						<a href="DirectoryObject.aspx@Id=7573.html" id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_aDirectoryLink_6">Отделение Управления Федеральной миграционной службы России по Нижегородской области в городском округе города Шахунья</a>
+						<p id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_pDirectoryText_6">Нижегородская область, Шахунья, Советская улица, 35 <strong>+7 (831-52) 2-70-17</strong></p>
+					</li>
+                    
+                	<li>
+						<a href="DirectoryObject.aspx@Id=7572.html" id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_aDirectoryLink_7">Шахунский межрайонный отдел судебных приставов</a>
+						<p id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_pDirectoryText_7">Нижегородская область, Шахунья, улица Коминтерна, 7 <strong>+7 (83152) 2-60-30</strong></p>
+					</li>
+                    
+                	<li>
+						<a href="DirectoryObject.aspx@Id=7574.html" id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_aDirectoryLink_8">Муниципальное автономное учреждение городского округа город Шахунья Нижегородской области &quot;Многофункциональный центр предоставления государственных и муниципальных услуг&quot;</a>
+						<p id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_pDirectoryText_8">Нижегородская область, Шахунья, Революционная улица, 18 <strong>+7 (83152) 2-17-16</strong></p>
+					</li>
+                    
+                	<li>
+						<a href="DirectoryObject.aspx@Id=7570.html" id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_aDirectoryLink_9">Отдел ЗАГС</a>
+						<p id="MainMasterContentPlaceHolder_sltDirectory_repDirectories_pDirectoryText_9">Нижегородская область, Шахунья, Советская площадь, 1 <strong>+7 (83152) 2-60-13</strong></p>
+					</li>
+                    
+                </ul>
+</div>
+
+
+
+
+            
+                <div class="soc-network" align="center">
+                <script type="text/javascript"><!--
+					google_ad_client = "ca-pub-5059676217578986";
+					/* МояОкруга небоскреб 300х600 */
+					google_ad_slot = "1495408958";
+					google_ad_width = 300;
+					google_ad_height = 600;
+				//-->
+				</script>
+				<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+                </div>
+                
+
+            <div id="unit_86494"><a href="http://smi2.ru/">PP>P2P>QQP8 smi2.ru</a></div>
+            <script type="text/javascript" charset="utf-8">
+                (function() {
+                    var sc = document.createElement('script'); sc.type = 'text/javascript'; sc.async = true;
+                    sc.src = '//smi2.ru/data/js/86494.js'; sc.charset = 'utf-8';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sc, s);
+                }());
+            </script>
+
+            
+
+			<div class="soc-network" align="center">
+				<script type="text/javascript" src="http://vk.com/js/api/openapi.js?97"></script>
+					<!-- VK Widget -->
+					<div id="vk_groups"></div>
+					<script type="text/javascript">
+                    VK.Widgets.Group("vk_groups", {mode: 0, width: "300", height: "300", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 50580269);
+					</script>
+                <br/>
+                <div id="ok_group_widget"></div>
+                <script>
+                    !function (d, id, did, st) {
+                        var js = d.createElement("script");
+                        js.src = "https://connect.ok.ru/connect.js";
+                        js.onload = js.onreadystatechange = function () {
+                            if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+                                if (!this.executed) {
+                                    this.executed = true;
+                                    setTimeout(function () {
+                                        OK.CONNECT.insertGroupWidget(id,did,st);
+                                    }, 0);
+                                }
+                            }}
+                        d.documentElement.appendChild(js);
+                    }(document,"ok_group_widget","53022756569158","{width:300,height:285}");
+                </script>
+                 <iframe src="http://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/MoyaOkruga&amp;width=300&amp;height=290&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;border_color&amp;header=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden;margin-top:15px; width:300px; height:290px;" allowTransparency="true"></iframe>
+
+                
+			</div>
+
+            
+<div class="directory-main">
+			 	<header>
+					<span class="icon dr"></span><a href="http://xn--b1agaluqhfp4g.xn--p1ai/?topcategoryid=165&categoryid=172" id="MainMasterContentPlaceHolder_sltSelectGoroskop_allPrivateAds">Гороскоп</a>
+					<div class="sorti" style="display:none">
+						<a href="index.html@topcategoryid=9&amp;categoryid=13&amp;page=1.html#" class="icon sor"></a>
+						<a href="index.html@topcategoryid=9&amp;categoryid=13&amp;page=1.html#" class="icon sor2"></a>
+					</div>
+				</header>
+				<ul>
+                
+                	<li>
+						<a href="http://xn--b1agaluqhfp4g.xn--p1ai/Articles.aspx?ArticleId=30947" id="MainMasterContentPlaceHolder_sltSelectGoroskop_repDirectories_aDirectoryLink_0" style="font-weight:bold">Что несет грядущий день?</a>
+						<p id="MainMasterContentPlaceHolder_sltSelectGoroskop_repDirectories_pDirectoryText_0" style="padding-top:5px"><img style='padding-right:5px;width:70px;height:70px;float:left;' src='../img/image_square/f261a2f9-897d-45a1-966f-676747b50dfb.jpg'/>Внимательно читая гороскоп, не забывайте, что, как бы серьезно ни было то, что называют судьбой, куда двигаться и как - решать все же нам и никому другому.</p>
+					</li>
+                    
+                	<li>
+						<a href="http://xn--b1agaluqhfp4g.xn--p1ai/Articles.aspx?ArticleId=30844" id="MainMasterContentPlaceHolder_sltSelectGoroskop_repDirectories_aDirectoryLink_1" style="font-weight:bold">24 октября: гороскоп</a>
+						<p id="MainMasterContentPlaceHolder_sltSelectGoroskop_repDirectories_pDirectoryText_1" style="padding-top:5px"><img style='padding-right:5px;width:70px;height:70px;float:left;' src='../img/image_square/19196554-d8b2-49f1-a4e3-1ec69b5f49bd.jpg'/>Чего ждать от звезд и судьбы в ближайшие дни - читаем в нашем постоянном гороскопе.</p>
+					</li>
+                    
+                	<li>
+						<a href="http://xn--b1agaluqhfp4g.xn--p1ai/Articles.aspx?ArticleId=30786" id="MainMasterContentPlaceHolder_sltSelectGoroskop_repDirectories_aDirectoryLink_2" style="font-weight:bold">23 октября: советы неба</a>
+						<p id="MainMasterContentPlaceHolder_sltSelectGoroskop_repDirectories_pDirectoryText_2" style="padding-top:5px"><img style='padding-right:5px;width:70px;height:70px;float:left;' src='../img/image_square/1fa99f87-c4ae-495e-994d-764bce49968d.jpg'/>Попробуем разобраться в туманных предположениях астрологов. Итак, что же ждет нас сегодняшним осенним днем?</p>
+					</li>
+                    
+                	<li>
+						<a href="http://xn--b1agaluqhfp4g.xn--p1ai/Articles.aspx?ArticleId=30714" id="MainMasterContentPlaceHolder_sltSelectGoroskop_repDirectories_aDirectoryLink_3" style="font-weight:bold">22 октября: верный путь</a>
+						<p id="MainMasterContentPlaceHolder_sltSelectGoroskop_repDirectories_pDirectoryText_3" style="padding-top:5px"><img style='padding-right:5px;width:70px;height:70px;float:left;' src='../img/image_square/332026f5-152a-4268-a1ae-74b315df14de.jpg'/>Что день грядущий нам готовит, хотелось бы всегда знать заранее, чтобы быть готовым к неожиданностям. Попробуем разобраться с прогнозами хотя бы отчасти.</p>
+					</li>
+                    
+                	<li>
+						<a href="http://xn--b1agaluqhfp4g.xn--p1ai/Articles.aspx?ArticleId=30641" id="MainMasterContentPlaceHolder_sltSelectGoroskop_repDirectories_aDirectoryLink_4" style="font-weight:bold">21 октября: звёзды о будущем</a>
+						<p id="MainMasterContentPlaceHolder_sltSelectGoroskop_repDirectories_pDirectoryText_4" style="padding-top:5px"><img style='padding-right:5px;width:70px;height:70px;float:left;' src='../img/image_square/1258952d-23ed-4329-8636-8d7a6b98097a.jpg'/>Чего ждать от сегодняшнего дня, читайте в нашем ежедневном гороскопе.</p>
+					</li>
+                    
+                	<li>
+						<a href="http://xn--b1agaluqhfp4g.xn--p1ai/Articles.aspx?ArticleId=30578" id="MainMasterContentPlaceHolder_sltSelectGoroskop_repDirectories_aDirectoryLink_5" style="font-weight:bold">20 октября: звёзды и жизнь</a>
+						<p id="MainMasterContentPlaceHolder_sltSelectGoroskop_repDirectories_pDirectoryText_5" style="padding-top:5px"><img style='padding-right:5px;width:70px;height:70px;float:left;' src='../img/image_square/4d25c6b2-cf72-455e-aa61-03d43c98d67a.jpg'/>Жизнь непредсказуема, и бывают моменты, которые не удается объяснить даже с помощью астрологии. Впрочем, вполне может быть, что дело в мастерстве толкователя... Как бы то ни было, попытаться можно всегда.</p>
+					</li>
+                    
+                </ul>
+</div>
+
+
+
+
+            
+
+        </aside><!-- #sideRight -->
+    </section><!-- #middle-->
+
+
+	<footer id="footer" class="clearfix">
+	    
+<style type="text/css">
+    #quad {left:-750px;} 
+    #firth {left:-724px;} 
+    #double li  { width:50%;float:left;  display:inline;}
+    #triple li  { width:33.333%;float:left;  display:inline; }
+    #quad li    { width:25%;float:left;  display:inline; }
+    #firth li    { width:20%;float:left;  display:inline; }
+    #six li     { width:16.666%;float:left;  display:inline; }
+</style>
+<div id="ctlCitiesMenu_divMenuCity" class="menu-sity">
+	<ul id="ctlCitiesMenu_cityUl" style="margin:0px;padding:0px;">
+	<li><a href='http://moyaokruga.ru/znamya-bm/'>Большемурашкинский район</a></li><li><a href='http://moyaokruga.ru/gazetaznamia/'>Володарский район</a></li><li><a href='http://moyaokruga.ru/rodnayazemlia/'>Дальнеконстантиновский район</a></li><li><a href='http://moyaokruga.ru/diveevo-udarnik/'>Дивеевский район</a></li><li class='all-sity'><a href='index.html@topcategoryid=9&amp;categoryid=13&amp;page=1.html#'>Еще города области</a><ul style='width:750px;' id='quad'><li><a href='http://moyaokruga.ru/pobedaknyaginino/'>Княгининский район</a></li><li><a href='http://moyaokruga.ru/kovernov-sinn/'>Ковернинский район</a></li><li><a href='http://moyaokruga.ru/vperyod/'>Краснобаковский район</a></li><li><a href='http://moyaokruga.ru/selskievesti/'>Краснооктябрьский район</a></li><li><a href='http://tuganyak.ru/'>Нижний Новгород</a></li><li><a href='http://moyaokruga.ru/szh-sergach/'>Сергачский район</a></li><li><a href='http://moyaokruga.ru/sn-gazeta/'>Сокольский район</a></li><li><a href='http://moyaokruga.ru/vestnik-nn/'>Сосновский район</a></li></ul></li></ul>
+</div>
+
+        <nav id="ctlBottomMenu_menuTopContainer" class="menu clearfix">
+	
+	<ul id="ctlBottomMenu_divTopMenu" class="clearfix">
+	<li><a href='index.html@topcategoryid=1.html'>Новости</a></li><li><a href='index.html@topcategoryid=12.html'>Официально</a><ul><li><a href='index.html@topcategoryid=12&amp;categoryid=231.html'>Служба новостей</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=432.html'>Правительство Нижегородской области</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=13.html'>Администрация района</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=14.html'>ЖКХ</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=164.html'>Благоустройство</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=15.html'>Открытый диалог</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=136.html'>Официальные документы</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=163.html'>События</a></li><li><a href='index.html@topcategoryid=12&amp;categoryid=322.html'>Информация</a></li></ul></li><li><a href='index.html@topcategoryid=16.html'>Общество</a><ul><li><a href='index.html@topcategoryid=16&amp;categoryid=138.html'>Экспресс</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=127.html'>Происшествия</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=20.html'>Закон и право</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=130.html'>Интервью</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=107.html'>Персона</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=108.html'>Православие</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=19.html'>Патр. воспитание</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=243.html'>Противодействие терроризму</a></li><li><a href='index.html@topcategoryid=16&amp;categoryid=133.html'>Экология</a></li></ul></li><li><a href='index.html@topcategoryid=115.html'>Экономика</a><ul><li><a href='index.html@topcategoryid=115&amp;categoryid=319.html'>Работа и вакансии</a></li><li><a href='index.html@topcategoryid=115&amp;categoryid=321.html'>Недвижимость</a></li><li><a href='index.html@topcategoryid=115&amp;categoryid=116.html'>Сельское хозяйство</a></li><li><a href='index.html@topcategoryid=115&amp;categoryid=117.html'>Промышленность</a></li><li><a href='index.html@topcategoryid=115&amp;categoryid=118.html'>Торговля</a></li><li><a href='index.html@topcategoryid=115&amp;categoryid=119.html'>Транспорт</a></li><li><a href='index.html@topcategoryid=115&amp;categoryid=120.html'>Услуги</a></li><li><a href='index.html@topcategoryid=115&amp;categoryid=124.html'>Связь</a></li></ul></li><li><a href='index.html@topcategoryid=27.html'>Культура</a><ul><li><a href='index.html@topcategoryid=27&amp;categoryid=334.html'>Мероприятия</a></li><li><a href='index.html@topcategoryid=27&amp;categoryid=32.html'>Искусство</a></li><li><a href='index.html@topcategoryid=27&amp;categoryid=31.html'>Книги</a></li><li><a href='index.html@topcategoryid=27&amp;categoryid=30.html'>Музыка</a></li><li><a href='index.html@topcategoryid=27&amp;categoryid=161.html'>Краеведение</a></li><li><a href='index.html@topcategoryid=27&amp;categoryid=162.html'>Театр</a></li><li><a href='index.html@topcategoryid=27&amp;categoryid=29.html'>Кино</a></li></ul></li><li><a href='index.html@topcategoryid=36.html'>Образование</a><ul><li><a href='index.html@topcategoryid=36&amp;categoryid=38.html'>Сад</a></li><li><a href='index.html@topcategoryid=36&amp;categoryid=39.html'>Школа</a></li><li><a href='index.html@topcategoryid=36&amp;categoryid=40.html'>После школы</a></li><li><a href='index.html@topcategoryid=36&amp;categoryid=132.html'>Дополнительное образование</a></li></ul></li><li><a href='index.html@topcategoryid=109.html'>Здоровье</a><ul><li><a href='index.html@topcategoryid=109&amp;categoryid=110.html'>Наша медицина</a></li><li><a href='index.html@topcategoryid=109&amp;categoryid=126.html'>Точка зрения</a></li><li><a href='index.html@topcategoryid=109&amp;categoryid=111.html'>Образ жизни</a></li><li><a href='index.html@topcategoryid=109&amp;categoryid=113.html'>События</a></li><li><a href='index.html@topcategoryid=109&amp;categoryid=114.html'>Наши спортсмены</a></li></ul></li><li><a href='index.html@topcategoryid=50.html'>Спецпроекты</a><ul><li><a href='index.html@topcategoryid=50&amp;categoryid=444.html'>Из свежего номера</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=371.html'>Защита трудовых прав</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=447.html'>Поздравления</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=335.html'>Жила-была деревня</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=333.html'>Туризм</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=134.html'>Народный корр</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=61.html'>Вопрос-ответ</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=57.html'>Конкурсы</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=135.html'>Поздравляем!</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=55.html'>Творчество земляков</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=53.html'>Потребителю</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=407.html'>Памятные даты</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=52.html'>Подвиг во имя Победы</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=245.html'>Дети о войне</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=51.html'>Мужские заботы</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=137.html'>Архив</a></li><li><a href='index.html@topcategoryid=50&amp;categoryid=244.html'>Фотофакт</a></li></ul></li><li><a href='ads.aspx.html'>Товары и Услуги</a></li></ul>
+</nav>
+
+
+		<div id="divFooter" class="c-container">
+			<div class="l-footer">
+
+<p>&copy; 2017 - 2018 «<span id="editorialName">Знамя труда</span>», <br />Все права защищены.</p>
+                
+			</div>
+			<div class="r-footer">
+<p id="pWithoutSEO">«<span id="editorialName2">Знамя труда</span>» -<br /> 
+<span id="editorialDescription">Общественно-политическая газета городского округа город Шахунья Нижегородской области</span></p>
+
+<p id="registration">ПИ № ТУ52-00816, 28.02.2013, Управление Федеральной службы по надзору в сфере связи, информационных технологий, и массовых коммуникаций по Приволжскому федеральному округу.</p>
+            <ul id="ulOfficeLinks" style="width:540px;"><li><a href="OfficePage.aspx@pagetype=1.html" id="contactLink">Контакты&nbsp;редакции</a></li>
+<li><a href="OfficePage.aspx@pagetype=2.html" id="adLink">Реклама</a></li>
+<li><a href="OfficePage.aspx@pagetype=3.html" id="subscriptionLink">Подписка</a></li>
+<li><a href="OfficePage.aspx@pagetype=4.html" id="conditionLink">Условия&nbsp;использования материалов</a></li>
+<li><a href="Partners.aspx.html" id="partnersLink">Наши&nbsp;партнеры</a></li>
+<li><a href="Purchases.aspx.html" id="purchaseLink">Закупки</a></li><li><a id='a0' href='Articles.aspx@preview=true&amp;articleId=131686.html'>Политика персональных данных в АУ ЗТ</a></li></ul>
+             </div>
+            <div style="float:right;width:4%;margin-top:-25px;margin-right:30px;">
+                    <a class="icon rss" href="rss.aspx@id=1044.html"></a>
+                </div>
+		</div>
+        
+		<div class="c-container">
+			<div class="l-footer">
+<div class="logo"><a href="http://moyaokruga.ru/selectregion.aspx"><img src="../content/img/logo-b-main.png" alt="" /></a></div>
+<p>Открытая информационная система<br />муниципальных образований</p>			
+			</div>
+			<div class="r-footer">
+				<ul>
+					<li><a href="SiteMap.aspx.html">Карта сайта</a></li>
+                    <li><a href="Section.aspx@Id=2.html"><b>О проекте</b></a></li>
+					<li><a href="http://moyaokruga.ru/selectregion.aspx">Карта России</a></li>								
+                    <li><a href="Section.aspx@Id=1.html">О компании</a></li>
+					<li><a href="Section.aspx@Id=7.html">Регистрация СМИ</a></li>
+                    <li><a href="Section.aspx@Id=4.html">Контакты</a></li>
+                    <li><a href="Section.aspx@Id=5.html">Разместить пресс-релиз</a></li>
+					<li><a href="Section.aspx@Id=3.html">Реклама</a></li>
+				</ul>
+                <div style="float:right;width:4%;margin-top:-51px;margin-right:90px;">
+                <!-- Rating@Mail.ru logo -->
+                <a href="http://top.mail.ru/jump?from=2791116">
+                <img src="http://top-fwz1.mail.ru/counter?id=2791116;t=295;l=1" 
+                style="border:0;" height="31" width="38" alt="Рейтинг@Mail.ru" /></a>
+                <!-- //Rating@Mail.ru logo -->
+                </div>
+                <div style="float:right;width:4%;margin-top:-51px;margin-right:40px;">
+                    <a class="icon rss" href="http://moyaokruga.ru/rss.aspx"></a>
+                </div>
+                <div style="float:right;width:4%;margin-top:-55px;">
+                    <!--LiveInternet counter--><script type="text/javascript"><!--
+               		document.write("<a href='http://www.liveinternet.ru/click' " +
+					"target=_blank><img src='//counter.yadro.ru/hit?t44.6;r" +
+					escape(document.referrer) + ((typeof (screen) == "undefined") ? "" :
+					";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ?
+					screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) +
+					";" + Math.random() +
+					"' alt='' title='LiveInternet' " +
+					"border='0' width='31' height='31'><\/a>")
+					//--></script><!--/LiveInternet-->
+				</div>
+                <ul style="float:right;margin-right:100px;padding-left:0px;margin-top:-117px">
+                    <li><a href="http://moyaokruga.ru/community/"><b>Курс&nbsp;для&nbsp;редакторов&nbsp;районных&nbsp;СМИ</b></a></li><br/>
+                    <li><a href="http://moyaokruga.ru/oferta/">Условия&nbsp;сотрудничества&nbsp;для&nbsp;редакций</a></li><br/>
+                    <li><a href="index.html@topcategoryid=9&amp;categoryid=13&amp;page=1.html#">Условия&nbsp;сотрудничества&nbsp;для&nbsp;рекламодателей</a></li><br/>
+                    <li><a href="http://moyaokruga.ru/userservice/">Условия&nbsp;предоставления&nbsp;услуг&nbsp;для&nbsp;пользователей</a></li><br/>
+                    <li><a href="http://moyaokruga.ru/privacy/">Положение&nbsp;о&nbsp;персональных&nbsp;данных</a></li>
+                </ul>
+			</div>
+		</div>
+        
+	</footer><!-- #footer -->
+</div><!-- #wrapper -->
+
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {var fn = function() {$get("ScriptManager1_HiddenField").value = '';Sys.Application.remove_init(fn);};Sys.Application.add_init(fn);})();//]]>
+</script>
+</form>
+<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-31139969-1']);
+		_gaq.push(['_setDomainName', 'moyaokruga.ru']);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>
+	<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+	(function (d, w, c) {
+		(w[c] = w[c] || []).push(function () {
+			try {
+				w.yaCounter14076946 = new Ya.Metrika({ id: 14076946, enableAll: true });
+			} catch (e) { }
+		});
+
+		var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+		s.type = "text/javascript";
+		s.async = true;
+		s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+		if (w.opera == "[object Opera]") {
+			d.addEventListener("DOMContentLoaded", f);
+		} else { f(); }
+	})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="http://mc.yandex.ru/watch/14076946" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter23768680 = new Ya.Metrika({id:23768680,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+ 
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+ 
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="http://mc.yandex.ru/watch/23768680" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=46319583&amp;from=informer"
+target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/46319583/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="46319583" data-lang="ru" /></a>
+<!-- /Yandex.Metrika informer -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter46319583 = new Ya.Metrika({
+                    id:46319583,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/46319583" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter48510443 = new Ya.Metrika({
+                    id:48510443,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/48510443" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+    var _tmr = window._tmr || (window._tmr = []);
+    _tmr.push({ id: "2791116", type: "pageView", start: (new Date()).getTime() });
+    (function (d, w, id) {
+        if (d.getElementById(id)) return;
+        var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+        ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+        var f = function () { var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s); };
+        if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+    })(document, window, "topmailru-code");
+</script><noscript><div style="position:absolute;left:-10000px;">
+<img src="http://top-fwz1.mail.ru/counter?id=2791116;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
+</div></noscript>
+<!-- //Rating@Mail.ru counter -->
+
+    <script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "name" : "МояОкруга",
+  "url" : "http://pr-cy.ru",
+  "sameAs" : [
+    "https://vk.com/moyaokruga",
+    "https://www.facebook.com/MoyaOkruga/"
+  ]
+}
+</script>
+
+</body>
+</html>

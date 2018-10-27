@@ -1,0 +1,1923 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<meta name='description' content='Как доехать?' />
+<title>Как доехать?</title>
+<link rel='stylesheet' href='/css/tmpl2/style.css?v=0.4' type='text/css' media='screen' />
+<link rel='stylesheet' href='/css/jquery.fancybox-1.3.4.css' type='text/css' media='screen' />
+<style type='text/css'>
+.calend_table {
+  border:1px solid #999999;
+  background:#FFFFFF;
+  font-family:Verdana;
+  font-size:10px;
+  color:#333333;
+}
+
+.calend_table td {
+  vertical-align:middle !important;
+  color:#333333;
+}
+
+.days_table {
+  font-family:Verdana;
+  font-size:10px;
+}
+.days, .days_sun, .days_sun_right {
+  background:#999999;
+  color:#FFFFFF !important;
+  width:35px;
+  height:25px;
+}
+.day, .no_day {
+  background: #F9F9F9;
+  margin-top:10px;
+  padding:0;
+}
+.day_curr {
+  background: #999999;
+  color:#FFFFFF !important;
+  font-weight:bold;
+  margin-top:10px;
+  padding:0;
+}
+.day_sun, .no_day_sun, .day_sun_right, .no_day_sun_right{
+  background:#EEEEEE;
+}
+
+.no_day, .no_day_sun, .no_day_sun_right {
+  color:#FFFFFF !important;
+  text-align:center;
+}
+
+.days, .days_sun, .day, .no_day, .day_curr, .day_sun, .no_day_sun{
+  border-top: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+  height:25px;
+}
+.day_sun_right, .no_day_sun_right, .days_sun_right {
+  border-top:1px solid #FFFFFF;
+  border-right:0;
+}
+
+.navig_form td {
+  background:#F9F9F9;
+  color:#333333;
+  padding:3px;
+  font-weight:bold;
+  font-size:12px;
+  height:25px;
+}
+td.navig_butt {
+  padding:0 7px;
+  cursor:pointer;
+}
+
+.mouseover {
+  background:#EEEEEE;
+  color:#333333;
+  border-top: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+}
+
+.mouseover_weekend, .mouseover_weekend_s {
+  background:#F9F9F9;
+  color:#333333;
+  border-top: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+}
+
+.mouseover_weekend_s {
+  border-right:none;
+}
+
+.month_link {
+  text-decoration:underline;
+  color:#333333;
+  cursor:pointer;
+  padding:0 5px;
+}
+
+.year_link {
+  text-decoration:underline;
+  color:#333333;
+  cursor:pointer;
+  padding:0 5px;
+}
+a, a:hover {
+  color:#333333;
+  text-decoration:underline;
+}</style>
+<script type='text/javascript'>var SUB_FOLDER = '', NETCAT_PATH = '/netcat/';</script>
+<script type='text/javascript' src='/netcat/admin/js/lib.js'></script>
+<script type='text/javascript' src='/netcat/modules/calendar/calendar.js'></script>
+
+<script type='text/javascript' src='/js/jquery.min.js'></script>
+<script type='text/javascript' src='/js/jquery.cycle.js'></script>
+<script type='text/javascript' src='/js/jquery.fancybox-1.3.4.pack.js'></script>
+<script type='text/javascript'>
+$(document).ready(function() {
+  $('#galery').cycle({ 
+    fx:      'fade',
+    next: '#next',
+    prev: '#prev'
+  });
+});
+</script>
+</head>
+<body>
+<div id='wrapper'>
+	<div id='all'>
+	<!--=========HEADER=========-->
+		<div id='header'>
+<span class='title'>Шахунская газета</span>
+<span class='date_h'>24 июня 2018 года, воскресенье</span>
+<div class='topmenu'>
+		<div class='pages2-wrap'>
+			<div class='pages2'>
+			<ul><li><a href='/' title='Главная'>Главная</a></li><li><a href='/karta-saita/' title='Карта сайта'>Карта сайта</a></li><li><a href='/kontakty/' title='Контакты'>Контакты</a></li><li><a href='/redakciya/' title='Редакция'>Редакция</a></li><li><a href='/reklama/' title='Реклама'>Реклама</a></li><li><a href='/informer/' title='Информер новостей'>Информер новостей</a></li><li><a href='/siterating/' title='Рейтинг сайтов'>Рейтинг сайтов</a></li></ul>
+			<div class='clear'></div>
+			</div>
+		</div>
+</div>
+				<div class='logo'><a href='/' title='Знамя труда'></a></div>
+			<div class='bloktop'>
+				
+				
+				
+				<div class='poisk0'>
+<form action='/search/' method='get'>
+ <input type='hidden' name='action' value='index' />
+<input type='text' name='text' onblur="if (this.value == '') this.value = 'Поиск...';" onfocus="if (this.value == 'Поиск...') this.value = '';" value='Поиск...' class='edit' />
+	<input type='image' src='/images/tmpl2/poisk.png' class='button' />
+</form>
+				</div>
+				
+			</div> 
+		</div>
+	<!--=========END=========HEADER=========-->
+		
+	<!--=========CONTENT=========-->
+		<div id='content'>
+			<div class='leftcol'>
+				<ul class='leftmenu'><li><a href='/novosti/' title='Новости'>Новости</a></li><li><a href='/obshestvo/' title='Общество'>Общество</a></li><li><a href='/ekonomika/' title='Экономика'>Экономика</a></li><li><a href='/politika/' title='Политика'>Политика</a></li><li><a href='/sport/' title='Спорт'>Спорт</a></li><li><a href='/obrazovanie/' title='Образование'>Образование</a></li><li><a href='/selskaja-zhizn/' title='Сельская жизнь'>Сельская жизнь</a></li><li><a href='/zakon/' title='Закон и порядок'>Закон и порядок</a></li><li><a href='/kultura/' title='Культура'>Культура</a></li><li><a href='/fotogalereya/' title='Фотогалерея'>Фотогалерея</a></li><li><a href='/blogs/' title='Блоги'>Блоги</a></li><li><a href='/katalog-saitov/' title='Каталог сайтов'>Каталог сайтов</a></li></ul>
+				
+				<div class='doska'>
+					<h2 class='rd'>Объявления</h2>
+					<ul>
+						<li class='prodam'><a href='/doska-objavlenii/prodam/'>Продам</a></li>
+						<li class='kypit'><a href='/doska-objavlenii/kuply/'>Куплю</a></li>
+						<li class='yslygi'><a href='/doska-objavlenii/uslugi/'>Услуги</a></li>
+						<li class='rabota'><a href='/doska-objavlenii/rabota/'>Работа</a></li>
+						<li class='raznoe'><a href='/doska-objavlenii/raznoe/'>Разное</a></li>
+						<li class='raznoe'><a href='/doska-objavlenii/avto-adv/'>Авто-объявления</a></li>
+					</ul>
+				</div>
+
+
+				
+<div class='interv'><h3 class='rd'>Интервью</h3><ul><li><a href='/obrazovanie/traditsii-i-novatorstvo-16-09-2017.html'>Традиции и новаторство</a></li><li><a href='/obshestvo/reorganizatsiya-so-znakom-plyus-09-09-2017.html'>Реорганизация со знаком плюс</a></li><li><a href='/politika/test-na-aktivnost-i-zabotu-05-09-2017.html'>Тест на активность и заботу</a></li><li><a href='/politika/uverenno-dvigayas-vpered-05-08-2017.html'>Уверенно двигаясь вперед</a></li><li><a href='/selskaja-zhizn/operatsiya-potrebkooperatsiya-18-04-2017.html'>Операция – потребкооперация</a></li><li><a href='/politika/glavnoe-otvetstvennost-18-04-2017.html'>Главное – ответственность</a></li><li><a href='/politika/praymeriz-po-novomu-11-04-2017.html'>Праймериз по-новому</a></li><li><a href='/politika/moratoriy-ne-zamorozka-28-03-2017.html'>"Мораторий — не заморозка"</a></li></ul></div>
+
+
+        
+			</div>
+             
+        <!--================================ -->
+			<div class='meedcol'>
+<div class='pyt'><a href='/'>Главная</a> <img src='/images/tmpl2/pyt.png' /> <a href='/novosti/'>Новости</a> <img src='/images/tmpl2/pyt.png' /> Как доехать?</div>
+<!-- content -->
+<div class='date'>22.12.2012 </div>
+<div class='view'>Просмотров: 10054, комментариев: 175</div>
+<div class='clear'></div>
+<h1 class='zag'>Как доехать?</h1>
+<img src='/files/42/119/RZhD.jpg ' alt='' title='' class='margin' />
+<p style="text-align: justify;">Статья в нашей газете о частичной отмене пригородного железнодорожного сообщения между Шахуньей и Нижним Новгородом вызвала бурю негативных эмоций. В городе активно ведется сбор подписей против такого решения: <br />
+&laquo;Начальнику Горьковской железной дороги А.Ф. Лесуну <br />
+Мы, жители города Шахуньи, с тревогой приняли весть о том, что с 1 января 2013 года будет отменено прямое движение электропоездов от станции Шахунья до Нижнего Новгорода. Если это произойдет в действительности, нам придется делать пересадку в г. Урене, что вызовет большие неудобства для пассажиров: придется делать пересадку, и время проведения в пути увеличится. Жители Шахунского района были довольны работой скоростных электропоездов. На данный момент радость от этого омрачена. <br />
+В Нижний Новгород из Шахуньи ездит много студентов, гостей нашего города, больных людей. Возникнут проблемы с дорогой и у детей, которые навещают престарелых родителей. Ввыходные дни приходилось наблюдать такую картину: уже от станции Шахунья практически нет свободных посадочных мест в электричках, отправляющихся до нашего областного центра. <br />
+Мы уверены, что это проявление заботы о пассажирах, наоборот, усложняет нашу непростую жизнь. Убедительно просим не отменять электропоезда до Нижнего Новгорода от ст. Шахунья. Неужели и в самом деле Шахунский район превратился в медвежий угол?&raquo;</p>
+<p style="text-align: right;">Жители г. Шахуньи: <br />
+всего 408 подписей </p>
+<p style="text-align: justify;">В адрес начальника ГЖД А.Ф. Лесуна от администрации Шахунского района за подписью и.о. главы администрации В.И. Романюка 3 декабря направлено письмо с просьбой не принимать решение о введении нового графика движения электропоездов между станцией Шахунья и Нижним Новгородом с пересадкой на станции Урень. В этот же день один экземпляр обращения был передан заместителем главы администрации района А.Д. Серовым заместителю начальника ГЖД Д.Ф. Мололкину во время его визита в Шахунью. Д.Ф. Мололкин заверил, что письмо рассмотрят и в течение недели дадут ответ. Намерения руководства ГЖД отменить прямое движение электропоездов по вышеназванному маршруту обсудят депутаты Совета депутатов городского округа город Шахунья на очередном заседании 14 декабря и вынесут соответствующее решение.</p>
+
+<div class='clear'></div>
+
+<div class='com'>Комментарии</div><div id='comments'><script src='/netcat/modules/comments/comments.js' type='text/javascript' language='JavaScript'></script>
+<script language='JavaScript' type='text/javascript' src='/netcat/admin/js/bbcode.js'></script>
+<script type='text/javascript'>
+nc_commentsObj119_198 = new nc_Comments({
+        'message_cc':'119',
+        'message_id':'198',
+        'template_id':'0',
+        'add_block':escape("<div class=\'add_comment\'><div class=\'c_text\'><span>Ваше имя:</span><br /><input type=\'text\' name=\'author\' id=\'nc_commentUserName\' value=\'Гость\' /></div><div class=\'bb_code\'>    <select class=\'nc_bbcode_bar_size\' onChange=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[SIZE=\' + this.value + \']\', \'[/SIZE]\'); this.selectedIndex=0;\"  name=\'bb_fontsize\' title=\'Размер шрифта\' onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Размер шрифта: [SIZE=8]маленький текст[/SIZE]\');\"><option value=\'\'>-- размер --<option value=\'8\'>8px<option value=\'10\'>10px<option value=\'12\'>12px<option value=\'14\'>14px<option value=\'16\'>16px<option value=\'18\'>18px<option value=\'20\'>20px<option value=\'22\'>22px<option value=\'24\'>24px</select><a href=\'#\' onClick=\"show_color_buttons(\'%TEXTAREA_ID\'); return false;\" id=\'nc_bbcode_color_button_%TEXTAREA_ID\' onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Цвет шрифта: [COLOR=FF0000]текст[/COLOR]\');\"><img src=\'/images/i_color.gif\' alt=\'Цвет шрифта\' class=\'nc_bbcode_wicon\'></a><a href=\'#\' onClick=\"show_smile_buttons(\'%TEXTAREA_ID\'); return false;\" id=\'nc_bbcode_smile_button_%TEXTAREA_ID\' onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Вставить смайлик\');\"><img src=\'/images/i_smile.gif\' alt=\'Смайлы\' class=\'nc_bbcode_wicon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[B]\',\'[/B]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Жирный шрифт: [B]текст[/B]\');\"><img src=\'/images/i_bold.gif\' alt=\'Жирный\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[I]\',\'[/I]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Наклонный шрифт: [I]текст[/I]\');\"><img src=\'/images/i_italy.gif\' alt=\'Курсив\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[U]\',\'[/U]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Подчёркнутый шрифт: [U]текст[/U]\');\"><img src=\'/images/i_underline.gif\' alt=\'Подчёркнутый\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[S]\',\'[/S]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Зачёркнутый шрифт: [S]текст[/S]\');\"><img src=\'/images/i_strike.gif\' alt=\'Зачёркнутый\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[LIST]\',\'[/LIST]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Элемент списка: [LIST]текст[/LIST]\');\"><img src=\'/images/i_list.gif\' alt=\'Элемент списка\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[QUOTE]\',\'[/QUOTE]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Цитата: [QUOTE]текст[/QUOTE]\');\"><img src=\'/images/i_quote.gif\' alt=\'Цитата\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[CODE]\',\'[/CODE]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Код: [CODE]код[/CODE]\');\"><img src=\'/images/i_code.gif\' alt=\'Код\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[IMG=\\\'http://\\\']\',\'\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Вставить картинку: [IMG=http://адрес_картинки]\');\"><img src=\'/images/i_picture.gif\' alt=\'Изображение\' class=\'nc_bbcode_icon\'></a>  <input type=\'text\' name=\'bbcode_helpbox_%TEXTAREA_ID\' value=\'Подсказка: выше расположены кнопки быстрого форматирования\' class=\'nc_bbcode_helpbox\' />    </div><div id=\'color_buttons_%TEXTAREA_ID\' class=\'nc_bbcode_colors\' style=\'display:none;\'><div class=\'nc_bbcode_color_top\'><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#770000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=770000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#BB0000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=BB0000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#FF0000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FF0000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#007700;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=007700]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00BB00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00BB00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00FF00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00FF00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#000077;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=000077]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#0000BB;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=0000BB]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#0000FF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=0000FF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#000000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=000000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /></div><div class=\'nc_bbcode_color\'><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#779900;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=779900]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#BB9900;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=BB9900]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#FF9900;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FF9900]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#007799;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=007799]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00BB99;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00BB99]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00FF99;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00FF99]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#990077;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=990077]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#9900BB;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=9900BB]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#9900FF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=9900FF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color_white\' style=\'background:#FFFFFF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FFFFFF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /></div><div class=\'nc_bbcode_color\'><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#77CC00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=77CC00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#BBCC00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=BBCC00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#FFCC00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FFCC00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#0077CC;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=0077CC]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00BBCC;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00BBCC]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00FFCC;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00FFCC]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#CC0077;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=CC0077]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#CC00BB;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=CC00BB]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#CC00FF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=CC00FF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#999999;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=999999]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /></div></div><div id=\'smile_buttons_%TEXTAREA_ID\' class=\'nc_bbcode_smiles\' style=\'display:none;\'><div class=\'nc_bbcode_smile_top\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':)\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/smile.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':D\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/bigsmile.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':grin:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/grin.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':laugh:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/laugh.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':proud:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/proud.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':yes:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/yes.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':wink:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/wink.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':cool:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/cool.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':eyes:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/rolleyes.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':lookdown:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/lookdown.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':(\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/sad.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':spy:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/suspicious.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':angry:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/angry.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':bad:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/shakefist.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':stern:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/stern.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':kiss:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/kiss.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':think:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/think.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':yep:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/thumbsup.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':sick:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/sick.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':no:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/no.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':cantlook:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/cantlook.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':doh:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/doh.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':out:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/knockedout.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':eyeup:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/eyeup.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':shh:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/shh.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':evil:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/evil.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':upset:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/upset.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':undecided:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/undecided.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':cry:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/cry.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':unsure:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/unsure.gif) no-repeat center;\' /></div></div><div class=\'c_text\'><span>Текст комментария:</span><br /><textarea id=\'%TEXTAREA_ID\' name=\'%TEXTAREA_ID\' cols=\'50\' rows=\'6\'>%TEXTAREA_VALUE</textarea></div><div class=\'captcha\'><input type=\'hidden\' name=\'nc_captcha_hash\' value=\'ad752d8c055979a7b302cf2bd4877925\' /><img name=\'nc_captcha_img\' src=\'/netcat/modules/captcha/img.php?code=ad752d8c055979a7b302cf2bd4877925\' /><br /><br />Введите код: <input type=\'text\' name=\'nc_captcha_code\' size=\'6\' value=\'\'></div><button id=\'%SUBMIT_BUTTON_ID\' name=\'%SUBMIT_BUTTON_ID\'>Сохранить</button> <button onclick=\'%CANCEL_BUTTON_ACTION\' id=\'%CANCEL_BUTTON_ID\' name=\'%CANCEL_BUTTON_ID\'>Отменить</button></div>"),
+        'edit_block':escape("<div class=\'add_comment\'><div class=\'bb_code\'>    <select class=\'nc_bbcode_bar_size\' onChange=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[SIZE=\' + this.value + \']\', \'[/SIZE]\'); this.selectedIndex=0;\"  name=\'bb_fontsize\' title=\'Размер шрифта\' onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Размер шрифта: [SIZE=8]маленький текст[/SIZE]\');\"><option value=\'\'>-- размер --<option value=\'8\'>8px<option value=\'10\'>10px<option value=\'12\'>12px<option value=\'14\'>14px<option value=\'16\'>16px<option value=\'18\'>18px<option value=\'20\'>20px<option value=\'22\'>22px<option value=\'24\'>24px</select><a href=\'#\' onClick=\"show_color_buttons(\'%TEXTAREA_ID\'); return false;\" id=\'nc_bbcode_color_button_%TEXTAREA_ID\' onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Цвет шрифта: [COLOR=FF0000]текст[/COLOR]\');\"><img src=\'/images/i_color.gif\' alt=\'Цвет шрифта\' class=\'nc_bbcode_wicon\'></a><a href=\'#\' onClick=\"show_smile_buttons(\'%TEXTAREA_ID\'); return false;\" id=\'nc_bbcode_smile_button_%TEXTAREA_ID\' onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Вставить смайлик\');\"><img src=\'/images/i_smile.gif\' alt=\'Смайлы\' class=\'nc_bbcode_wicon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[B]\',\'[/B]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Жирный шрифт: [B]текст[/B]\');\"><img src=\'/images/i_bold.gif\' alt=\'Жирный\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[I]\',\'[/I]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Наклонный шрифт: [I]текст[/I]\');\"><img src=\'/images/i_italy.gif\' alt=\'Курсив\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[U]\',\'[/U]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Подчёркнутый шрифт: [U]текст[/U]\');\"><img src=\'/images/i_underline.gif\' alt=\'Подчёркнутый\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[S]\',\'[/S]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Зачёркнутый шрифт: [S]текст[/S]\');\"><img src=\'/images/i_strike.gif\' alt=\'Зачёркнутый\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[LIST]\',\'[/LIST]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Элемент списка: [LIST]текст[/LIST]\');\"><img src=\'/images/i_list.gif\' alt=\'Элемент списка\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[QUOTE]\',\'[/QUOTE]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Цитата: [QUOTE]текст[/QUOTE]\');\"><img src=\'/images/i_quote.gif\' alt=\'Цитата\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[CODE]\',\'[/CODE]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Код: [CODE]код[/CODE]\');\"><img src=\'/images/i_code.gif\' alt=\'Код\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[IMG=\\\'http://\\\']\',\'\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Вставить картинку: [IMG=http://адрес_картинки]\');\"><img src=\'/images/i_picture.gif\' alt=\'Изображение\' class=\'nc_bbcode_icon\'></a>  <input type=\'text\' name=\'bbcode_helpbox_%TEXTAREA_ID\' value=\'Подсказка: выше расположены кнопки быстрого форматирования\' class=\'nc_bbcode_helpbox\' />    </div><div id=\'color_buttons_%TEXTAREA_ID\' class=\'nc_bbcode_colors\' style=\'display:none;\'><div class=\'nc_bbcode_color_top\'><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#770000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=770000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#BB0000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=BB0000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#FF0000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FF0000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#007700;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=007700]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00BB00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00BB00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00FF00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00FF00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#000077;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=000077]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#0000BB;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=0000BB]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#0000FF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=0000FF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#000000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=000000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /></div><div class=\'nc_bbcode_color\'><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#779900;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=779900]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#BB9900;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=BB9900]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#FF9900;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FF9900]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#007799;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=007799]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00BB99;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00BB99]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00FF99;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00FF99]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#990077;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=990077]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#9900BB;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=9900BB]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#9900FF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=9900FF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color_white\' style=\'background:#FFFFFF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FFFFFF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /></div><div class=\'nc_bbcode_color\'><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#77CC00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=77CC00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#BBCC00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=BBCC00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#FFCC00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FFCC00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#0077CC;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=0077CC]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00BBCC;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00BBCC]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00FFCC;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00FFCC]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#CC0077;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=CC0077]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#CC00BB;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=CC00BB]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#CC00FF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=CC00FF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#999999;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=999999]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /></div></div><div id=\'smile_buttons_%TEXTAREA_ID\' class=\'nc_bbcode_smiles\' style=\'display:none;\'><div class=\'nc_bbcode_smile_top\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':)\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/smile.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':D\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/bigsmile.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':grin:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/grin.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':laugh:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/laugh.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':proud:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/proud.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':yes:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/yes.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':wink:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/wink.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':cool:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/cool.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':eyes:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/rolleyes.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':lookdown:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/lookdown.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':(\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/sad.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':spy:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/suspicious.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':angry:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/angry.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':bad:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/shakefist.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':stern:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/stern.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':kiss:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/kiss.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':think:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/think.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':yep:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/thumbsup.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':sick:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/sick.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':no:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/no.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':cantlook:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/cantlook.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':doh:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/doh.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':out:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/knockedout.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':eyeup:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/eyeup.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':shh:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/shh.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':evil:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/evil.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':upset:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/upset.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':undecided:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/undecided.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':cry:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/cry.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':unsure:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/unsure.gif) no-repeat center;\' /></div></div><div class=\'c_text\'><span>Текст комментария:</span><br /><textarea id=\'%TEXTAREA_ID\' name=\'%TEXTAREA_ID\' cols=\'50\' rows=\'6\'>%TEXTAREA_VALUE</textarea></div><button id=\'%SUBMIT_BUTTON_ID\' name=\'%SUBMIT_BUTTON_ID\'>Обновить</button> <button onclick=\'%CANCEL_BUTTON_ACTION\' id=\'%CANCEL_BUTTON_ID\' name=\'%CANCEL_BUTTON_ID\'>Отменить</button></div>"),
+        'delete_block':escape("<div style=\'margin:5px 0;\'><button id=\'%SUBMIT_BUTTON_ID\' name=\'%SUBMIT_BUTTON_ID\'>Удалить</button> <button onclick=\'%CANCEL_BUTTON_ACTION\' id=\'%CANCEL_BUTTON_ID\' name=\'%CANCEL_BUTTON_ID\'>Отменить</button></div>"),
+        'last_updated':'1529841731',
+        'MODULE_PATH':'/netcat/modules/comments/',
+        'LOADING':'Подождите, идёт загрузка...',
+        'SUBSCRIBE_TO_ALL':'подписаться на все комментарии',
+        'UNSUBSCRIBE_FROM_ALL':'отписаться от всех комментариев',
+        'edit_access':'disable',
+        'delete_access':'disable',
+        'all_comments_id':[12, 15, 17, 18, 19, 20, 23, 25, 26, 27, 31, 32, 36, 38, 39, 40, 41, 44, 45, 47, 48, 49, 50, 51, 53, 54, 55, 61, 62, 63, 65, 66, 68, 69, 71, 74, 75, 76, 77, 78, 80, 81, 83, 84, 85, 86, 88, 89, 90, 91, 93, 94, 95, 96, 97, 98, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 113, 114, 115, 116, 118, 121, 122, 123, 124, 125, 126, 127, 131, 134, 139, 141, 142, 143, 144, 147, 148, 149, 150, 152, 154, 155, 158, 160, 163, 164, 170, 178, 180, 181, 182, 183, 184, 185, 188, 190, 193, 194, 195, 198, 200, 201, 203, 204, 205, 210, 213, 214, 215, 218, 219, 220, 221, 222, 224, 231, 233, 234, 235, 242, 245, 247, 248, 249, 252, 256, 260, 262, 263, 265, 266, 267, 268, 269, 270, 272, 273, 274, 276, 278, 309, 310, 327, 328, 329, 330, 337, 351, 352, 358, 362, 364, 365, 366, 427, 511, 536, 645, 646, 647, 901, 921, 983]
+      });
+</script>
+<div id='nc_commentID119_198_0'><div id='nc_commentID119_198_12' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_12'>Мы уверены, что это проявление заботы о пассажирах, наоборот, усложняет нашу непростую жизнь. Убедительно просим не отменять электропоезда до Нижнего Новгорода от ст. Шахунья. Неужели и в самом деле Шахунский район превратился в медвежий угол.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>10.12.2012, 10:19</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_15' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_15'>итак никакой ифраструктуры нет и тут еще поезда не будет как быть</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>12.12.2012, 21:10</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_17' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_17'>Это очень плохо для людей! </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>12.12.2012, 21:35</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_18' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_18'>Неужели выхода другого нетЛюди кто жто придумал на лимузинах ездят видимо???</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>12.12.2012, 22:40</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_19' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_19'>ПОЖАЛЕЙТЕ ДЕТЕЙ ,СТАРИКОВ ОСТАВЬТЕ ВСЁ КАК ЕСТЬ </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>13.12.2012, 10:07</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_20' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_20'>(Такая забота) никому не нужна,а как же пожилые люди,дети которые пользуются услугами электропоезда до Нижнего Новгорода от ст.Шахунья.Где же власть?Куда смотрят депутаты нашего города?Пожалейте людей...  </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>13.12.2012, 10:26</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_23' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_23'>Как всегда,верха только и думают о своей выгоде,а что делать простым смертным?Шахунья то как город распадается,скоро будет как поселок!Как так к людям можно относиться!Нужно решать этот вопрос!<br />
+</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>13.12.2012, 14:30</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_25' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_25'>согласен.. все "продали" в Урень, население нашего города в 2 раза больше и город у нас лутше в урене 1 центральная улица и все лутше куда мы катимся?</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>13.12.2012, 19:30</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_26' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_26'>хотим жить а не существовать в своем городе... Газ тоже в Урене а нам котельные поставили не спросили что нам больше нужно.<br />
+</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>13.12.2012, 19:34</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_27' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_27'>Несправедливость! Уважайте права человека! Дайте свободу людям! Отмените эту реформу!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>13.12.2012, 21:31</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_31' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_31'>БРАВО- ничего умного и полезного наше правительство нижегородской обл.для Шахуньи за последнее время не сделало, а теперь перешли в контратаку-нате вам товарищи жители живите и мучайтесь все в Урень все для УРЕНЯ -  морг и тот туда,а это говорят только еще начало(налоговую тоже) там же сталица Нижегородской обл., одна центральная улица. А ведь как говорят в народе-"рыба гниет с головы"-либо нашу рыбу взяли за горло.А пока товарищи командировочные, студенты и больные люди которые ездят на операции и на лечения с детьми и со стариками в Нижний, будем пытаться отстаивать наши права и интересы попытаемся достучаться до чиновников может к нам и прислушаются, оставят нам электричку<img src='/images/smiles/cry.gif' alt='плачет' class='nc_bbcode_smile_in_text'></span></p>
+<div class='rd rd2'>
+<div class='left name'>патриот</div>
+<div class='view'>13.12.2012, 22:25</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_32' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_32'>Кроме как издевательством подобный шаг назвать нельзя! Называется, всё для людей! Понятно, те, кто это придумывает, трястись четыре часа в электричке не будут, у них крутые джипы есть и вертолёты! И дети их в ОБЛАСТНОЙ центр учиться не ездят( или, может, мы уже к какой-то другой области относимся? Как-то непохоже, что мы ещё нижегородцы!. И больные старики - родители в областные больницы с пересадкой не поедут. Стыдно за руководство области!!!! Как можно так настраивать против себя население?!!!! Или пока до выборов далеко, можно и поиздеваться, кресла заняты твердо, не жмут? А представьте теперь, что будет твориться в Урене в выходные дни!!!! Господа, будьте, пожалуйста, благоразумными! Что вы делаете, господа!!!!!<span style='color:#007700;' class='nc_bbcode_color'><span style='color:#007700;' class='nc_bbcode_color'><span style='color:#007799;' class='nc_bbcode_color'><span style='color:#00BB00;' class='nc_bbcode_color'><span style='color:#BB0000;' class='nc_bbcode_color'><span style='color:#007799;' class='nc_bbcode_color'><span style='color:#007799;' class='nc_bbcode_color'><span style='color:#007799;' class='nc_bbcode_color'><span style='color:#000000;' class='nc_bbcode_color'></span></span></span></span></span></span></span></span></span></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>13.12.2012, 22:40</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_36' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_36'>Я уже давно в Шахунье не живу, но категорически против отмены электрички!!! Сама была студентом, и сейчас ребят понимаю. Да и не только студенты пострадают, любой житель будет благодарен, если все оставят так как есть!!! Не могу понять кому это выгодно?! Лучше бы наши "драгоценные" власти жизнь улучшали, а не ставили "палки в колеса". Власти -вы же тоже люди! Или я ошибаюсь?!</span></p>
+<div class='rd rd2'>
+<div class='left name'>SMILE</div>
+<div class='view'>14.12.2012, 00:43</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_38' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_38'>оставте электричку<img src='/images/smiles/angry.gif' alt='сердитый' class='nc_bbcode_smile_in_text'><img src='/images/smiles/shakefist.gif' alt='грозится' class='nc_bbcode_smile_in_text'></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 09:06</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_39' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_39'>мы желаем тем кто внес такое предложение-одеть рюкзак как студент, взять клюшку как инвалид и коляску с маленьким ребенком и отправиться в путешествие Нижний новгород после 1 января 2013 </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 11:31</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_40' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_40'>какие нелюди хотят лишить город и без того разворованный город еще и путей сообщения?зачем?</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 11:36</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_41' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_41'>думается что даже если и оставят электричку, то цены на билеты взлетят до небес</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 12:29</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_44' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_44'>полный идеатизм</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 13:48</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_45' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_45'>КАК МОЖНО ТАК ОБРАЩАТЬСЯ С ЛЮДЬМИ! ЗАЖРАЛИСЬ ЧИНОВНИКИ ТАМ ВООБЩЕ!!! ДАЙ БОГ ЗДОРОВЬЯ ТЕМ КТО ПРЕДЛОЖИЛ ОТМЕНИТЬ ЭЛЕКТРИЧКУ!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 13:50</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_47' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_47'>кто наша партия то правящая?мм? не они ли обещали заботу о людях? какая забота? все только для себя...это издевательство! все делается против людей!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 14:28</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_48' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_48'>я против отмены электрички!!!!!!!видимо .наверху. все в виду предстоящего конца света спятили!!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 14:36</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_49' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_49'>Из каждого правила должны быть исключения. Нельзя тупо исполнять то что кто-то придумал. Надо думать о людях и что им удобно, а не 100% исполнение написанного. И не думаю что это экономически эффективно. Затраты то по-моему увеличатся, а вот количество потребителей данной услуги может и уменьшиться.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 14:54</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_50' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_50'>Хотелось бы на страницах нашей газеты еженедельно видеть отчет чиновников о том, что ими сделано, дабы исполнить волю всего населения... Переписываться (или отписываться)можно долго, не пробовала наша Власть лично встретиться с теми, от кого зависит решение об отмене или оставлении электричек? </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 14:56</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_51' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_51'>А юристы среди читателей есть? Не нарушается ли Закон "О защите конкуренции"?</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 15:20</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_53' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_53'>Такое ощущение,что идиоты правят в РЖД. Это же бросить людей на произвол не только Шахуньи ,но и Сявы , Вахтана, Тоншаева и др. населенных пунктов.Куда то катимся с таким правлением и заботой о людях. Можно убрать до Семеново и других короткокиллометражных пунктов, в основном на Шахунских ездят.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 15:46</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_54' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_54'>ЛЮЮЮююдиии...да как же не понятно , что никто ничего не отменить..так как пригородное сообщение до 150 км...а после уже начинается местное...а электропоезд пригородный...соответсвенно никто не может его ппустить в обращение до ст.Шахунья...а сделано эт осейчас именно потому что ГЖД хочет выкачать побольше средств из нас пассажиров и бороться с этим просто бессмысленно<br />
+</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 16:09</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_55' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_55'>и причем тут юристы...сдесь руководствовалисб инструкциями, установл<br />
+енными для жд.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 16:15</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_61' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_61'>Может уж сразу и рельсы со шпалами снять, как на перегоне от Шахуньи до Сявы... Быстрей народ вымрет, никому не нужный</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 17:15</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_62' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_62'>как так можно отменить электричку до шахуньи? если основной потак людей едит в шахунью. это просто издевательство над людьми....<br />
+</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 17:35</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_63' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_63'>Бред полнейший с отменой этой электрички. Только задумайтесь над картиной если её отменят: весь пассажиропоток поедет на Кировском экспрессе или до Уреня, а там до Нижнего. А Урень будет просто напросто весь забит "дикими" озверевшими студентами которые от холода и нервов просто напросто затопчут всех кругом. Подумайте об инвалидах, детях и пенсионерах, думаю возможно понять наше положение и НЕ отменять электричку!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 17:45</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_65' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_65'>Это очень плохая идея(((((</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 17:57</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_66' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_66'>как так то?! последнего лешают студентов! теперь остается на автобусе ездить и платить 250 рублей , только из Нижнего в Урень..капец..плохая идея это!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 18:02</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_68' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_68'>так нельзя...электрички итак по пятницам загружены до упора. Студенты, да и вообще люди ездят на выходные в пятницу, пройдя "все прелести" забитой до отказа электрички, а теперь еще и совсем ее не будет. Получается что теперь к нашим родителям и близким, мы сможем попадать на час...глупая идея отмены электричек и интересно чем это вызвано и кто это предложил. люди у которых есть машина или нет близких?</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 18:38</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_69' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_69'>Всё идёт к вымиранию нашего края. А до Тоншаева вообще теперь не доехать!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 18:39</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_71' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_71'><span style='color:#FF0000;' class='nc_bbcode_color'>ДА! ЗАБОТА О ЛЮДЯХ!!!</span></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 19:32</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_74' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_74'>А все дело в том, что произведенная корректировка расписания следования пригородных поездов на участке Нижний Новгород — Шахунья — Киров привела дальность маршрутов беспересадочного сообщения пригородных поездов в соответствие с требованиями приказа Министерства транспорта России от 18.07.2007 № 99. Оказалось, станция Шахунья, находящаяся от Нижнего Новгорода в 240 км, уже не входит в установленные РЖД границы пригородной зоны, которая определяется 200 км. И это значит, что прямое пригородное сообщение возможно только до Уреня и не дальше. Примечательно, что о нововведениях Горьковская региональная служба развития пассажирских сообщений и предоставления доступа к инфраструктуре уведомила руководство Шахунского района лишь 10 декабря, отметив: «Вводимые изменения не отразятся на доступности областного центра для жителей северных районов Нижегородской области (или районов Кировской области)», поскольку «не предполагают длительного пребывания пассажиров на конечных станциях».</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 19:53</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_75' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_75'>ржд это вытворяет везде, у вообже парадокс, электричка С- петербург-Бабаево доходит до границы Ленинградской обл людей высаживают чуть ли не в чистом поле и на отстой пустая идет до Бабаево не парадок ли..................</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 20:10</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_76' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_76'>Приказ Минтранса от 2007г.решили исполнить в 2013 году????? Или кто-то "умный" нашелся в ГЖД, только что приказ прочитал? Тогда давайте вспомним и кинемся выполнять другие программы руководства нашей страны, например -"Продовольственную программу" или что "к 2000 году каждая семья должна иметь отдельную квартиру" и т.д. Давайте, уважаемые Слуги народа, сначала более ранее исполним, то, что вы обещали НАРОДУ!!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 20:11</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_77' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_77'>Зачем отнимать то,что было раньше,чем наша станция Шахунья хуже Уреня?пожалуйста подумайте о студентах и других людях,которые ездят от Шахуньи с тяжелыми сумками и колясками,какого это с багажом делать пересадку!!!!не отменяйте ,мы категорически против,уважаемые те,кто это задумал,считайтесь с мнением людей,которые ПРОТИВ ЭТОГО!!!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 20:16</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_78' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_78'>Да вобще дибилы-чиновники оборзели,это же бред,у них с головами не всё в порядке,их нужно на психобследование отправить,там их сразу забракуют!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 20:19</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_80' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_80'>Полное безобразие!!!!! И ЭТО называется всё для людей!!!!! Администрация наверное хочет новой агитации, но уже на вокзале. Потом будут опять песню заводить что они не причём!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Я-ПРОТИВ!!!!</div>
+<div class='view'>14.12.2012, 20:37</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_81' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_81'> «Вводимые изменения не отразятся на доступности областного центра для жителей северных районов Нижегородской области (или районов Кировской области)», поскольку «не предполагают длительного пребывания пассажиров на конечных станциях». До вводимых изменений осталось 2 недели, но до сих пор нет ни расписания на январь, ни информации о стоимости проезда от Шахуньи до Нижнего!!! Ждем очередных СЮРПИЗОВ?!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 21:00</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_83' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_83'>На сайте http://www.vvppk.ru уже есть расписание электричек с 01.01.2013. Из Шахуньи до Уреня можно выехать 05-48 ч. Прибытие в Урень 06-39, а отправление электрички из Уреня в Н.Новгород в 8-59ч.!!!!! Ждать в Урене 2 часа 20 минут!!!!! Прибытие в Нижний Новгород в 12-04!!!!! И это самая ранняя электричка!!! Люди-чиновники!!! Одумайтесь!!! Включите, наконец, свои мозги, если они у вас еще есть!!!! О какой доступности областного центра можно говорить!!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 21:17</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_84' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_84'>Путин выступил с обращением к депутатам-все красиво,но на деле все будет наоборот.Весело!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 21:24</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_85' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_85'>Господа, я то же не сторонник нововведения и категорически против выступаю за принятие к исполнению данного указа, но.... Мы такая страна и привыкли жить ив мусоре и беспорядке не выполняя требований и указов, которые порой нам кажутся абсурдными. есть порядок...не надо придумывать и кидать дезу что отменят электричку и про вас все забудут... Транспорт наладят, РЖД таким образом наводит в своей структуре порядок, которое даст четкое понимание распределению как денежных средств так и эксплуатационных ресурсов своей огромной организации... Наведение порядков из покон веков воспринималось в штыки, но не надо быть недальновидными это пока меры. результата мы не знаем и знать не можем... Давайте посмотрим что нам предложат в качестве решения проблемы, и только после этого будем строить предположения....(Далеко не работник ЖД)</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 21:32</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_86' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_86'>вся власть придурки одним словом!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 21:34</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_88' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_88'>Первая электричка Пижма-Ветлужская, отправление из Шахуньи в 05ч.48 мин. Прибытие в Ветлужскую 07 ч.30 мин., а отправление электрички до Н.Новгорода в 07 ч.54 мин. Вообщем, чтобы добраться до НиНо, надо обскакать все станции, или Урень или Ветлужскую! </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 21:34</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_89' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_89'>И кто же такой умный, посмотреть бы в глаза- продажные!!! У нас в Шахунье столько народу живет, вблизи районов много, и так все и на всех забить с высокой колокольни!? Что делается??? К чему мы докатимся??? </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 21:37</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_90' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_90'>Никто не против наведения порядка на ЖД! И пригородные перевозки, как правило, убыточные! Но! Компенсацию этих убытков всегда брали на себя региональные власти!!! И что же сейчас??? Нас просто - кидают!!! Действительно, выборы прошли, а остальное - ерунда!!! Наши местные чиновники купили себе по новой иномарке, чтобы удобнее было и мягче, а на нас им НАПЛЕВАТЬ!!! Кого выбрали, того и получили!!!! (Тоже не работник ЖД) </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 21:42</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_91' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_91'>Да уж про Путина кстати! И кто же за него голосует все время? Я лично у кого ни спрошу голосуют за кого угодно, но не за Путина, а в голосовании он и побеждает, это еще лишний раз доказывает, что все уже давно продано и НИ КТО про народ не думает, все чиновники ездят на дорогих иномарках( ни один на российский автопром не сел) им ли про народ думать? </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 21:43</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_93' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_93'>На сайте ВВППК уже есть расписание..Электрички будут либо от Ежихи,либо от Пижмы ходить..Из Шахуньи полностью убрали.<br />
+В Урене добавили дополнительно две.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 22:25</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_94' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_94'>это что за нововедения такие и кому они нужны??? если от них народу только хуже, нововедения должны быть для народа, а у нас получаеться наоборот...</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 22:26</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_95' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_95'>Некоторые электрички из Нижнего будут до Ветлужской,а некоторые до Уреня.<br />
+Плюс дополнительно до Уреня в 14:35,а от Уреня до Шахуньи не предусмотрено..</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 22:51</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_96' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_96'>Мы жители города Ухта,но тоже возмущены тем,что отменяют электропоезд до Нижнего Новгорода.У нас в Шахунье живёт очень много родственников,и нам небезразлична такая ситуация.Конечно,когда власти не имеют понятия,что значит трястись в электричке,да ещё и с пересадками,зачем она им нужна? Почему-то везде говорят,что в стране всё лучше и лучше жизнь становиться,только для кого она лучше?Догадываемся для кого,только не для людей!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Наталья</div>
+<div class='view'>14.12.2012, 23:41</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_97' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_97'>да пмпец какой-то как вообще из шахуньи ездить в нижний?</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 23:42</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_98' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_98'>совсем уже охренели</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 23:49</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_100' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_100'>Я тоже давно в Шахунье не живу, но категорически против отмены электрички!!! Пострадают все!!! Надо оставить так как есть!!! Не могу понять - за какие грехи наши "драгоценные" власти жизнь людям так портят. Заботились бы об оставшемся населении, а не гнобили бы людей. И так приходится постоянно всем обращаться за медпомощью в Нижний, так ещё для полного счастья и электрички решили отменить!!!<br />
+<I><B>КАТЕГОРИЧЕСКИ ПРОТИВ ТАКОГО РЕШЕНИЯ!!!</B></I></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 01:17</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_101' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_101'><span style='font-size:8px' class='nc_bbcode_size'>А кто спросил  как вам  живется газа нет ,воды Горячей  нет, тротуаров нет ,  дорог нет, Работы нет ,  садиков нет (или  мест  в них нет), но  по сводкам все ХОРОШО, да и еще и сообщение ( общение)  с областью  обрезать . Выживайте  как хотите. Но мы ( население не в три- два дома</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 01:22</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_102' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_102'>МЫ ПРОТИВ ТАКОГО РЕШЕНИЯ ДАЙТЕ НАМ  ВСЕ ПРАВА конституции   ДАЖЕ УЧЕНИКАМ  ПОЛОЖЕНО  БЫЛО  ОТДЫХАТЬ  12 ДЕКАБРЯ  И ТО НЕ ДАЛИ  а ДЕНЬ ПЕРЕНЕСЕННЫЙ НА ЗИМНИЕ  КАНИКУЛЫ  ТАК ОНИ  БУДУТ  ОТДЫХАТЬ  ПО ЗАКОНУ. ДАЙТЕ  ЗЕЛЕНУЮ  УЛИЦУ ДО НИЖНЕГО ДЕТИ  ТОЖЕ  БУДУЩЕЕ.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 01:33</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_103' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_103'>Господа, не надо устраивать общественный истиризм!!! Мы 70 лет рушили свою страну, теперь боремся с  пережитками прошлого. Насчет вашего руководства, пусть вы не выбирали, но вы допустили... Сколько можно слушать, одни только разговоры, но обидно в другом, что когда электричку действительно отменят, все покорно согласятся....Ни кто, ни кто не предложил решение проблемы... Ни кто не написал что устроит автобусные туры, или еще что либо, ни кто не написал что напишет петицию от лица жителей, ни кто не вышел к ЖД, только бурчите себе под нос..Смешно честное слово...Сколько раз Вас обманывали, но вы покорно соглашались, трусливо поглядывая из за угла, на проезжающие иномарки ваших подчиненных, народных избранников.... Вы работодатели, а сделать ничего не можете....И вот из за таких как вы в России до сих пор и существует этот бардак....Наведите порядок в голове (хотя зачем, это так не удобно) а потом устраивайте шумиху по поводу принятий решений, которые возможно пойдут на пользу не только вам а ЖД в целом....Влад!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 01:58</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_104' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_104'>Если решение будет, то оно будет. его не изменить, будем придумывать сами что делать.... Либо, либо присвоить электричке статус не пригородной))) Влад!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 02:03</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_105' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_105'>если, что-то решают администрация шахунск.района,-это большое спасибо, но почему тогда ,когда в Нижнем <br />
+новгороде на московском вокзале объявляют изменения в расписании, связанных с электропоездом,почему народ для них ничего не значит и его мнение???(((((</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 02:50</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_106' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_106'>не нужно ни за что отменять электричку до  <br />
+Шахуньи!!!!!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 09:31</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_107' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_107'>Самое время выслушать мнение руководства нашего района и руководителей автотранспортного предприятия!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 10:27</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_108' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_108'>Оставьте нам 1 экспресс Киров-Н.Новгород (утром) и 1 обратно вечером! без остановки в Урене!!! Кто ЗА? </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 10:34</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_109' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_109'>Я -"ЗА"!!!!  И пусть он не будет пригородным!!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 10:35</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_110' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_110'>Я- ЗА то, чтобы и электрички ходили, как раньше, и экспресс Киров- Нижний-Киров ходил каждый день. Не надо ломать то, что уже хорошо сделано! И думайте головой, уважаемые господа чиновники,прежде чем выполнять директивы! </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 11:43</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_111' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_111'>Просто нужно менять своё отношение к проблемам которые нам создает сегодняшняя власть.(Или менять власть,но это по моему мнению не сильно поможет)</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 11:54</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_113' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_113'>Кстати говоря это не решение ГЖД отменить электричку существует некий приказ Минтранса аж от 18.04.2007 года № 99, зарегистрированный в Минюсте в августе этого же года, так вот там такое понятие пригородных электропоездов - следующие на расстояние не более 200 км, состоящие из вагонов с местами для сидения. Так что скорее всего написав письмо г-ну Лесуну А.Ф. придет ответ что у них все по закону и ссылочка на эту норму. Мне так кажется именно необходимо судить расстояние по всем субъектам Федерации, там наверху подумали и сделали, но подумали как всегда по Черномырдински - хотели как лучше а получилось.... и очень странно что приказ не дает оснований исполнительным органам регионов самим принимать решение по движению пригородных поездов. Они же там видно не знают протяженности веток по подведомственным им железнодорожным путям, а в итоге страдаем мы. Надо нашей администрации выходить на Минтранс через областное правительство, а так пока будут чиновничьи отписки. Конечно не исключено что все останется как прежде, но это будет нонсенс. А что для них них народ???? ЛИшь бы самим в тепле и добре сидеть. Поздновато наши районные власти спохватились на эту тему ((((((</span></p>
+<div class='rd rd2'>
+<div class='left name'>Грег</div>
+<div class='view'>15.12.2012, 12:31</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_114' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_114'>Осталось устроить только митинг у здания вокзала,может тогда нас услышат чиновники!!!!Мы против отмены электрички и хотим ,чтобы наше руководство думало о народе!!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 13:07</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_115' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_115'><span style='color:#FF0000;' class='nc_bbcode_color'><span style='font-size:22px' class='nc_bbcode_size'>Пожалуйста не превращайте Шахунью в "медвежий угол"!!!!!!!!!!!!!!!!!!</span></span></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 13:44</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_116' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_116'>В субботы после учебы ездим домой, итак к вечеру только приезжаем, еще и в Шахунье автобуса ждем, а если еще у в Урене торчать, так это вообще можно сразу обратно ехать.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 14:03</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_118' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_118'><span style='color:#FF0000;' class='nc_bbcode_color'>ТАК И ОХОТА МАТОМ НАОРАТЬ!НИХЕРА НЕ ПОНИМАЮТ! ТУПОСТЬ И ДЕБИЛИЗМ!!!!!!!!!ХОТЬ МИТИНГ УСТРАИВАЙ </span></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 16:54</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_121' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_121'>Какой ужас , что хотят то и творят и плевали они на народ ,как они будут добираться (((. С маленькими  детьми ((( ,молодежь и та устанет так мотаться , а уж что говорить про остальных. Нахалы , совсем совести нет -начальниками еще называются , делают все во вред людям (((</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 19:18</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_122' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_122'>теперь думайте в следующий раз за кого голосовать! Я просто не понимаю, ДЛЯ ЧЕГО это все? Людям лучше не станет, наоборот - только хуже! Путь для большинства населения просто закроется по видимым причинам! Зачем создавать трудности? Они хотят сделать поезд дальнего следования?, на который билет в 10 раз дороже! Да никто ездить то и не будет! Головой нужно думать а не "тем" местом!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 19:21</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_123' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_123'>отмените эти вредящие изменения пожалуйста, будьте людьми</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 20:34</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_124' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_124'>П******ы</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 20:53</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_125' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_125'>это какое то вредительство.кто принял такое решение видимо сам не пользуется общественным транспортом,а передвигается исключительно на лимузине.оставте простым людям последнее средство передвижения.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 21:06</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_126' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_126'>Оставьте электрички, оставьте экспресс! Не издевайтесь над людьми! Русский народ терпеливый, но и терпению приходит конец! Зарплаты мизерные, квартплата огромная, места в детсадах не дождешься, а и дождешься так обещали увеличить плату за детсад в 5 раз! Кто туда  пойдет? В домах нет горячей воды, холодно! Господа чиновники, вы хотите революции? Ведь всему есть предел. И терпению народа тоже!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 21:50</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_127' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_127'>во всех странах делают всё для удобства людей,а у нас как всегда!везде добавляют поезда,сокращают время поездки на поезде,а у нас наоборот убирают и увеличивают время поездок на поезде!как так?????</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 21:54</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_131' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_131'>Мне кажется  что тут этим делом не поможешь , хоть как будет пересадка </span></p>
+<div class='rd rd2'>
+<div class='left name'>Телекоммуникационная Система Телевидения (ТСТ) </div>
+<div class='view'>15.12.2012, 23:18</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_134' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_134'>Затраты ГЖД возрастут, т.к. нужно содержать вдвое больше составов до шахуньи. Сам приказ - это некомпетентность и тупость московского чиновника</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>16.12.2012, 00:38</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_139' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_139'>оставьте электрички,нам на работу ездить нужно.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>16.12.2012, 13:13</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_141' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_141'>бастовать надо </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>16.12.2012, 18:06</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_142' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_142'>Поднять бы Сталина, он не за 2 недели, а за сутки разобрался, эти чиновники уже Столыпиным уехали бы на Колыму пути ремонтировать! И это было бы правильно!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>16.12.2012, 18:19</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_143' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_143'>Если расписание изменят, люди начнут перекрывать пути, бастовать. РЖД совершенно не считается с мнением простых граждан, пассажиров. Настоящее свинство!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>16.12.2012, 18:55</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_144' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_144'>Полное безобразие! Как людям жить, последнее отнимают<br />
+</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>16.12.2012, 20:32</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_147' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_147'>А мне на плевать я туда все равно не ездию <br />
+</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>16.12.2012, 23:54</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_148' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_148'>я против отмены электричек, у нас пассажиропоток очень большой, зачем над людьми издеваться! </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>17.12.2012, 07:59</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_149' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_149'>Почему у нас все против людей. У нас каждый год школьников возят на экскурсию в Нижний.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>17.12.2012, 08:27</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_150' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_150'>П****ц полный!!! Как тык? Неужели так на людей наплевать? Мы и так живем далеко от Нижнего и что бы туда добраться нужно быть героем! А после отходишь сутки, а тут еще усугубляют! Дурдом на гастролях!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>17.12.2012, 09:43</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_152' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_152'><span style='color:#FF0000;' class='nc_bbcode_color'><B><U>Дамы и господа! Просьба: слова ненормативной лексики заменять символами! Спасибо за понимание.</span></U></B></span></p>
+<div class='rd rd2'>
+<div class='left name'><a href='/profile/id_2.html'>poster</a></div>
+<div class='view'>17.12.2012, 13:40</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_154' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_154'>Голову бы открутить,тому кто придумал ездить с пересадкой!!!!Совсем ахренели наши власти,они только бабки отмывать умеют,а на народ им наплевать!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>17.12.2012, 17:43</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_155' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_155'>Это новый план ЕдРа: "всё для жизни, для людей" Эти же сволочи считают что дальше чем на 200 км в электричке ехать очень трудно, и поэтому они внесли такую попаравку, чтоб "силком заставить людей ездить с комфортом". Типа в ихних кругах не принято ездить электричками на такие расстояния. Это сейчас творится везде по России т.к. p/d (ржд) специально ломают пересадки, чтоб люди ездили на дальние расстояния не на электричке, а на поезде. Поскольку считается что если по статистике в России средняя зарплата 28.000 рублей, то у человека вполне хватит денег ездить поездом.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>17.12.2012, 18:05</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_158' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_158'>Может кто-то и позволил бы себе ездить до Нижнего и обратно на поезде! Но это возможно только зимой, когда пассажиропоток небольшой! Летом билетов на поезд не купить, их (билетов) просто нет!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>17.12.2012, 20:33</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_160' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_160'> Не злите обозленных людей!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>17.12.2012, 21:42</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_163' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_163'>Вот вам и подтверждение версии об УНИЧТОЖЕНИИ РОССИЙСКОГО НАРОДА! 50 лет электричка ходила, а теперь  какой-то господин решил, что километры не те. Есть отрезанные от мира деревни, а теперь будут отрезанные города. Не доводите людей до взрыва!.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 10:11</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_164' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_164'>«Электрички отменяются» - такие объявления накануне появились на вокзалах всех станций по веткам Владимир - Тумская, Муром - Волосатая, Ковров - Селиваново, Муром - Вековка и Муром - Навашино. Без железнодорожного сообщения могли одновременно остаться около 1,5 тысячи человек. И это только по подсчетам самого перевозчика, чья статистика формально исходит из количества билетов, покупаемых в кассах, и обычно занижена.<br />
+<br />
+На деле же несколько тысяч жителей региона в один момент оказались на пороге глобального бедствия. Отмена электричек грозила подорвать весь их налаженный быт, ведь с помощью этого транспорта жители маленьких «станционных» поселков каждый день добираются в районные центры на работу, учебу, в больницы, административные учреждения.<br />
+ЭТО ВЫПИСКА С САЙТА ГОРОДА МУРОМА. ЯКУНИН ВЕДЕТ НАСТУПЛЕНИЕ ПО ВСЕМ ФРОНТАМ. </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 10:28</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_170' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_170'>Очевидно, в России все еще слишком "много" народа. Подумаешь несколько десятков тысяч останутся  и без того  не слишком комфортабельного железнодорожного транспорта.Чиновникам РЖД не приходится ездить на наших электричках, а следовало бы прокатиться.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 14:18</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_178' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_178'> <span style='font-size:16px' class='nc_bbcode_size'>Местные власти,наверняка, все это знали раньше, но молчали. А не выйти ли на встречу?</span></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 15:53</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_180' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_180'>Согласна со всеми выше изложенными высказываями! Я возмущена этим решением Очень!  Не отменяйте электрички. Сама постоянно езжу, то  маленькими детьми, то мои родители ко мне,  от работы в командировки ездила. Куча народа нуждается в этом транстпорте. </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 16:04</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_181' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_181'>Видимо,кто это придумал, не пробывал ездить на электричке, полной народу, с большими и тяжелыми сумками, как студенты или как пожилые люди. ОДУМАЙТЕСЬ,что Вы делаете для людей, как бабушки будут спрыгивать на перрон ,а затем запрыгивать в другой поезд. Или дети-студенты с сумками.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость в ужасе</div>
+<div class='view'>18.12.2012, 16:48</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_182' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_182'>Расстояние пригородной зоны 200 км... Не проще ли продлить расстояние до 300-350 км??? Это возврат к тому, от чего когда то уходили? Оставьте всё как есть!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 18:14</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_183' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_183'>"Чиновникам РЖД не приходится ездить на наших электричках" - как было выше сказано, но это не чиновники Горьковской железной дороги, это все Всемогущая администрация г.Шахунья, которая не может постоять за свой город, не в плане газа, не плане ГЖД</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 18:40</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_184' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_184'>Я Против!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 19:00</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_185' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_185'>Отмена электрички до станции Шахунья это полный брет. </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 20:18</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_188' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_188'>А ведь и до Кирова теперь будет не доехать... Сначала- до Пижмы! Тут уже не медвежий угол получается, а Бермудский треугольник какой-то... Довести ситуацию до абсурда-браво, слуги народа!!! </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 21:33</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_190' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_190'>Охренели совсем, может вообще отменим электричку и на санях до Нижнего добираться будем???</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 22:09</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_193' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_193'>Вселенский опыт говорит,<br />
+что погибают царства<br />
+не оттого, что тяжек быт<br />
+или страшны мытарства.<br />
+А погибают оттого,<br />
+(и тем больней, чем дольше),<br />
+что ЛЮДИ ЦАРСТВА СВОЕГО<br />
+НЕ УВАЖАЮТ БОЛЬШЕ.<br />
+ Булат Окуджава<br />
+<br />
+...как это уже про нас!!!!! Районной администрации, если она ещё желает иметь район, а не быть непонятно чем, НЕОБХОДИМО с этими обращениями выходить выше, чем область. Где-то может проснётся здравый смысл! Неужели наши дети будут вынуждены забыть или об образовании, или о родном доме?! так домой-то они ездят за какой-либо едой. голодно студентам. от миллионеров мы далеки. Неподъемную стоимость билета нам не вынести..... Одумайтесь, люди наверху! Ведь народ не может терпеть всё и бесконечно! Неужели до такой степени деньги глаза застили?! Даже дети в школе спрашивают (после последних телевизионных "разоблачений"): "Зачем им столько денег? Разве возможно их истратить? Разве нужно их столько, когда уже не знают, куда их деть?!" Прислушайтесь! Устами младенца, как известно, глаголет истина!<span style='color:#779900;' class='nc_bbcode_color'><span style='color:#007799;' class='nc_bbcode_color'><span style='color:#779900;' class='nc_bbcode_color'><span style='color:#007700;' class='nc_bbcode_color'><span style='color:#779900;' class='nc_bbcode_color'><span style='color:#00BB99;' class='nc_bbcode_color'></span></span></span></span></span></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 23:12</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_194' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_194'>Пусть сначала ГЖД оборудует безопасные перроны, чтобы люди всех возрастов могли спокойно выходить и заходить в электричку, не боясь что-нибудь сломать! А также оборудуют залы ожидания для пассажиров, т.к. судя по расписанию, последнюю электричку придется ждать в Урене 1,5 часа, а остальные по 43 минуты. Не на перроне же стоять? </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 23:26</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_195' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_195'>это чтобы северная часть области спилась и вымерла, как все бесит...</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>19.12.2012, 00:49</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_198' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_198'>Отлично всё идет! Уберем всё из шахуньи а потом её родную к чертовой бабушке! Потому что больше ничего в мысли не идет! Шахунью развивать надо, а не уничтожать! Власти смотрите на мир трезво а не через деньги!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>19.12.2012, 12:23</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_200' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_200'>ОСТАВЬТЕ ЭЛЕКТРИЧКУ!!!!!!!!!!!!!!!!!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>19.12.2012, 14:38</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_201' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_201'>Дурдом на выезде психи на природе!<br />
+нет ну на фига,на фига спрашивается отменять электричку то?<br />
+Или опять очередному дяденьке сверху не хватает на машину новую и он решил таким вот образом выгоду для себя извлечь?Бред какой - то. Лучше бы людей для начала спросили...</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>19.12.2012, 15:51</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_203' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_203'> Жить стало лучше ,жить стало веселей!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>19.12.2012, 18:24</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_204' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_204'> В РЖД пора провести ревизию,как в Минобороны.Там можно накопать на много больше.Якунин бессменный президент этого ОАО.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>19.12.2012, 18:35</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_205' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_205'>Изменения в расписании на участке Нижний Новгород - Шахунья - Киров <br />
+<br />
+В связи с приведением дальности маршрутов пригородных поездов в соответствие с приказом Министерства транспорта Российской Федерации от 18.07.2007 года №99, согласно которому к пригородным относятся поезда, следующие на расстояние не более 200 км и состоящие из вагонов с местами для сидения, с 1 января 2013 г. пригородные поезда, маршрут которых имеет длину более 200 км, изменяют свое расписание.<br />
+<br />
+Прямые электрички Нижний Новгород—Шахунья и Киров—Шахунья будут отменены, вместо них назначаются поезда укороченными маршрутами, расписание которых составлено таким образом, что на станциях Ветлужская, Урень, Котельнич-2, Ежиха, Буреполом или Пижма (в зависимости от поезда) можно осуществить пересадку из состава в состав.<br />
+<br />
+Например, для проезда из Нижнего Новгорода в Шахунью или обратно надо сделать пересадку на станциях Ветлужская или Урень. Для проезда из Кирова в Шахунью — в Котельниче-2, Ежихе, Буреполоме или Пижме (в зависимости от поезда). Часть поездов имеют конечную на станции Уста, но использовать ее для пересадки не рекомендуется, т.к. она расположена в небольшим населенном пункте и имеет вокзал, имеющий малую вместимость. Лучше сделать эту пересадку в Урене, где на вокзале имеется просторный теплый зал ожидания и буфет.<br />
+<br />
+Расписание вариантов проезда с пересадкой, действующее с 1 января 2013 г. приведено на этой странице. В таблицах указаны все поезда на участке Урень—Шахунья—Котельнич, а также те поезда на участках Нижний Новгород—Урень и Киров—Котельнич, с которых возможна пересадка на электрички, следующие до станций участка Урень—Котельнич. Например, из Нижнего Новгорода в Урень и обратно с 1 января будет ходить еще несколько электричек, но в таблице указаны только те, с которых можно пересесть в Урене для проезда в Шахунью и далее.<br />
+<br />
+Железная дорога может внести в расписание дополнительные изменения. Следите за обновлением информации!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>19.12.2012, 19:23</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_210' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_210'>конечно, зачем Шахунью развивать? Ведь взять-то с нее больше нечего - лес уже весь вывезли, а предприятия закрыть - дело пяти минут. Электрички убрать, пусть ездят на поездах - там билет всего-то 1000 рублей стоит. Что нам будет, с нашими-то зарплатами в 28000 рублей??</span></p>
+<div class='rd rd2'>
+<div class='left name'>Ксения</div>
+<div class='view'>19.12.2012, 21:51</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_213' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_213'>Вот главный вопрос!!! Кому же от этого глупого закона будет польза??? У бедных Шахунцев последнее забирают!!!<img src='/images/smiles/sad.gif' alt='грустный' class='nc_bbcode_smile_in_text'><img src='/images/smiles/shakefist.gif' alt='грозится' class='nc_bbcode_smile_in_text'> это не дело!!! просто глупо...<br />
+</span></p>
+<div class='rd rd2'>
+<div class='left name'>Светлана</div>
+<div class='view'>20.12.2012, 10:10</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_214' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_214'>А если зарплата 7000 руб или пенсия? То вообще перестать жить? Даже раз в год съездить к родным страшно.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>20.12.2012, 10:41</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_215' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_215'>Весь вопрос как раз в том, что властьимущие считают, что народ в среднем действительно получает 28.000 рублей. А вот действительно, с какого такого хрена этот приказ вообще издали???? Завтра издадут приказ, что электричка не может ехать дальше 50 км и быть длиннее 4-х вагонов????? Вот уже есть приказ, что перевозчик в праве отменить поезд, если он просто грязный или в одном из вагонов порезано сиденье или разбито окно. Ну не идиотизм ли????? Даже в 30 градусный мороз лучше ехать в вагоне с разбитым окном и без отопления, чем мёрзнуть хрен знает сколько в ожидании следующего поезда.<br />
+Но увы, это не только на ж.д. такое происходит. Власть имущие всеми силами пытаются выжать из нас как можно больше. А зная то, кто у якуши - начальника p/d, сосед по даче и кто его пропихнул на эту должность и с кем он делится наворованным баблом, станет ясно, что жаловаться на ж.д. транспорт абсолютно бесполезно.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>20.12.2012, 11:08</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_218' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_218'>Шахунья всегда была узловой станцией, я все понимаю приказ есть приказ, но в приказе могут быть исключения, а если не  хотите по хорошему, предлагаю всем собраться и перегородить им всю дорогу на фиг, тогда они быстро из Москвы и не только прилетят. Ведь от такого приказа пострадают более 100 тысяч шахунцев, а это в первую очередь студенты, мамы с детьми, пожилые люди. Как им добираться до больницы ведь они не здоровы, им уже тяжело?! А студенты с огромными сумками? Я была студенткой-знаю. Когда папа сумку в поезд занесет а там друзья помогают вытащить хотя бы. Такое ощущение, что Шахунья уже не входит в Нижегородскую область, все обрезали, теперь еще и электричку. Как жить? Шанцев давно уже забил на Шахунский район. Ну не нравится наше руководство, так вы пришлите кого-нибудь своего? Котельная наша прекрасная как коптила так и коптит, проезжаешь мимо, страшное зрелище как будто сам дом горит. Вот представьте вы сидите у костра и дым все время в вашу сторону дует. А люди в этом доме круглосуточно с таким ощущение живут. И НИКТО ИХ НЕ СЛЫШИТ!!! АУ!!! Что нам нужно сделать чтоб жить стало нормально в нашем городе? Спросите любого? Да большинство готово на все! Мы любим свой город и не позволим его разрушить!!! Давайте создадим команду! Кто за?</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>20.12.2012, 12:33</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_219' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_219'>Когда дорогу перекрывать будем, надо телевидение обязательно пригласить-центральное!!! Можно  "человек и закон" или Андрея Малахова позвать!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>20.12.2012, 12:46</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_220' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_220'>Действительно, чьи же мы, Шахунцы??? Нижегородская область от нас отказалась, к Кировской мы тоже не относимся!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>20.12.2012, 12:48</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_221' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_221'>Нижегородскую область обрезают по 200-му километру<br />
+<br />
+15.11.2012 12:29<br />
+<br />
+ <br />
+<br />
+Николай Морохин, корреспондент газеты «Гудок»:<br />
+<br />
+   Мне стало известно из достоверных источников, что со следующего года прекратят свое существование маршруты пригородных поездов до Шахуньи, Пижмы, Ежихи и Кирова. Это очень существенные для жизни севера нашей Нижегородской области маршруты, и людям, конечно же, будет трудно без них обходиться. Кстати, уже сейчас нижегородцы не могут пользоваться пригородными поездами, которые совсем недавно ходили в Казань и во Владимир – их отменили.  <br />
+<br />
+   Причина этого неприятного события состоит совсем не в злой воле Горьковской железной дороги и не в злой воле перевозчика, ОАО «Волго-Вятская пригородная пассажирская компания». Все дело в том, что Минтранс Российской Федерации 18 июня 2007 года издал приказ №99, который запрещает работу пригородных поездов на маршрутах, имеющих длину более двухсот километров. Вот все эти маршруты, о которых я говорил, очень важные для нижегородцев и попадают в число «слишком длинных», которые необходимо немедленно закрыть.<br />
+<br />
+   На протяжении нескольких лет Горьковская железная дорога и «Волго-Вятская пригородная пассажирская компания» различными путями игнорировали этот приказ. Например, пассажиры, которые садились в шахунскую электричку, получали два билета: один до Ветлужской, другой – дальше. Они и не подозревали, что едут на двух поездах, но формально поезд «Горький-Шахунья» был оформлен как два поезда с согласованным расписанием. Теперь этот номер не пройдет. Стало известно, что будут проведены соответствующие проверки, и в результате таких проверок виновные будут наказаны разорительными штрафными санкциями.<br />
+<br />
+   Меня могут спросить, что это за абсурдный приказ, который мешает жить населению Нижегородской области и перевозчикам. Приказ этот для отдельных территорий и мог бы иметь некоторый смысл. Совершенно ясно, что всякие перевозки должны иметь какой-то предел. Если речь идет о пригородных перевозках, то надо установить какое-то предельное расстояние. Иначе кто-нибудь запустит пригородный поезд «Москва-Екатеринбург», что приведет к каким-то проблемам для пассажиров (например, они не будут получать постельное белье или этот поезд не будет останавливаться на каких-то остановочных пунктах).<br />
+<br />
+   Двести километров – это расстояние, актуальное для Московской области. В пределах двухсот километров от Москвы находятся Тула, Владимир, Тверь, Рязань, Калуга, словом, этот приказ совершенно не мешает существовать таким межобластным маршрутам пригородных поездов. Но Россия страна такая, что чем дальше от Москвы, тем больше становятся регионы, тем сильнее не похожи условия жизни людей на те, с какими они сталкиваются в Подмосковье. Если ехать на север Нижегородской области, вы проедете на поезде более трехсот километров. В южном направлении – более двухсот километров, например, до Пильны, до Ужовки. То есть, в нашей области пригородные маршруты обязательно должны быть длиннее, иначе они не смогут нормально обслуживать наше население.<br />
+<br />
+   Что же предлагается взамен таких электричек? Местному населению будет предложен поезд дальнего следования. Чем это чревато, совершенно понятно. Во-первых, большинство пользователей льгот эти льготы не получат, потому что в поездах дальнего следования они предусмотрены в куда меньшем количестве, чем в пригородных. Во-вторых, надо иметь в виду, что проехать какой-нибудь десяток километров между соседними станциями в пригородном поезде в нашей области стоит 12-16 рублей, а в поезде дальнего следования поездка обойдется минимум в 172 рубля. Таким образом, транспортные организации как бы должны получить дополнительные доходы, о чем заботится государство, а государство, в свою очередь, резко увеличит свою налогооблагаемую базу, получив дополнительные денежки от населения, которому оно создало дополнительные проблемы. Но совершенно очевидно, что в этом случае люди просто перестанут пользоваться таким поездом. Например, если исчезнет пригородный поезд между Устой и Уренем или Устой и Арьей, люди не будут пользоваться поездом дальнего пользования, а просто поедут на автобусе, что обойдется им в те же 15 рублей.<br />
+<br />
+   Есть и второй вариант. Вместо единой длинной линии пригородного поезда сделать две линии, использовать два состава и посередине маршрута сделать пересадку. Именно по такому пути и пойдут в нашей области. В этом нет ничего веселого. Человек, который едет в Шахунью, должен будет выйти из электрички в Урене, какой бы ни была погода и сколько бы у него ни было багажа (есть вариант, что пунктом пересадки станет Ветлужская). Человек должен выйти на этой станции, побыть там какое-то время, подождать, пока подойдет поезд, который будет обращаться, например, между Уренем и Шахуньей, сесть в него и ехать дальше.<br />
+<br />
+   Во-первых, это как-то хлопотно. Во-вторых, железнодорожники в течение многих лет боролись за то, чтобы поездка была короче, чтобы человек ехал с большей скоростью. Теперь же вместо трех часов тридцати минут, которых железная дорога добилась, получится четыре с половиной, или даже пять часов. Эта ситуация усложнит работу и самой железной дороге.   <br />
+<br />
+   Если до настоящего времени она могла держать один состав электропоезда и одну локомотивную бригаду, то в новых условиях придется держать два электропоезда, две локомотивные бригады, и при этом на такой небольшой станции, как Урень, нужно будет создать пути, на которых эти поезда будут отстаиваться, где они будут менять направление движения. А этих путей пока нет. И дежурным будет сложно распоряжаться парком таких небольших станций.<br />
+<br />
+   Непосредственным результатом всего этого станет то, что пригородные перевозки обязательно увеличатся в своей себестоимости. Вот к чему приведет в нашей области исполнение приказа Минтранса №99 от 18 июня 2007 года. В Кировской области ситуация очень похожая. Там есть пригородные маршруты, имеющие длину более трехсот километров.  <br />
+<br />
+   Узнав о том, что Минтранс и другие федеральные органы, которые будут заниматься проверкой, добираются до перевозчика, администрация Кировской области начала борьбу против этого абсолютно бесчеловечного для сельского населения и населения небольших городов приказа. Уже направлены письма в правительство Российской Федерации и в Минтранс с тем, чтобы как-то повлиять на ситуацию. Не знаю, приведет ли это к пересмотру принятых решений, но, по крайней мере, в Кирове что-то в этом направлении делается. У нас, в Нижегородской области, для этого не делается ничего, и нижегородцы увидят результаты этого уже через полтора месяца.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>20.12.2012, 13:03</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_222' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_222'>Русский наш народ! Как военный взвод! Вытерпит и вынесет, и все переживет!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>20.12.2012, 14:24</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_224' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_224'>В цивилизованных странах в первую очередь думают о людях, их удобстве и комфорте. Все просчитывают наперед. У нас сначала приказ издают, а потом ждут реакции - авось люди промолчат, так чаще всего и бывает.  Московские  чиновники от железной дороги, очевидно и не подозревают о размерах России и особенностях расстояний на ее просторах. Проще говоря, слабы умишком, чтобы мыслить в масштабах страны. </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>20.12.2012, 14:46</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_231' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_231'>Кроме всего прочего, если мы не входим в пригородную зону, значит и все льготы не будут на нас распространяться! Студенты, пенсионеры и прочие будут ездить за полную стоимость??? </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>21.12.2012, 08:29</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_233' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_233'>ОАО «Волго-Вятская пригородная пассажирская компания» сообщает, в связи с приказом Министерства транспорта Российской Федерации от 18.07.2007г. № 99 «О критериях определения категорий поездов для перевозки пассажиров в зависимости от скорости их движения и расстояния следования» с 1 января 2013 года на участке Нижний Новгород — Шахунья — Киров изменяется расписание пригородных поездов. Об этом сообщает служба корпоративных коммуникаций ГЖД.<br />
+<br />
+В соответствии с пунктом 1-б настоящего приказа, к категории «пригородные» относятся поезда, следующие на расстояние не более 200 км, состоящие из вагонов с местами для сидения. При внесении изменений в расписание, вводимых с 01.01.2013 года, дальность маршрутов беспересадочного сообщения пригородных поездов приведена в соответствие к требованиям вышеуказанного приказа.<br />
+<br />
+По маршруту Нижний Новгород — Шахунья будут ежедневно курсировать 4 пары электропоездов, перевозка пассажиров будет осуществляться по следующей схеме:<br />
+<br />
+1. Электропоезд № 6510 отправляется со станции Нижний Новгород в 09:05, если пассажир следует дальше станции Урень, то по прибытии электропоезда № 6510 в 11:59 минут на данную станцию пассажиру необходимо выйти из электропоезда, остаться на пассажирской платформе, находящейся рядом с вокзалом, и совершить посадку в электропоезд № 6512, прибывающий к данной платформе. Время отправления электропоезда № 6512 12:16 минут (время ожидания составит 17 минут). На станцию Шахунья электропоезд № 6512 прибывает в 13:08, время в пути от станции Нижний Новгород до станции Шахунья составляет 4 часа 5 минут.<br />
+<br />
+2. Электропоезд № 6520 отправляется со станции Нижний Новгород в 12:40, если пассажир следует дальше станции Урень, то по прибытии электропоезда № 6520 в 15:47 минут на данную станцию пассажиру необходимо выйти из электропоезда, остаться на пассажирской платформе, находящейся рядом с вокзалом, и совершить посадку в электропоезд № 6522, прибывающий к данной платформе. Время отправления электропоезда № 6522 16:05 минут (время ожидания составит 18 минут). На станцию Шахунья электропоезд № 6522 прибывает в 16:59, время в пути от станции Нижний Новгород до станции Шахунья составляет 4 часа 19 минут.<br />
+<br />
+3. Электропоезд № 6532 отправляется со станции Нижний Новгород в 17:15, если пассажир следует дальше станции Урень, то по прибытии электропоезда № 6532 в 19:40 минут на данную станцию пассажиру необходимо выйти из электропоезда, остаться на пассажирской платформе, находящейся рядом с вокзалом, и совершить посадку в электропоезд № 6534, прибывающий к данной платформе. Время отправления электропоезда № 6534 19:58 минут (время ожидания составит 18 минут). На станцию Шахунья электропоезд № 6534 прибывает в 20:42, время в пути от станции Нижний Новгород до станции Шахунья составляет 3 часа 27 минут.<br />
+<br />
+4. Электропоезд № 6538 отправляется в 18:20 со станции Нижний Новгород двойным составом (два четырехвагонных электропоезда). Электропоезд № 6538 в 20:24 прибывает на станцию Ветлужская, первый по ходу электропоезд остается на <br />
+данной станции, второй состав отправляется электропоездом № 6540 в 20:42 и следует маршрутом Ветлужская — Шахунья (время стоянки — 18 минут). Электропоезд № 6540 прибывает на станцию Шахунья в 22:29, время в пути от станции Нижний Новгород до станции Шахунья составляет 4 часа 9 минут.<br />
+<br />
+По маршруту Шахунья — Нижний Новгород будут ежедневно курсировать 4 пары электропоездов, перевозка пассажиров будет осуществляться по следующей схеме:<br />
+<br />
+1. Электропоезд № 6521 отправляется со станции Шахунья в 10:42, если пассажир следует дальше станции Урень, то по прибытии электропоезда № 6521 в 11:26 минут на данную станцию пассажиру необходимо выйти из электропоезда, перейти на платформу, находящуюся рядом с вокзалом, и пересесть в электропоезд № 6525, который прибудет к данной платформе в 11:59. Время отправления электропоезда № 6525 12:08 (время ожидания составит 42 минуты). На станцию Нижний Новгород электропоезд № 6525 прибывает в 14:58, время в пути от станции Шахунья до станции Нижний Новгород составляет 4 часа 16 минут.<br />
+<br />
+2. Электропоезд № 6535 отправляется со станции Шахунья в 14:25, если пассажир следует дальше станции Урень, то по прибытии электропоезда № 6535 в 15:14 минут на данную станцию пассажиру необходимо выйти из электропоезда, перейти на платформу, находящуюся рядом с вокзалом, и пересесть в электропоезд № 6537, который прибудет к данной платформе в 15:47. Время отправления электропоезда № 6537 15:56 (время ожидания составит 42 минуты). На станцию Нижний Новгород электропоезд № 6537 прибывает в 14:58, время в пути от станции Шахунья до станции Нижний Новгород составляет 4 часа 25 минут;<br />
+<br />
+3. Электропоезд № 6547 отправляется со станции Шахунья в 17:29, если пассажир следует дальше станции Урень, то по прибытии электропоезда № 6547 в 18:20 минут на данную станцию пассажиру необходимо выйти из электропоезда, перейти на платформу, находящуюся рядом с вокзалом и пересесть в электропоезд № 6549ю Время его отправления 18:31 (время ожидания составит 11 минут). На станцию Нижний Новгород электропоезд № 6549 прибывает в 21:22, время в пути от станции Шахунья до станции Нижний Новгород составляет 3 часа 57 минут.<br />
+<br />
+4. Электропоезд № 6513 отправлением со станции Шахунья в 05:48 следует до станции Ветлужская четырехвагонным составом. По прибытии на станцию Ветлужская электропоезда № 6513 в 07:30 производится его объединение со вторым четырехвагонным составом электропоезда № 6515 сообщением Ветлужская — Нижний Новгород, отправлением со станции Ветлужская в 07:54 (время стоянки — 24 минуты). Далее поезд № 6515 следует двойным составом до станции Нижний Новгород, прибытие на конечную станцию — 09:43, время в пути от Шахуньи до станции Нижний Новгород составляет 3 часа 55 минут.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>21.12.2012, 10:23</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_234' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_234'>Категорически против, итак долго ехать, ещё и пересаживаться "15-20 минут". http://news.mail.ru/inregions/volgaregion/52/society/11336635/</span></p>
+<div class='rd rd2'>
+<div class='left name'>NoName</div>
+<div class='view'>21.12.2012, 10:24</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_235' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_235'>КЛАСС! И какой это фантазер только выдумал? Тащить 2 состава вместо одного??? Если это экономически выгодно для РЖД, почему тогда не пустить один четырехвагонный состав от Шахуньи (или от Пижмы, Ежихи)до Уреня, а в Урене присоединить еще 1 четырехвагонный состав, и объединенным составом ехать до Н.Новгорода? Почему нельзя все электрички пустить таким образом? Сколько можно над людьми издеваться? 42 минуты ожидания!!! С ума сойти можно!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>21.12.2012, 10:55</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_242' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_242'>Это не фантазер выдумал. Люди выполняют приказ министра...С опозданием на 5 лет, правда. Это говорит лишь о том, что в головах чиновников, начальников, министров и.т.д. полный хаос. Главное- тупое выполнение приказа. Пассажиры для них - ничто. Вернее, средство для выполнения плана.  </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>21.12.2012, 19:39</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_245' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_245'>присоединяюсь к вышесказанному!!!И добавлю свое-такова судьба провинциальных городов!мы не нужны нашей власти с нашими проблемами.они лишь думают о своих карманах.вот только стоимость билетов растет, а условия все хуже и хуже.в последний раз хала в электричке Шахунья-Нижний.которая вообще не отапливалась!!!!!это при том, что за окошком 30ти градусный мороз, а мест уже в Урене почти не было!!!!!!!Что "уважаемая" власть решила таким образом поиздеваться над народом!??!??!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>22.12.2012, 15:31</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_247' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_247'>Призываю объявить о <B>несоответствии с должностью</B> ВСЁ РУКОВОДСТВО ГЖД  ВО ГЛАВЕ С ЛЕСУНОМ!!! <span style='color:#FF0000;' class='nc_bbcode_color'>В ОТСТАВКУ!!! </span></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>22.12.2012, 16:43</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_248' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_248'>Это полнейшая глупость<img src='/images/smiles/knockedout.gif' alt='в ауте' class='nc_bbcode_smile_in_text'> зачем это всё придумали нужно оставить электричку... всё как есть. было же нормально<img src='/images/smiles/shakefist.gif' alt='грозится' class='nc_bbcode_smile_in_text'><img src='/images/smiles/angry.gif' alt='сердитый' class='nc_bbcode_smile_in_text'><img src='/images/smiles/no.gif' alt='нет' class='nc_bbcode_smile_in_text'>[COLOR=FF0000]пожалейте стариков и инвалидов(((</span><span style='font-size:12px' class='nc_bbcode_size'></span></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>22.12.2012, 16:49</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_249' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_249'><B>Счетная палата</B> (браво, добрались до зачинщика!!!)  пугает ГЖД банкротством. А платить обязаны пассажиры?!  Это странно... И при чем тут отличный экспресс "Киров- Нижний Новгород", который почил в бозе? Ведь он вроде не электричкой был. Зато сейчас (какая красота) вагоны 1 класса расформированного состава экспресса идут как обычная электричка! Нет, друзья. Тут что-то не так. <B>Бастовать надо!!! </B> Министров, чиновников, принимающих такие законы- <B>В ОТСТАВКУ!!! </B></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>22.12.2012, 16:54</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_252' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_252'>Нашла в блоге В. Якунина такой взляд на проблему: http://v-yakunin.livejournal.com/<br />
+Компенсация выпадающих доходов пригородных компаний<br />
+31 окт, 2012 at 4:35 PM<br />
+<br />
+<br />
+Пригородные пассажирские компании начали судиться с регионами, которые не выполняют своих обязательств по компенсации железнодорожникам убытков (выпадающих доходов) от государственного регулирования тарифов. Есть несколько конкретных примеров – иски к властям Владимирской, Новгородской и Курганской областей в настоящее время уже рассматриваются в судах.<br />
+<br />
+Общая сумма требований по поданным исковым заявлениям составила более 501 млн. руб. Несколько компаний заявляют, что в связи с убыточностью могут сделать это в ближайшее время. Так, в процессе подготовки находится еще ряд исков, в том числе иск ОАО «ЗППК» к Забайкальскому краю на сумму 509,6 млн. руб. Кроме того, по 29 регионам ведется претензионная работа. Общая сумма претензий пригородных компаний к регионам составляет около 6 млрд. рублей.<br />
+<br />
+Претензии железнодорожников совершенно обоснованы. Напомню, что в тех субъектах РФ, где <B>местные власти</B> отказались выполнять свои обязательства по субсидированию пригорода (которые они обязаны выполнять по закону), железнодорожники были вынуждены сократить число электричек или уменьшить их составность, что вызвало естественное недовольство населения и громкий общественный резонанс. Камни полетели в сторону РЖД. <B>Регионы-неплательщики </B>требуют от нас восстановить движение пригородных поездов, но при этом говорят, что денег на покрытие убытков ППК в их бюджете нет.<br />
+<br />
+Мы со своей стороны проводим активную работу по достижению понимания субъектами своих обязательств перед пригородными пассажирскими компаниями. В тех случаях, когда понимания достичь не удалось, и возникла необходимость в судебных разбирательствах. Понятно, что это произошло не от хорошей жизни, но иждивенчество пора прекращать. В любом случае дело будет доведено до логического конца – либо путем переговоров, либо через суды. На днях Арбитражный суд Кемеровской области уже принял положительное решение о взыскании долгов за пригородные перевозки из бюджета области в пользу ОАО «Краспригород»   и обязал выплатить компании 7,28 млн. руб., которые ранее регион компенсировать отказывался.<br />
+<br />
+Еще раз повторяю, что мы искренне стараемся сотрудничать с регионами и поддерживаем местных производителей везде, где можем это делать. Но, как говорится, нельзя одну овцу стричь дважды, поэтому те, кто принимает решения не платить железной дороге, должны нести ответственность за последствия таких решений. В обязанности РЖД не входит обучение чиновников, наша задача – <B>защита экономических интересов компании</B>, которая на 100% является государственной.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>22.12.2012, 17:23</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_256' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_256'>Довели уже народ. Эти уроды бесчеловечные похоже даже не понимают, что им самим такая чушь не выгодна. <br />
+Теперь вместо содержания одной электрички, они будут содержать две, вместо четырёх локомотивных бригад - восемь и т.д. К тому же электрички стоящие на станциях нужно обслуживать. Можно привести очень много "ПРОТИВ" и ни одного "ЗА". <br />
+Эта реформа неприемлима только даже для самих железнодорожников, а тут ведь идёт речь обо всех жителях. Не находите ли вы смешным то, что между депо в Горьком и депо в Шахунье нет прямого сообщения и сотрудники РЖД будут прыгать из электрички в электричку. Может ещё в теплушках начнём ездить как в начале ХХ века??? Это называется ПЛАНОМЕРНАЯ ТРАВЛЯ ЛЮДЕЙ!!! Нельзя так к людям относиться...</span></p>
+<div class='rd rd2'>
+<div class='left name'>Валентин</div>
+<div class='view'>22.12.2012, 18:34</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_260' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_260'>Шахунцы! У нас же есть свой поровоз! осталось только прицепить теплушки как в гражданскую. А что, преступность, беспризорность и детская смертность у нас как в гражданскую войну. Докатились!!! <br />
+А если серьезно, с отменой электрички произойдет ухудшение условий жизни. Мы пострадаем и морально, и материально, и физически. А это уже повод обратиться в транспортную прокуратуру и в суд.  Законы, созданные одними людьми могут отменить другие люди.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 12:13</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_262' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_262'>В стране идет борьба за сферы влияния. Президент,я уверена, в курсе дела. Пассажиры являются заложниками ситуации. Нас просто продают. Вот и всё. Если будем молчать, как в других регионах, то откатимся на 50 лет назад. </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 12:29</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_263' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_263'><B>А вот и этот убогий приказ? из-за которого все наши беды:</B><br />
+<br />
+Зарегистрировано в Минюсте РФ 7 августа 2007 г. N 9969<br />
+<br />
+МИНИСТЕРСТВО ТРАНСПОРТА РОССИЙСКОЙ ФЕДЕРАЦИИ<br />
+<br />
+ПРИКАЗ<br />
+от 18 июля 2007 г. N 99<br />
+<br />
+О КРИТЕРИЯХ ОПРЕДЕЛЕНИЯ КАТЕГОРИЙ ПОЕЗДОВ<br />
+ДЛЯ ПЕРЕВОЗКИ ПАССАЖИРОВ В ЗАВИСИМОСТИ ОТ СКОРОСТИ<br />
+ИХ ДВИЖЕНИЯ И РАССТОЯНИЯ СЛЕДОВАНИЯ<br />
+<br />
+В соответствии со статьей 81 Федерального закона от 10 января 2003 г. N 18-ФЗ "Устав железнодорожного транспорта Российской Федерации" (Собрание законодательства Российской Федерации, 2003, N 2, ст. 170; N 28, ст. 2891; 2006, N 50, ст. 5279) приказываю:<br />
+1. Утвердить прилагаемые критерии определения категорий поездов для перевозки пассажиров в зависимости от скорости их движения и расстояния следования.<br />
+2. Признать утратившим силу Приказ Министерства транспорта Российской Федерации от 24 декабря 2004 г. N 50 "О критериях определения категорий поездов для перевозки пассажиров в зависимости от скорости их движения и расстояния следования" (зарегистрирован Минюстом России 16 февраля 2005 г., регистрационный N 6330).<br />
+<br />
+Министр<br />
+И.ЛЕВИТИН<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+ <br />
+Утверждены<br />
+Приказом Минтранса России<br />
+от 18 июля 2007 г. N 99<br />
+<br />
+ <br />
+КРИТЕРИИ<br />
+ОПРЕДЕЛЕНИЯ КАТЕГОРИЙ ПОЕЗДОВ ДЛЯ ПЕРЕВОЗКИ ПАССАЖИРОВ<br />
+В ЗАВИСИМОСТИ ОТ СКОРОСТИ ИХ ДВИЖЕНИЯ<br />
+И РАССТОЯНИЯ СЛЕДОВАНИЯ<br />
+<br />
+ <br />
+1. По расстоянию следования и условиям проезда поезда, предназначенные для перевозки пассажиров (далее - поезда), подразделяются на:<br />
+а) дальние - следующие на расстояние свыше 150 км, в составы которых включаются вагоны с местами для сидения и лежания и которые отвечают требованиям, предъявляемым к проезду в дальнем следовании;<br />
+ <br />
+б) пригородные - следующие на расстояние не более 200 км, состоящие из вагонов с местами для сидения.<br />
+2. Определение категорий поездов в зависимости от скорости их движения производится исходя из маршрутной скорости движения таких поездов, которая определяется как средняя скорость движения таких поездов от начальной до конечной станции маршрута следования.<br />
+3. Величина маршрутной скорости определяется делением общей протяженности маршрута следования поезда (в километрах) на общее время нахождения поезда в пути следования (в часах) с учетом времени всех остановок на железнодорожных станциях для посадки и высадки пассажиров.<br />
+4. По скорости движения поезда подразделяются на:<br />
+а) скоростные - маршрутная скорость движения которых составляет более 91 км/час;<br />
+б) скорые - маршрутная скорость движения которых от 50 до 91 км/час;<br />
+в) пассажирские - маршрутная скорость движения которых не превышает 50 км/час.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 12:38</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_265' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_265'><B>А теперь, ВНИМАНИЕ! </B> Прочтите предыдущий приказ И.Левитина: в нем расстояние пригородных поездов было до 150 км!!! То есть фактически в новом приказе <B>расстояния увеличились</B>. Но, вы же понимаете, что и прежний <B>приказ не выполнялся </B>в нашей области! И кировской тоже. То есть приказы не выполнялись и никто никого не штрафовал. А теперь вдруг! все поменялось!! Что случилось?! Кто кому наступил на хвост?! Кому это стало выгодно, чтобы народ взволновался, пошел наступать на власть имущих?<br />
+<br />
+МИНИСТЕРСТВО ТРАНСПОРТА РОССИЙСКОЙ ФЕДЕРАЦИИ<br />
+<br />
+ПРИКАЗ<br />
+от 24 декабря 2004 г. N 50<br />
+<br />
+О КРИТЕРИЯХ ОПРЕДЕЛЕНИЯ КАТЕГОРИЙ ПОЕЗДОВ<br />
+ДЛЯ ПЕРЕВОЗКИ ПАССАЖИРОВ В ЗАВИСИМОСТИ ОТ СКОРОСТИ<br />
+ИХ ДВИЖЕНИЯ И РАССТОЯНИЯ СЛЕДОВАНИЯ<br />
+<br />
+В соответствии со статьей 81 Федерального закона от 10 января 2003 г. N 18-ФЗ "Устав железнодорожного транспорта Российской Федерации" (Собрание законодательства Российской Федерации, 2003, N 2, ст. 170) приказываю:<br />
+Утвердить прилагаемые Критерии определения категорий поездов для перевозки пассажиров в зависимости от скорости их движения и расстояния следования.<br />
+<br />
+Министр<br />
+И.ЛЕВИТИН<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+Приложение<br />
+к Приказу Минтранса России<br />
+от 24 декабря 2004 г. N 50<br />
+<br />
+КРИТЕРИИ<br />
+ОПРЕДЕЛЕНИЯ КАТЕГОРИЙ ПОЕЗДОВ<br />
+ДЛЯ ПЕРЕВОЗКИ ПАССАЖИРОВ В ЗАВИСИМОСТИ ОТ СКОРОСТИ<br />
+ИХ ДВИЖЕНИЯ И РАССТОЯНИЯ СЛЕДОВАНИЯ<br />
+<br />
+По дальности перевозки поезда подразделяются на:<br />
+а) дальние - следующие на расстояние свыше 150 км;<br />
+б) пригородные - следующие на расстояние до 150 км.<br />
+<br />
+По скорости движения поезда подразделяются на:<br />
+а) скоростные - поезда для перевозки пассажиров, участковая скорость которых 141 - 200 км/ч;<br />
+б) скорые - поезда для перевозки пассажиров, участковая скорость которых на всем пути следования не ниже 50 км/ч;<br />
+в) пассажирские - поезда для перевозки пассажиров, участковая скорость которых ниже 50 км/ч.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 12:51</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_266' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_266'>"Реформы" в области здравоохранения, образования, культуры. Теперь добрались до транспорта. Всё это- звенья одной цепи. Цель- дестабилизация общества и смена власти. Провокация. Все волнения общества кому-то на руку. Важно это понимать! </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 12:57</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_267' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_267'>Я в отчаянии... Ни до Нижнего, ни до Кирова нет пути. <B>Верните экспресс!!!</B></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 13:56</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_268' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_268'>Правильно было в статье написано "Кто дал им право распоряжаться нашими семьями, нашим личным временем, нашей жизнью" Интересно получить ответ от администрации, что смогли добиться в этом вопросе или они ни как еще кабинеты не поделят? Вот задача перед вами-сумеете добиться и городской округ будет существовать, а если нет то руководить кем будите? Здесь одни старики останутся, а молодежь уедет.Сложно? А вы как думали? По всей стране такая проблема, но кто-то 5 лет сдерживал исполнение этого приказа, кто-то понимал к чему он приведет. Что изменилось? Всю страну порезали на 200 км., отделив таким образом от БОЛЬШОЙ земли (только так теперь можно сказать) больше 100 тыс. человек Шахунского , Тоншаевского и др. районов. </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 14:23</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_269' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_269'>Волнения, говорите, на руку? Кто помни революция 1905 года с чего началась?</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 14:32</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_270' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_270'>И так из Шахуньи всё в Урень перевели, а теперь ещё и электричку решили отменить. Мы что хуже остальных что ли??? </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 16:49</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_272' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_272'>Надо обращаться к В.В Путину, что этим дебилам писать им все без разницы</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 17:16</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_273' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_273'>Похоже в Урень все переводить стали именно после приказа 2007 года. Уже тогда стали понимать все сложности. Что мы имеем. Сначала деревни, села загубили, теперь и до нас добрались.Кому-то выгодна эта ситуация. Что-то за ней последует.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 19:05</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_274' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_274'>Что вы делаете?у меня двое детей,мои родные живут в городе Семенов.как мне теперь ездить к ним с детками.а я ведь не одна такая.неужели трудно позаботиться о людях,чем о своем кошельке.люди нужно писать Путину,может он поймет и поможет.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 19:08</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_276' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_276'>И как голосовать за власть в стране если эта власть толкает людей "на дно"Чем люди в Урене лучше шахунцев? Предлагаю выйти на митинг у вокзала и перегородить пути ,а не послушают -отдать ж.д цыганам- ее разберут и сдадут в метал-м(Дак не доставайся же ты ни кому)А в Урене сделают наши студенты общественный туалет -представляете, как высадят 500 человек-держись Урень.Вот тогда посмотрим кто царь-город!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 21:09</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_278' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_278'>ЗЕМЛЯКИ! ВСПОМНИТЕ ЛЕТО 1988 ГОДА, КОГДА ВСЕ МЫ БЫЛИ ОТРАВЛЕНЫ ПРОДУКТАМИ ГОРЕНИЯ ВАГОНА С НЕИЗВЕСТНЫМ  ВЕЩЕСТВОМ НА СТАНЦИИ. У ВСЕХ КТО ПОДЫШАЛ ТЕМ "ДЫМКОМ" ПОРАЖЕНЫ СЛИЗИСТЫЕ ОБОЛОЧКИ ОРГАНИЗМА: У КОГО КИШЕЧНИК, У КОГО - ОРГАНЫ ДЫХАНИЯ И Т.Д. А ТЕПЕРЬ ЭТА, ОТРАВИВШАЯ НАС ЖЕЛЕЗНАЯ ДОРОГА, СОЗДАЕТ ПРЕПЯТСТВИЯ НА ПУТИ В ОБЛАСТНУЮ БОЛЬНИЦУ!!! А НАРД В РАЙОНЕ ОЧЕНЬ БОЛЬНОЙ.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>24.12.2012, 10:09</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_309' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_309'><span style='font-size:12px' class='nc_bbcode_size'>СКОЛЬКО МОЖНО ИЗДЕВАТЬСЯ НАД НАМИ?????????? Ехать из Нижнего до Шахуньи за 8 часов - это уму не постижимо!!!!!!!!!!!!!!!!!!!!!!!!!<br />
+<br />
+Я предлагаю чиновнику, придумавшему этот маразм, разок проехать по этому маршруту. Сесть на первую электричку, когда мороз -30 и во всех вагонах дикий холод. Потом в Урене на вокзале 40 минут поторчать. А затем попытаться с дорожной сумкой залезть в вагон, так как в Урене будет огромная давка. <br />
+Я гарантирую, это всё закончится тем, что произойдёт несчастный случай. Кого-нибудь столкнут на пути или затопчут, так как давка будет очень большая. Может тогда наши власти задумаются. Хотя вряд ли.<br />
+P.S. Это затронуло жителей не только Шахуньи, а всех населённых пунктов. Я сама из Арьи.</span></span></p>
+<div class='rd rd2'>
+<div class='left name'>Не могу больше жить в этой поганой стране!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>
+<div class='view'>27.12.2012, 21:46</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_310' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_310'>Всё для народа, всё для людей.<img src='/images/smiles/knockedout.gif' alt='в ауте' class='nc_bbcode_smile_in_text'></span></p>
+<div class='rd rd2'>
+<div class='left name'>Я - против!!!!</div>
+<div class='view'>27.12.2012, 21:51</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_327' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_327'>БЕС-ПО-ЛЕЗ-НО. Никто нас слушать не будет. Вот нашла интересную инфу про МАССОВУЮ ОТМЕНУ ЭЛЕКТРОПОЕЗДОВ ПО ВСЕЙ СТРАНЕ: http://metroblog.ru/post/4160/</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>04.01.2013, 16:42</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_328' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_328'>Ну почему все через ж@пу. Почему все против людей. Мне сегодня ехать вечером с ребенком одной. Стоянка в Шахунье 2 мин., в Урене 11 мин. куда-то переходить. Люди, я реально боюсь! </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>05.01.2013, 15:22</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_329' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_329'>сорок лет электричка ходила из Шахуньи до областного центра...Кем нужно быть, что бы принять такое решение против десятков тысяч людей севера Нижегородской области???? Губернатор всё какие то рейтинги набирает- всё выше и выше....Чьи??????????????????????? Неужели нельзя найти денег на покрытие убытков РЖД, если таковые имеются? Никита Белых в своей Кировской области, соседней нашей, решил вопрос - электричка до Пижмы ходит! Может к Кировской присоединимся? ПОЗОР! ИМПОТЕНТЫ!<br />
+</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>06.01.2013, 11:00</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_330' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_330'>И что? До Пижмы... Не до Шахуньи же...</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>06.01.2013, 13:14</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_337' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_337'>Здравствуйте. 8 января всей семьей прокатились по -новому , в Урене негде было встать на вокзале, не то что сесть.Так и ждали 42 минуты на улице. А потом огромная толпа ринулась в электричку с желанием комфортно устроиться. Тут уж не смотрели, кто пожилой, а кто грудной. А главное час потеряли. Люди едут не только из Шахуньи, но из деревень, сел, поселков. Время в пути и так очень большое. Ни попить , ни поесть. Эх, Шукшина нет, чтобы заступиться за глубинку российскую. Всю дорогу сочиняла письмо в газету. Да, что толку писать? Мы все принимаем безропотно.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>10.01.2013, 19:49</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_351' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_351'>Вспоминая лихие 90  - надо выходить на рельсы и стучать касками (кастрюли тоже подойдут)[SIZE=14]</span></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.01.2013, 16:11</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_352' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_352'>Короче нужно реально позвонить на "Пусть говорят" вот номер 8495 617 76 28 и грамотно изложить что приказ Мин транса  №99 от 07.2007 ,а не закон Рф определил что в такой стране как Россия  почему то всего 200 км пригород ну почему не 300 им то от этого что Пусть Президент об этом сам услышит  все письма что писали вернуться назад в Шахунью ну максимум в нижний и ответит нам пешка из ГЖД. Считаю  это просто произвол о котором не знает руководство страны да и  в мин трансе об этом уж забыли ЭЭЭ Давайте шуметь под лежачий камень вода не течёт ВПЕРЁ Я ВЕРЮ В ПОБЕДУ    </span></p>
+<div class='rd rd2'>
+<div class='left name'>Шахунец</div>
+<div class='view'>27.01.2013, 23:58</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_358' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_358'>Верните электричку<br />
+	11:22<br />
+Уважаемый Дмитрий Анатольевич Медведев!<br />
+Жители Шахунского района и г. Шахунья Нижегородской области просят оказать срочную помощь.<br />
+Суть просьбы состоит в том, что отменили прямую электричку Н.Новгород-Шахунья (время в пути 3 часа 45 минут), скорый поезд Н.Новгород-Киров, мы просим срочно восстановить проезд электрички, восстановить справедливость.<br />
+С 01.01.2013 г. окончательно убрали все электрички и чтобы доехать до станции Шахунья Нижегородской обл.нужно делать пересадку на ст. Ветлужская, ждать 40 минут и затем садится в прицепной и только последний вагон и ехать дальше до Шахуньи (Время всего проезда составляет почти 5 часов, это очень много очень трудно пенсионерам и больным). Над нами, людьми, просто издеваются, с начало искусственно создали затратную часть (так например-посадили в каждый состав из 6 вагонов электрички по 3 контроллера на 2 часа поездки-это до ст. Ветлужская, затем на следующие 2 часа, едут другие 3 контроллера итого 6 вагонов – 6 контроллеров). Никогда раньше столько обслуживающего персонала не было. Сейчас сокращают расходы ЖД за счет ликвидации электричек-здорово. Кому-то очень невыгодно проезд до Шахуньи электричек без пересадки. Все люди очень недовольны властью, очень ругают власть, только небольшая группа людей понимают, что кому-то это очень выгодная ситуация, настраивать людей против власти. Люди понимают, не дураки ,что везде афишируют поезда САПСАН, дороги в Сочи, метро в Н.Новгороде и т.д, где вкладываются миллиарды денег, говорят, что улучшают жизнь, но кому-то, только не нам, а нам делают жизнь,все хуже и хуже. ОЧЕНЬ ПРОСИМ ПОМОЩИ. Просим выделить денег на нашу электричку, если наша электричка такая убыточная. Ходят слухи, что хотят выходить на железную дорогу и перекрывать пути живым щитом, а кому это нужно?<br />
+Мы думаем, что письма, которые посылают люди Вам и Путину В.В., не доходят до Вас, иначе бы такой ситуации не сложилась бы. Просим проверить всю ситуацию из числа Ваших доверенных лиц, а не местными властями и УЖД (мы им не доверяем) и восстановить нам проезд прямой электрички до Шахуньи, как было ранее.<br />
+В Шахунье и Шахунском районе творится полный хаос,и руководству Шахунского района и Нижегородским областным властям и УЖД безразлично.<br />
+Раньше г.Шахунья образовался как железнодорожный узел и вся инфраструктура строилась с помощью РЖД, была большая больница, дет. сады и ясли, вагонное и локомотивное депо, производство по ремонту электродвигателей, 20 подъездных путей, предприятия обслуживающие работу узловой станции- ПЧ, ШЧ, НГЧ, было много строительный организаций, предприятий по ремонту сельхозтехники, была художественная фабрика, производство по изготовлению комплектации для телевизоров, производство общество слепых, районная больница и так далее. В районе было 10 колхозов и 4 совхоза. Население составляло до 60 тысяч человек. Выше перечисленного уже нет, и население уменьшилось до 25-20 тыс. человек. Сейчас все пришло в полный упадок, но местные власти ничего для исправления этой ситуации ничего не делают. Вы и Ваши помощники, руководители, говорите с экрана оптимистические речи, но для нас почти ничего не доходит. Газопровод не ведут и в ближайшие годы, даже не собираются проводить, детские сады позакрывали, новых не строят, все предприятия РЖД закрыли, фабрику закрыли, больницу закрыли, здание ЖД больницы пустует и рушится вот уже 7 лет.Могли бы переделать в детский сад(с наименьшими затратами), при больнице есть даже здание столовой, готовить детям еду. А у нас, все рушится, власти не хотят на нас обращать внимания т.к. бюджета у нас нет совсем, как, нет и предприятий. Бюджет наш дотационный, вкладывать в наш район деньги власти не хотят.Спасибо Вам за программы оздоровления, поэтому нам построили ФОК и несколько домиков, (каждый домик на 2 семьи), люди очень рады и благодарны, не местным властям, а лично Вам, т.к. областным властям прошлось выполнять эту программу.<br />
+Убирают из Шахуньи последние маленькие предприятия. Люди не довольны сложившейся ситуацией считают и винят власть и конечно в знак протеста, многие голосуют за коммунистов (очень плачевно).<br />
+В последнее время, даже налоговую инспекцию, перенесли в соседний р.п.Урень, убрали РКЦ. Газопровод провели только до Уреня, а до Шахуньи осталось всего 60 км. Где-же программа государства газофицировать всю Россию? Мы всегда молчали, ждали, что скоро и к нам все придет,но ждать видно бесполезно, нам жизнь все ухудшают.<br />
+Сейчас последний крик о помощи. Помощь просим у Вас.<br />
+От Нижнего Новгорода до Шахуньи, всю жизнь ездила электричка, в советские времена, это было достижение, что так далеко ездит электричка (4 часа).<br />
+Пока, до конца декабря,электричка еще ездила, но с 1 января 2013 г. электропоезда до Шахуньи отменяются, об отмене электрички кричать везде, даже по телевидению. Электричка будет ездить, только до Уреня, не доезжая до Шахуньи 60 км. В Урене люди должны выйти и ждать какую-то другую электричку, затем продолжить свой путь до Шахуньи и более дальних районов и поселки (как Тонкино, Тоншаево, т.д.). Вы понимаете, как нам хотят улучшить жизнь? Вместо 4 часов пути в холодной электричке (не жаловались), нам придется быть в пути еще большее время (неизвестно сколько ?), так как будет пересадка. Кому это хорошо? Новоявленные хозяева, делят дорогу на зоны и делят барыши, им так удобно, а что людям будет плохо, трудно, всем наплевать. Такое впечатление, что настраивают людей на негатив и недовольство. Много ездит студентов, больных в областную больницу, пенсионеров, также, ездят люди из соседних районов и поселков (Тонкинский, Тоншаевский , Сява, Хмелнвицы и др.). Почти 50 лет, как к электричке подходят автобусы межрайонные из разных поселков северных районов Нижегородской области, что бы доехать до своих районов и поселков(как люди будут ездить – сутки или двое?). На Севере страны все строят и поднимают жизнь, а у нас на Севере Нижегородской обл, все заброшено, все в запустении, даже электрички убрали, как понимать?<br />
+Шанцев В.П. никак не реагирует на эту ситуацию, но зато постоянно на телеэкране, хвастается о достижениях в г.Н.Новгороде-а как же Нижегородская область, какие достижения, где проводят ГАЗ, какие строят современные котельные или строят котельные только на опилках. Достижения по районам только -ФОКи. Мы собрали подписи, написали письмо в администрацию, в газету, толку нет.Как и сколько можно издеваться над людьми, местные власти хотят бунта или деревне это не грозит, люди скромные, так считают они. Так же ходил скорый поезд Н.Новгород-Киров и Киров - Н.Новгород, его тоже отменили (при пуске этого поезда была большая реклама, что народу, улучшили условия проезда, в скорости и в комфорте, вот только ненадолго).<br />
+В Шахунье выстроили большой железнодорожный вокзал, вложили огромные деньги, есть много подъездных путей, тупиков для стоянки электричек и разных поездов, была создана большая инфраструктура для работы РДЖ, ее надо развивать, дать новое дыхание, возобновить работы, дать людям рабочие места, а не уничтожать все окончательно и переносить все в Урень(в угоду кому-то), где кроме четырех полос путей, ничего нет. В Урене, нужно все построить с ноля; дополнительные подъездные пути, тупики, и т.д., для отстоя электропоездов в ночное время. Выложить на это миллиарды, кому-то это очень нужно, деньги у государства вытащить и тратить в личных интересах новых хозяев, а не для людей. Лучше бы садики строили, и квартиры для учителей и многодетных семей, сохраняли бы сельскую местность. В Шахунье за многие годы (трудно сказать, сколько лет), не построили ни одного детского садика, только закрывали, стоят те, в которые мы, старые люди, ходили, когда были детьми, вот их и латают – стыд и позор. Мы, как в другом мире от государства живем. Вот так улучшают жизнь людям местные власти и Управление РЖД. Политика правительства, трудится честно и напряженно, сделать жизнь людей комфортней лучше. Где это на деле? Для Шахуньи и Северных районной Нижегородской области наоборот, делают все хуже и хуже жизнь. Довели район до плачевного состояния. Шанцев В. П. обо всех ситуациях знает, в Н.Новгороде многое, делается, но в Н.Новгороде есть два хороших управленца (Кондрашов и Сорокин). Провели метро в верхнюю часть города, и многое другое, все очень рады, всем удобно. А как же Северные районы Нижегородской области? Где вы Управленцы? АУ? Так, в 2011 ситуацию с отоплением довели до крайности, чуть вся Шахунья не осталась без отопления в зиму 2011 г., (Шанцев В.П. сам с телеэкрана говорил). Выстроили, срочно, котельную, (по проекту дочки Шанцева В.П., так говорит народ), топят ее опилками, (такая же котельная и в Ветлужской- опилками, может быть и еще где-то в области). Областное руководство, зная, о такой ситуации в Шахунье, не спрашивало, и не уволило плохих руководителей, не контролировало работу администрации Шахунского района, не помогало вовремя, что бы не доводить ситуацию до кризисной. Новая котельная, так сильно дымит, (в этом году), прямо в окна жилых домов и детский сад, люди задыхаются в дыму(эту ситуацию даже по телевидению показали РЕН ТВ). В ЖКХ творится безобразие, цены за кВ. плату огромные, а пенсии маленькие. Руководителя Шахунского района осенью 2012 года, выбирали местные депутаты в Н.Новгороде, того же, что и раньше был, плохого управленца. Вот такое у нас руководство, кругом бардак, поэтому растет недовольство людей, и голосуют очень многие на выборах, за коммунистов, или вообще никак не голосуют. Просим срочной помощи, и разобраться в этой ситуации, не ухудшать жизнь людей, жизнь и так очень трудная особенно пенсионерам.<br />
+Еще раз очень просим разобраться в этих ситуациях, оставить электричку соединяющую Шахунью с Нижним Новгородом. Пока Вера в ВАС еще не пропала.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>29.01.2013, 13:10</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_362' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_362'>Кто же прочтет это письмо? Только мы. </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>01.02.2013, 21:17</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_364' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_364'>Я так понимаю: пока Шанцев у власти, нам ничего не "светит". Вот его мнение (ответ на вопрос журналиста):<br />
+<br />
+- Добраться из деревни в город, действительно, становится нереально. Жители Шахуньи, например, уже собирают подписи против отмены Кировской и Шахунской электричек.<br />
+<br />
+- У нас любые вопросы начинаются с подписей. Причем люди собирают их , даже  не разобравшись в ситуации. Действительно, электрички отменяются. Потому что законы железной дороги гласят: пригородный поезд  перевозит пассажиров на расстояние не больше 200 км. Поэтому наши горьковские железнодорожники доезжали до Уреня, затем перебивали документы, меняли предназначение и от Уреня как  бы ехали вновь.<br />
+<br />
+Но вы понимаете, что в налоговой инспекции тоже не чудаки работают. А им есть до этого дела: ведь если поезд  дальнего следования, то в стоимость билета включается налог на добавленную стоимость. Железная дорога в результате попадает на колоссальные штрафы - на сотни миллионов рублей. И сейчас по всей стране сейчас проходит зачистка таких вот маршрутов.<br />
+<br />
+Но мы придумали альтернативу поездам дальнего следования. Сначала следует сесть на электропоезд назначением  «Нижний Новгород-Урень», на последней станции  перейти на  соседнюю платформу , к которой через 15 минут подойдет электричка «Урень-Шахунья». Билеты на оба поезда можно будет купить в Нижнем Новгороде.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>01.02.2013, 21:22</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_365' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_365'>"Зачистка маршрутов" по всей стране... ПРЭЛЕСТНО!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>01.02.2013, 21:23</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_366' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_366'>На фоне всего этого безобразия с электричками,  оказывается, нельзя пускать и пригородные автобусы более 50 км. В Шахунском районе хотят и автобусы на Сяву и Вахтан убрать как пригородные, а сделать их междугородними, со всеми вытекающими... До указанных поселков по 60 км., там практически нет работы (особенно в п.Сява), и люди вынуждены ездить в Шахунью, а им сюрпри-и-и-и-из!(Платите как за межгород). К чему идем???? </span></p>
+<div class='rd rd2'>
+<div class='left name'>За державу обидно...</div>
+<div class='view'>02.02.2013, 02:13</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_427' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_427'>В условиях все увеличивающейся несправедливости и невозможности её достичь, все больше будут случаться и распространятся случаи самосудов. Это общее правило.<br />
+Так что не удивлюсь, если, например, группа озверевших от холода и давки студентов закидает в Урене, на пересадке, камнями/снегом окна близлежащих учреждений, имеющих отношение к власти или РЖД.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>17.03.2013, 18:17</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_511' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_511'>Полностью поддерживаю последний пост. Хотя работники  на местах ни в чем в принципе не виноваты. Если бы кто то похожий на меня оказался в момент такой акции рядом то обязательно заложил бы пару кирпичей в фундамент общественного негодования.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>05.05.2013, 12:47</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_536' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_536'>О людях здесь думают в последнюю очередь, или вообще не думают. Вопрос кому это нужно?</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>07.06.2013, 16:17</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_645' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_645'>Выход один - поправку в приказ пробивать - увеличение пригородного расстояния 250 км!! Люди, давайте каждый напишет письмо и отправит президенту или куда нужно. Обращения граждан должны рассматривать и давать ответ.Если придут тысячи писем без внимания это не останется!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Яранск</div>
+<div class='view'>21.07.2013, 07:28</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_646' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_646'>ул. Ильинка, д. 23<br />
+103132, Москва, Россия -адрес президента.<br />
+Хорошо бы примерный текст составил юрист, краткий и доходчивый и выложил на форуме.Каждый дополнит ее своей историей. Посылать лучше с уведомлением.( или по электронке -http://letters.kremlin.ru/. По федер.закону "по обращениям граждан" каждое письмо подлежит регистрации и обязательному ответу. Пишите, не бойтесь!Не молчите! Законы должны работать на благо людей.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>21.07.2013, 08:38</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_647' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_647'>http://cybergo-ru.livejournal.com/62764.html- если верить -дворец Якунина-президента РЖД.Ему на отделку не хватает, так он жалуется на минфин, что денег на социальные перевозки мало дают.Плевали они с вертолета на наши проблемы с электричками.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>21.07.2013, 10:18</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_901' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_901'>Беззащитный народ! По этому поводу предлагаю посмотреть видео, "глас народа", так сказать http://www.youtube.com/watch?v=gmgEF9nagKw (см. с 4 минуты). Все для народа, как всегда )</span></p>
+<div class='rd rd2'>
+<div class='left name'>Сергей, житель Шахунского района</div>
+<div class='view'>29.01.2014, 21:56</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_921' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_921'>Сколько не писали,а воз и ныне там.Ездить стало просто не возможно.30 лет ездили Кирова до Шахуньи и таких проблем не было.Куда всё катится,КТО ЭТО ПРИДУМАЛ,его на наше место и посмотреть какого это::</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>04.03.2014, 23:38</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_198_983' class='blok borderbot p12'>
+<p><span id='nc_commentText119_198_983'>в сергаче вообще все электрички в чувашию отменили,как будто у нас не одна страна, а разные.не мрогу съездить к родителям полгода.автобусы ходят плохо,не согласованы между собой.люди всю жизнь работали строили жд а теперь даже не имеют права ездить на электричке это роскошь!!!! </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>25.09.2014, 21:06</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><p><a href='#' id='nc_commentsReply119_198_0' onclick='nc_commentsObj119_198.Form(0); return false;'>Оставить комментарий</a></p></div></div><!-- /content -->
+			</div>
+        <!--================================ -->
+			<div class='rightcol'>
+        
+				<div class='arxiv'>
+					<h3 class='rd'>Архив новостей</h3>
+					<div class='blok0'><div id='nc_calendar_block'><table width='188' cellpadding='0' cellspacing='0' class='calend_table'><tr valign='top' class='navig_form'>
+<td align='left' class='navig_butt'>
+<img src='/netcat/modules/calendar/images/left-arrow-std.gif' onclick='nc_calendar_generate(24, 5, 2018); return false;' alt='май' title='май' />
+</td>
+<td align='center' class='navig_date'>
+<span class='month_link'><a href='/arhiv/2018/06/'>июнь</a></span>
+<span class='year_link'><a href='/arhiv/2018/'>2018</a></span>
+</td>
+<td align='right' class='navig_butt'>
+<img src='/netcat/modules/calendar/images/right-arrow-std.gif' onclick='nc_calendar_generate(24, 7, 2018); return false;' alt='июль' title='июль' />
+</td>
+</tr><tr><td colspan='3'><table cellpadding='0' cellspacing='0' width='100%' class='days_table'><tr><td align='center' class='days'>пон</td><td align='center' class='days'>втр</td><td align='center' class='days'>срд</td><td align='center' class='days'>чет</td><td align='center' class='days'>пят</td><td align='center' class='days_sun'>суб</td><td align='center' class='days_sun_right'>вск</td></tr><tr><td class='no_day'>&nbsp;</td><td class='no_day'>&nbsp;</td><td class='no_day'>&nbsp;</td><td class='no_day'>&nbsp;</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>1</td><td class='day_sun' align='center' onmouseover='this.className="mouseover_weekend"' onmouseout='this.className="day_sun"'>2</td><td class='day_sun_right' align='center' onmouseover='this.className="mouseover_weekend_s"' onmouseout='this.className="day_sun_right"'>3</td></tr><tr><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>4</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>5</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>6</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>7</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>8</td><td class='day_sun' align='center' onmouseover='this.className="mouseover_weekend"' onmouseout='this.className="day_sun"'>9</td><td class='day_sun_right' align='center' onmouseover='this.className="mouseover_weekend_s"' onmouseout='this.className="day_sun_right"'>10</td></tr><tr><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>11</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>12</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>13</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>14</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>15</td><td class='day_sun' align='center' onmouseover='this.className="mouseover_weekend"' onmouseout='this.className="day_sun"'>16</td><td class='day_sun_right' align='center' onmouseover='this.className="mouseover_weekend_s"' onmouseout='this.className="day_sun_right"'>17</td></tr><tr><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>18</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>19</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>20</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>21</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>22</td><td class='day_sun' align='center' onmouseover='this.className="mouseover_weekend"' onmouseout='this.className="day_sun"'>23</td><td class='day_curr' align='center'>24</td></tr><tr><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>25</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>26</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>27</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>28</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>29</td><td class='day_sun' align='center' onmouseover='this.className="mouseover_weekend"' onmouseout='this.className="day_sun"'>30</td><td class='no_day_sun_right'>&nbsp;</td></tr><tr><td class='no_day'>&nbsp;</td><td class='no_day'>&nbsp;</td><td class='no_day'>&nbsp;</td><td class='no_day'>&nbsp;</td><td class='no_day'>&nbsp;</td><td class='no_day_sun'>&nbsp;</td><td class='no_day_sun_right'>&nbsp;</td></tr></table></td></tr></table></div>
+<input type='hidden' id='calendar_cc' value='118' />
+<input type='hidden' id='calendar_theme' value='3' />
+<input type='hidden' id='calendar_field' value='Date' />
+<input type='hidden' id='calendar_filled' value='' />
+<input type='hidden' id='calendar_querydate' value='' />
+</div>
+				</div>
+
+
+
+				<div class='fotogal'>
+					<h3 class='rd'>фотогалерея</h3>
+					<div class='listalka'>
+                    	<div class='left' id='prev'></div>
+<div id='galery' style='float: left;'>
+
+</div>
+                        <div class='left right2' id='next'></div>
+                        <a href='/fotogalereya/'>смотреть все фотографии</a>
+                    </div>
+				</div>
+
+
+			</div>
+        <!--================================ -->
+			<div class='clear'></div>
+        
+			<div class='katalog'><h4 class='rd'>Каталог организаций</h4><ul><li><a href='/katalog-organizacii/spisok-predprijatij-avariynye/' title='Аварийные'>Аварийные (40)</a></li><li><a href='/katalog-organizacii/spisok-firm-avtotovary/' title='Автотовары'>Автотовары (882)</a></li><li><a href='/katalog-organizacii/spravochnik-firm-bezopasnost/' title='Безопасность'>Безопасность (242)</a></li><li><a href='/katalog-organizacii/informacionnaja-sistema-firm-biznes-uslugi/' title='Бизнес-услуги'>Бизнес-услуги (911)</a></li><li><a href='/katalog-organizacii/informacionnaja-sistema-predprijatij-veterinarija/' title='Ветеринария'>Ветеринария (62)</a></li><li><a href='/katalog-organizacii/spisok-kompanij-gorod/' title='Город'>Город (213)</a></li><li><a href='/katalog-organizacii/spravochnik-firm-gruzoperevozki/' title='Грузоперевозки'>Грузоперевозки (675)</a></li><li><a href='/katalog-organizacii/katalog-uchrezhdenij-kommunalnye/' title='Коммунальные'>Коммунальные (410)</a></li><li><a href='/katalog-organizacii/spisok-kompanij-meditsina/' title='Медицина'>Медицина (971)</a></li><li><a href='/katalog-organizacii/baza-dannyh-predprijatij-metally/' title='Металлы'>Металлы (345)</a></li><li><a href='/katalog-organizacii/katalog-firm-oborudovanie/' title='Оборудование'>Оборудование (1087)</a></li><li><a href='/katalog-organizacii/informacionnaja-sistema-firm-obrazovanie/' title='Образование'>Образование (359)</a></li><li><a href='/katalog-organizacii/informacionnaja-sistema-predprijatij-obuv/' title='Обувь'>Обувь (831)</a></li><li><a href='/katalog-organizacii/baza-dannyh-uchrezhdenij-ofisnaja-tehnika/' title='Офисная техника'>Офисная техника (504)</a></li><li><a href='/katalog-organizacii/spravochnik-predprijatij-poligrafija/' title='Полиграфия'>Полиграфия (545)</a></li><li><a href='/katalog-organizacii/spravochnik-kompanij-produkty-pitanija/' title='Продукты питания'>Продукты питания (395)</a></li><li><a href='/katalog-organizacii/spravochnik-organizacij-razvlechenija/' title='Развлечения'>Развлечения (524)</a></li><li><a href='/katalog-organizacii/spisok-firm-religija/' title='Религия'>Религия (97)</a></li><li><a href='/katalog-organizacii/spisok-kompanij-remont/' title='Ремонт'>Ремонт (1570)</a></li><li><a href='/katalog-organizacii/spisok-firm-svjaz/' title='Связь'>Связь (635)</a></li><li><a href='/katalog-organizacii/katalog-uchrezhdenij-spetsmagaziny/' title='Спецмагазины'>Спецмагазины (435)</a></li><li><a href='/katalog-organizacii/spisok-predprijatij-stroitelnye/' title='Строительные'>Строительные (1464)</a></li><li><a href='/katalog-organizacii/spravochnik-firm-textil/' title='Текстиль'>Текстиль (540)</a></li><li><a href='/katalog-organizacii/informacionnaja-sistema-organizacij-turizm/' title='Туризм'>Туризм (501)</a></li><li><a href='/katalog-organizacii/spisok-kompanij-furnitura/' title='Фурнитура'>Фурнитура (764)</a></li><li><a href='/katalog-organizacii/spravochnik-kompanij-hoztovary/' title='Хозтовары'>Хозтовары (524)</a></li><li><a href='/katalog-organizacii/spisok-predprijatij-elektrotehnika/' title='Электротехника'>Электротехника (464)</a></li></ul></div>
+
+
+
+
+<div style="position: fixed; bottom: 10px; right: 10px; height: 20px; width: 20px;" onclick="$('#mapPag').toggle();"></div><div id="mapPag" style="display: none; clear: both;"> <a href="/map/1.html">1</a>  <a href="/map/2.html">2</a>  <a href="/map/3.html">3</a>  <a href="/map/4.html">4</a>  <a href="/map/5.html">5</a>  <a href="/map/6.html">6</a>  <a href="/map/7.html">7</a>  <a href="/map/8.html">8</a>  <a href="/map/9.html">9</a>  <a href="/map/10.html">10</a>  <a href="/map/11.html">11</a>  <a href="/map/12.html">12</a>  <a href="/map/13.html">13</a> </div>
+<div style='text-align: left;'>
+<strong>ИНН:</strong> 5204000590<br />
+<strong>ОГРН:</strong> 1025200939763
+</div>
+
+<noindex><div class='counter'>
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click' "+
+"target=_blank><img src='//counter.yadro.ru/hit?t11.1;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров за 24"+
+" часа, посетителей за 24 часа и за сегодня' "+
+"border='0' width='88' height='31'><\/a>")
+//--></script><!--/LiveInternet-->
+</div></noindex>
+
+		</div>
+		<!--=========END=========CONTENT=========-->
+	</div>
+</div>
+        
+</body>
+</html>

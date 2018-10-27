@@ -1,0 +1,781 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<meta name='description' content='До Нижнего – с пересадкой?' />
+<title>До Нижнего – с пересадкой?</title>
+<link rel='stylesheet' href='/css/tmpl2/style.css?v=0.4' type='text/css' media='screen' />
+<link rel='stylesheet' href='/css/jquery.fancybox-1.3.4.css' type='text/css' media='screen' />
+<style type='text/css'>
+.calend_table {
+  border:1px solid #999999;
+  background:#FFFFFF;
+  font-family:Verdana;
+  font-size:10px;
+  color:#333333;
+}
+
+.calend_table td {
+  vertical-align:middle !important;
+  color:#333333;
+}
+
+.days_table {
+  font-family:Verdana;
+  font-size:10px;
+}
+.days, .days_sun, .days_sun_right {
+  background:#999999;
+  color:#FFFFFF !important;
+  width:35px;
+  height:25px;
+}
+.day, .no_day {
+  background: #F9F9F9;
+  margin-top:10px;
+  padding:0;
+}
+.day_curr {
+  background: #999999;
+  color:#FFFFFF !important;
+  font-weight:bold;
+  margin-top:10px;
+  padding:0;
+}
+.day_sun, .no_day_sun, .day_sun_right, .no_day_sun_right{
+  background:#EEEEEE;
+}
+
+.no_day, .no_day_sun, .no_day_sun_right {
+  color:#FFFFFF !important;
+  text-align:center;
+}
+
+.days, .days_sun, .day, .no_day, .day_curr, .day_sun, .no_day_sun{
+  border-top: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+  height:25px;
+}
+.day_sun_right, .no_day_sun_right, .days_sun_right {
+  border-top:1px solid #FFFFFF;
+  border-right:0;
+}
+
+.navig_form td {
+  background:#F9F9F9;
+  color:#333333;
+  padding:3px;
+  font-weight:bold;
+  font-size:12px;
+  height:25px;
+}
+td.navig_butt {
+  padding:0 7px;
+  cursor:pointer;
+}
+
+.mouseover {
+  background:#EEEEEE;
+  color:#333333;
+  border-top: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+}
+
+.mouseover_weekend, .mouseover_weekend_s {
+  background:#F9F9F9;
+  color:#333333;
+  border-top: 1px solid #FFFFFF;
+  border-right: 1px solid #FFFFFF;
+}
+
+.mouseover_weekend_s {
+  border-right:none;
+}
+
+.month_link {
+  text-decoration:underline;
+  color:#333333;
+  cursor:pointer;
+  padding:0 5px;
+}
+
+.year_link {
+  text-decoration:underline;
+  color:#333333;
+  cursor:pointer;
+  padding:0 5px;
+}
+a, a:hover {
+  color:#333333;
+  text-decoration:underline;
+}</style>
+<script type='text/javascript'>var SUB_FOLDER = '', NETCAT_PATH = '/netcat/';</script>
+<script type='text/javascript' src='/netcat/admin/js/lib.js'></script>
+<script type='text/javascript' src='/netcat/modules/calendar/calendar.js'></script>
+
+<script type='text/javascript' src='/js/jquery.min.js'></script>
+<script type='text/javascript' src='/js/jquery.cycle.js'></script>
+<script type='text/javascript' src='/js/jquery.fancybox-1.3.4.pack.js'></script>
+<script type='text/javascript'>
+$(document).ready(function() {
+  $('#galery').cycle({ 
+    fx:      'fade',
+    next: '#next',
+    prev: '#prev'
+  });
+});
+</script>
+</head>
+<body>
+<div id='wrapper'>
+	<div id='all'>
+	<!--=========HEADER=========-->
+		<div id='header'>
+<span class='title'>Шахунская газета</span>
+<span class='date_h'>24 июня 2018 года, воскресенье</span>
+<div class='topmenu'>
+		<div class='pages2-wrap'>
+			<div class='pages2'>
+			<ul><li><a href='/' title='Главная'>Главная</a></li><li><a href='/karta-saita/' title='Карта сайта'>Карта сайта</a></li><li><a href='/kontakty/' title='Контакты'>Контакты</a></li><li><a href='/redakciya/' title='Редакция'>Редакция</a></li><li><a href='/reklama/' title='Реклама'>Реклама</a></li><li><a href='/informer/' title='Информер новостей'>Информер новостей</a></li><li><a href='/siterating/' title='Рейтинг сайтов'>Рейтинг сайтов</a></li></ul>
+			<div class='clear'></div>
+			</div>
+		</div>
+</div>
+				<div class='logo'><a href='/' title='Знамя труда'></a></div>
+			<div class='bloktop'>
+				
+				
+				
+				<div class='poisk0'>
+<form action='/search/' method='get'>
+ <input type='hidden' name='action' value='index' />
+<input type='text' name='text' onblur="if (this.value == '') this.value = 'Поиск...';" onfocus="if (this.value == 'Поиск...') this.value = '';" value='Поиск...' class='edit' />
+	<input type='image' src='/images/tmpl2/poisk.png' class='button' />
+</form>
+				</div>
+				
+			</div> 
+		</div>
+	<!--=========END=========HEADER=========-->
+		
+	<!--=========CONTENT=========-->
+		<div id='content'>
+			<div class='leftcol'>
+				<ul class='leftmenu'><li><a href='/novosti/' title='Новости'>Новости</a></li><li><a href='/obshestvo/' title='Общество'>Общество</a></li><li><a href='/ekonomika/' title='Экономика'>Экономика</a></li><li><a href='/politika/' title='Политика'>Политика</a></li><li><a href='/sport/' title='Спорт'>Спорт</a></li><li><a href='/obrazovanie/' title='Образование'>Образование</a></li><li><a href='/selskaja-zhizn/' title='Сельская жизнь'>Сельская жизнь</a></li><li><a href='/zakon/' title='Закон и порядок'>Закон и порядок</a></li><li><a href='/kultura/' title='Культура'>Культура</a></li><li><a href='/fotogalereya/' title='Фотогалерея'>Фотогалерея</a></li><li><a href='/blogs/' title='Блоги'>Блоги</a></li><li><a href='/katalog-saitov/' title='Каталог сайтов'>Каталог сайтов</a></li></ul>
+				
+				<div class='doska'>
+					<h2 class='rd'>Объявления</h2>
+					<ul>
+						<li class='prodam'><a href='/doska-objavlenii/prodam/'>Продам</a></li>
+						<li class='kypit'><a href='/doska-objavlenii/kuply/'>Куплю</a></li>
+						<li class='yslygi'><a href='/doska-objavlenii/uslugi/'>Услуги</a></li>
+						<li class='rabota'><a href='/doska-objavlenii/rabota/'>Работа</a></li>
+						<li class='raznoe'><a href='/doska-objavlenii/raznoe/'>Разное</a></li>
+						<li class='raznoe'><a href='/doska-objavlenii/avto-adv/'>Авто-объявления</a></li>
+					</ul>
+				</div>
+
+
+				
+<div class='interv'><h3 class='rd'>Интервью</h3><ul><li><a href='/obrazovanie/traditsii-i-novatorstvo-16-09-2017.html'>Традиции и новаторство</a></li><li><a href='/obshestvo/reorganizatsiya-so-znakom-plyus-09-09-2017.html'>Реорганизация со знаком плюс</a></li><li><a href='/politika/test-na-aktivnost-i-zabotu-05-09-2017.html'>Тест на активность и заботу</a></li><li><a href='/politika/uverenno-dvigayas-vpered-05-08-2017.html'>Уверенно двигаясь вперед</a></li><li><a href='/selskaja-zhizn/operatsiya-potrebkooperatsiya-18-04-2017.html'>Операция – потребкооперация</a></li><li><a href='/politika/glavnoe-otvetstvennost-18-04-2017.html'>Главное – ответственность</a></li><li><a href='/politika/praymeriz-po-novomu-11-04-2017.html'>Праймериз по-новому</a></li><li><a href='/politika/moratoriy-ne-zamorozka-28-03-2017.html'>"Мораторий — не заморозка"</a></li></ul></div>
+
+
+        
+			</div>
+             
+        <!--================================ -->
+			<div class='meedcol'>
+<div class='pyt'><a href='/'>Главная</a> <img src='/images/tmpl2/pyt.png' /> <a href='/novosti/'>Новости</a> <img src='/images/tmpl2/pyt.png' /> До Нижнего – с пересадкой?</div>
+<!-- content -->
+<div class='date'>22.12.2012 </div>
+<div class='view'>Просмотров: 2305, комментариев: 50</div>
+<div class='clear'></div>
+<h1 class='zag'>До Нижнего – с пересадкой?</h1>
+<img src='/files/DSC_0622_0.jpg ' alt='' title='' class='margin' />
+<p style="text-align: justify;">&ndash; Вы слышали, что на дороге надумали, &ndash; остановила меня на перроне знакомая женщина, работник железнодорожного вокзала. &ndash; С начала декабря добираться до Нижнего будем на перекладных. <br />
+&ndash; Это как? &ndash; отреагировала я, несколько опешив от неожиданной новости. <br />
+&ndash; А так, &ndash; продолжила знакомая, доберемся до Уреня, а там пересядем на другую электричку, которую придется ждать. Потом уж и дальше отправимся. <br />
+Узнать более достоверную информацию оказалось непросто. Начальник участка Шерстки-Ветлужская Волго-Вятской пригородной пассажирской компании Е.С. Солнышкова от комментариев отказалась, сказав лишь, что это может произойти в любой момент. Слухи подтвердила начальник вокзала станции Шахунья Е.Ф.Сальникова. Она пояснила, что Шахунья, находясь от Нижнего Новгорода в 240 км, не входит в установленные границы (200 км) пригородной зоны. <br />
+Неплохой повод для очередного эксперимента над шахунцами?  <br />
+Трудно себе представить, как, скажем, студенты с огромными сумками, заполнив электричку до отказа, будут вынуждены уже через 40 минут пути сойти в Урене, а затем снова попытаться попасть в переполненный состав. <br />
+Среди пассажиров встречаются не только командировочные, но и больные, которые спешат в областные клиники к определенному времени. <br />
+Нужно ли объяснять, на какие неудобства будут обречены шахунцы, если руководство Волго-Вятской пригородной компании все-таки примет решение отменить прямое движение электропоездов?!</p>
+
+<div class='clear'></div>
+
+<div class='com'>Комментарии</div><div id='comments'><script src='/netcat/modules/comments/comments.js' type='text/javascript' language='JavaScript'></script>
+<script language='JavaScript' type='text/javascript' src='/netcat/admin/js/bbcode.js'></script>
+<script type='text/javascript'>
+nc_commentsObj119_270 = new nc_Comments({
+        'message_cc':'119',
+        'message_id':'270',
+        'template_id':'0',
+        'add_block':escape("<div class=\'add_comment\'><div class=\'c_text\'><span>Ваше имя:</span><br /><input type=\'text\' name=\'author\' id=\'nc_commentUserName\' value=\'Гость\' /></div><div class=\'bb_code\'>    <select class=\'nc_bbcode_bar_size\' onChange=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[SIZE=\' + this.value + \']\', \'[/SIZE]\'); this.selectedIndex=0;\"  name=\'bb_fontsize\' title=\'Размер шрифта\' onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Размер шрифта: [SIZE=8]маленький текст[/SIZE]\');\"><option value=\'\'>-- размер --<option value=\'8\'>8px<option value=\'10\'>10px<option value=\'12\'>12px<option value=\'14\'>14px<option value=\'16\'>16px<option value=\'18\'>18px<option value=\'20\'>20px<option value=\'22\'>22px<option value=\'24\'>24px</select><a href=\'#\' onClick=\"show_color_buttons(\'%TEXTAREA_ID\'); return false;\" id=\'nc_bbcode_color_button_%TEXTAREA_ID\' onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Цвет шрифта: [COLOR=FF0000]текст[/COLOR]\');\"><img src=\'/images/i_color.gif\' alt=\'Цвет шрифта\' class=\'nc_bbcode_wicon\'></a><a href=\'#\' onClick=\"show_smile_buttons(\'%TEXTAREA_ID\'); return false;\" id=\'nc_bbcode_smile_button_%TEXTAREA_ID\' onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Вставить смайлик\');\"><img src=\'/images/i_smile.gif\' alt=\'Смайлы\' class=\'nc_bbcode_wicon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[B]\',\'[/B]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Жирный шрифт: [B]текст[/B]\');\"><img src=\'/images/i_bold.gif\' alt=\'Жирный\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[I]\',\'[/I]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Наклонный шрифт: [I]текст[/I]\');\"><img src=\'/images/i_italy.gif\' alt=\'Курсив\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[U]\',\'[/U]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Подчёркнутый шрифт: [U]текст[/U]\');\"><img src=\'/images/i_underline.gif\' alt=\'Подчёркнутый\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[S]\',\'[/S]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Зачёркнутый шрифт: [S]текст[/S]\');\"><img src=\'/images/i_strike.gif\' alt=\'Зачёркнутый\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[LIST]\',\'[/LIST]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Элемент списка: [LIST]текст[/LIST]\');\"><img src=\'/images/i_list.gif\' alt=\'Элемент списка\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[QUOTE]\',\'[/QUOTE]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Цитата: [QUOTE]текст[/QUOTE]\');\"><img src=\'/images/i_quote.gif\' alt=\'Цитата\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[CODE]\',\'[/CODE]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Код: [CODE]код[/CODE]\');\"><img src=\'/images/i_code.gif\' alt=\'Код\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[IMG=\\\'http://\\\']\',\'\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Вставить картинку: [IMG=http://адрес_картинки]\');\"><img src=\'/images/i_picture.gif\' alt=\'Изображение\' class=\'nc_bbcode_icon\'></a>  <input type=\'text\' name=\'bbcode_helpbox_%TEXTAREA_ID\' value=\'Подсказка: выше расположены кнопки быстрого форматирования\' class=\'nc_bbcode_helpbox\' />    </div><div id=\'color_buttons_%TEXTAREA_ID\' class=\'nc_bbcode_colors\' style=\'display:none;\'><div class=\'nc_bbcode_color_top\'><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#770000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=770000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#BB0000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=BB0000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#FF0000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FF0000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#007700;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=007700]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00BB00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00BB00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00FF00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00FF00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#000077;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=000077]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#0000BB;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=0000BB]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#0000FF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=0000FF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#000000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=000000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /></div><div class=\'nc_bbcode_color\'><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#779900;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=779900]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#BB9900;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=BB9900]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#FF9900;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FF9900]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#007799;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=007799]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00BB99;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00BB99]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00FF99;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00FF99]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#990077;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=990077]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#9900BB;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=9900BB]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#9900FF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=9900FF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color_white\' style=\'background:#FFFFFF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FFFFFF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /></div><div class=\'nc_bbcode_color\'><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#77CC00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=77CC00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#BBCC00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=BBCC00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#FFCC00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FFCC00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#0077CC;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=0077CC]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00BBCC;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00BBCC]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00FFCC;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00FFCC]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#CC0077;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=CC0077]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#CC00BB;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=CC00BB]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#CC00FF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=CC00FF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#999999;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=999999]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /></div></div><div id=\'smile_buttons_%TEXTAREA_ID\' class=\'nc_bbcode_smiles\' style=\'display:none;\'><div class=\'nc_bbcode_smile_top\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':)\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/smile.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':D\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/bigsmile.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':grin:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/grin.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':laugh:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/laugh.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':proud:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/proud.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':yes:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/yes.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':wink:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/wink.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':cool:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/cool.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':eyes:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/rolleyes.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':lookdown:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/lookdown.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':(\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/sad.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':spy:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/suspicious.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':angry:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/angry.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':bad:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/shakefist.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':stern:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/stern.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':kiss:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/kiss.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':think:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/think.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':yep:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/thumbsup.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':sick:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/sick.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':no:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/no.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':cantlook:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/cantlook.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':doh:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/doh.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':out:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/knockedout.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':eyeup:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/eyeup.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':shh:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/shh.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':evil:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/evil.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':upset:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/upset.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':undecided:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/undecided.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':cry:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/cry.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':unsure:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/unsure.gif) no-repeat center;\' /></div></div><div class=\'c_text\'><span>Текст комментария:</span><br /><textarea id=\'%TEXTAREA_ID\' name=\'%TEXTAREA_ID\' cols=\'50\' rows=\'6\'>%TEXTAREA_VALUE</textarea></div><div class=\'captcha\'><input type=\'hidden\' name=\'nc_captcha_hash\' value=\'7c0b27a284956a111336522d925c5379\' /><img name=\'nc_captcha_img\' src=\'/netcat/modules/captcha/img.php?code=7c0b27a284956a111336522d925c5379\' /><br /><br />Введите код: <input type=\'text\' name=\'nc_captcha_code\' size=\'6\' value=\'\'></div><button id=\'%SUBMIT_BUTTON_ID\' name=\'%SUBMIT_BUTTON_ID\'>Сохранить</button> <button onclick=\'%CANCEL_BUTTON_ACTION\' id=\'%CANCEL_BUTTON_ID\' name=\'%CANCEL_BUTTON_ID\'>Отменить</button></div>"),
+        'edit_block':escape("<div class=\'add_comment\'><div class=\'bb_code\'>    <select class=\'nc_bbcode_bar_size\' onChange=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[SIZE=\' + this.value + \']\', \'[/SIZE]\'); this.selectedIndex=0;\"  name=\'bb_fontsize\' title=\'Размер шрифта\' onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Размер шрифта: [SIZE=8]маленький текст[/SIZE]\');\"><option value=\'\'>-- размер --<option value=\'8\'>8px<option value=\'10\'>10px<option value=\'12\'>12px<option value=\'14\'>14px<option value=\'16\'>16px<option value=\'18\'>18px<option value=\'20\'>20px<option value=\'22\'>22px<option value=\'24\'>24px</select><a href=\'#\' onClick=\"show_color_buttons(\'%TEXTAREA_ID\'); return false;\" id=\'nc_bbcode_color_button_%TEXTAREA_ID\' onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Цвет шрифта: [COLOR=FF0000]текст[/COLOR]\');\"><img src=\'/images/i_color.gif\' alt=\'Цвет шрифта\' class=\'nc_bbcode_wicon\'></a><a href=\'#\' onClick=\"show_smile_buttons(\'%TEXTAREA_ID\'); return false;\" id=\'nc_bbcode_smile_button_%TEXTAREA_ID\' onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Вставить смайлик\');\"><img src=\'/images/i_smile.gif\' alt=\'Смайлы\' class=\'nc_bbcode_wicon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[B]\',\'[/B]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Жирный шрифт: [B]текст[/B]\');\"><img src=\'/images/i_bold.gif\' alt=\'Жирный\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[I]\',\'[/I]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Наклонный шрифт: [I]текст[/I]\');\"><img src=\'/images/i_italy.gif\' alt=\'Курсив\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[U]\',\'[/U]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Подчёркнутый шрифт: [U]текст[/U]\');\"><img src=\'/images/i_underline.gif\' alt=\'Подчёркнутый\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[S]\',\'[/S]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Зачёркнутый шрифт: [S]текст[/S]\');\"><img src=\'/images/i_strike.gif\' alt=\'Зачёркнутый\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[LIST]\',\'[/LIST]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Элемент списка: [LIST]текст[/LIST]\');\"><img src=\'/images/i_list.gif\' alt=\'Элемент списка\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[QUOTE]\',\'[/QUOTE]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Цитата: [QUOTE]текст[/QUOTE]\');\"><img src=\'/images/i_quote.gif\' alt=\'Цитата\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[CODE]\',\'[/CODE]\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Код: [CODE]код[/CODE]\');\"><img src=\'/images/i_code.gif\' alt=\'Код\' class=\'nc_bbcode_icon\'></a><a href=\'#\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'[IMG=\\\'http://\\\']\',\'\'); return false;\" onMouseOver=\"show_bbcode_tips(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\',\'Вставить картинку: [IMG=http://адрес_картинки]\');\"><img src=\'/images/i_picture.gif\' alt=\'Изображение\' class=\'nc_bbcode_icon\'></a>  <input type=\'text\' name=\'bbcode_helpbox_%TEXTAREA_ID\' value=\'Подсказка: выше расположены кнопки быстрого форматирования\' class=\'nc_bbcode_helpbox\' />    </div><div id=\'color_buttons_%TEXTAREA_ID\' class=\'nc_bbcode_colors\' style=\'display:none;\'><div class=\'nc_bbcode_color_top\'><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#770000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=770000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#BB0000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=BB0000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#FF0000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FF0000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#007700;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=007700]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00BB00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00BB00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00FF00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00FF00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#000077;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=000077]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#0000BB;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=0000BB]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#0000FF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=0000FF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#000000;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=000000]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /></div><div class=\'nc_bbcode_color\'><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#779900;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=779900]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#BB9900;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=BB9900]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#FF9900;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FF9900]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#007799;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=007799]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00BB99;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00BB99]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00FF99;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00FF99]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#990077;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=990077]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#9900BB;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=9900BB]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#9900FF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=9900FF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color_white\' style=\'background:#FFFFFF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FFFFFF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /></div><div class=\'nc_bbcode_color\'><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#77CC00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=77CC00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#BBCC00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=BBCC00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#FFCC00;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=FFCC00]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#0077CC;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=0077CC]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00BBCC;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00BBCC]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#00FFCC;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=00FFCC]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#CC0077;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=CC0077]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#CC00BB;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=CC00BB]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#CC00FF;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=CC00FF]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /><input type=\'button\' value=\'\' class=\'nc_bbcode_color\' style=\'background:#999999;\' onClick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \'[COLOR=999999]\', \'[/COLOR]\'); show_color_buttons(\'%TEXTAREA_ID\');\" /></div></div><div id=\'smile_buttons_%TEXTAREA_ID\' class=\'nc_bbcode_smiles\' style=\'display:none;\'><div class=\'nc_bbcode_smile_top\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':)\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/smile.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':D\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/bigsmile.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':grin:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/grin.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':laugh:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/laugh.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':proud:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/proud.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':yes:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/yes.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':wink:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/wink.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':cool:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/cool.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':eyes:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/rolleyes.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':lookdown:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/lookdown.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':(\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/sad.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':spy:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/suspicious.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':angry:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/angry.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':bad:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/shakefist.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':stern:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/stern.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':kiss:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/kiss.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':think:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/think.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':yep:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/thumbsup.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':sick:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/sick.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':no:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/no.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':cantlook:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/cantlook.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':doh:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/doh.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':out:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/knockedout.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':eyeup:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/eyeup.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':shh:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/shh.gif) no-repeat center;\' /></div><div class=\'nc_bbcode_smile\'><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':evil:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/evil.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':upset:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/upset.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':undecided:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/undecided.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':cry:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/cry.gif) no-repeat center;\' /><input type=\'button\' value=\'\' onclick=\"insert_bbcode(\'this\',\'%FORM_ID\',\'%TEXTAREA_ID\', \':unsure:\', \'\'); show_smile_buttons(\'%TEXTAREA_ID\');\" class=\'nc_bbcode_smile\' style=\'background:url(/images/smiles/unsure.gif) no-repeat center;\' /></div></div><div class=\'c_text\'><span>Текст комментария:</span><br /><textarea id=\'%TEXTAREA_ID\' name=\'%TEXTAREA_ID\' cols=\'50\' rows=\'6\'>%TEXTAREA_VALUE</textarea></div><button id=\'%SUBMIT_BUTTON_ID\' name=\'%SUBMIT_BUTTON_ID\'>Обновить</button> <button onclick=\'%CANCEL_BUTTON_ACTION\' id=\'%CANCEL_BUTTON_ID\' name=\'%CANCEL_BUTTON_ID\'>Отменить</button></div>"),
+        'delete_block':escape("<div style=\'margin:5px 0;\'><button id=\'%SUBMIT_BUTTON_ID\' name=\'%SUBMIT_BUTTON_ID\'>Удалить</button> <button onclick=\'%CANCEL_BUTTON_ACTION\' id=\'%CANCEL_BUTTON_ID\' name=\'%CANCEL_BUTTON_ID\'>Отменить</button></div>"),
+        'last_updated':'1529841723',
+        'MODULE_PATH':'/netcat/modules/comments/',
+        'LOADING':'Подождите, идёт загрузка...',
+        'SUBSCRIBE_TO_ALL':'подписаться на все комментарии',
+        'UNSUBSCRIBE_FROM_ALL':'отписаться от всех комментариев',
+        'edit_access':'disable',
+        'delete_access':'disable',
+        'all_comments_id':[46, 56, 57, 59, 60, 64, 67, 72, 73, 79, 87, 92, 99, 112, 117, 119, 120, 128, 129, 130, 132, 133, 135, 136, 137, 138, 140, 145, 146, 151, 156, 161, 165, 177, 197, 208, 223, 226, 228, 238, 255, 261, 264, 277, 321, 331, 335, 343, 363, 452]
+      });
+</script>
+<div id='nc_commentID119_270_0'><div id='nc_commentID119_270_46' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_46'>да они что там совсем офигели тут и так 4 часа таращиться пол дня теряешь,а так сутки придется ехать до Нижнего?бараны!!!<img src='/images/smiles/shakefist.gif' alt='грозится' class='nc_bbcode_smile_in_text'></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 14:18</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_56' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_56'>в шоке мля!!!!!!!!!!!!<img src='/images/smiles/angry.gif' alt='сердитый' class='nc_bbcode_smile_in_text'></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 16:31</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_57' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_57'>они там че совсем совесть потеряли!!!??? и так когда в Нижний приезжаешь еле ноги волочишь,а тут так совсем ползти будешь!!!!не это не дело надо что то менять!я решительно против всей этой авантюры!!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>аноним...</div>
+<div class='view'>14.12.2012, 16:36</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_59' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_59'><span style='font-size:8px' class='nc_bbcode_size'><img src='/images/smiles/laugh.gif' alt='смех' class='nc_bbcode_smile_in_text'> это просто смешно!!! Дать Якунину В.И.(Презедент РЖД) маленького Грудничка с которыми люди тащатся в Нижний по причине того что у нас тут нет медицины.Студенческие сумки с продовольствием на неделю и вот все эти прикольчики вручить ему в руки и пускай катаеться с пересадками!!!абсурд!!!лучше бы сделали платформы повыше чтоб люди пожилого возраста могли нормально залазить в поезда а не выдумывали как бабки отмыть!!! я лично отказываюсь ездить этим сообщение пока не отменят этот прикольчик!!!а Якунина надо в работники ЧОП пусть ходит вокзалы охраняет раз со своими обязанностями не справляеться.</span></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 16:57</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_60' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_60'><span style='font-size:12px' class='nc_bbcode_size'></span><img src='/images/smiles/laugh.gif' alt='смех' class='nc_bbcode_smile_in_text'> это просто смешно!!! Дать Якунину В.И.(Презедент РЖД) маленького Грудничка с которыми люди тащатся в Нижний по причине того что у нас тут нет медицины.Студенческие сумки с продовольствием на неделю и вот все эти прикольчики вручить ему в руки и пускай катаеться с пересадками!!!абсурд!!!лучше бы сделали платформы повыше чтоб люди пожилого возраста могли нормально залазить в поезда а не выдумывали как бабки отмыть!!! я лично отказываюсь ездить этим сообщение пока не отменят этот прикольчик!!!а Якунина надо в работники ЧОП пусть ходит вокзалы охраняет раз со своими обязанностями не справляеться.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 16:59</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_64' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_64'>это просто издевательство над людьми, как можно отменить электричку до нижнего? если столько народу ездят на ней. МЫ ПРОТИВ ЭТОГО!!!!!<img src='/images/smiles/shakefist.gif' alt='грозится' class='nc_bbcode_smile_in_text'></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 17:49</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_67' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_67'>в карелии тоже отменяют поезда.уехать невозможно-билетов нет,а им все невыгодно.выгодно только карманы набивать а на народ плевать-за быдло держат</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 18:30</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_72' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_72'>Вобще уже охренели, или зажрались.Сталина на них нет!?!!! И как в 30-е ,поехал бы он без чемодана, лес рубить в районе Магадана.<br />
+</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 19:34</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_73' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_73'>А еще интересно,кто этот 1%??????//</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 19:37</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_79' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_79'>шахунья болтается как г.... в проруби не в киров не в нижний . А нашему руководству на все наплевать .</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 20:34</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_87' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_87'>Задрали поселки Вахтан и Сява, теперь взялись драть Шахунью.Спасибо Партии.В районе люди что-ли живут! И до Уреня очередь дойдет.Валят всю периферию.<br />
+<br />
+</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 21:34</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_92' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_92'>Просто всем насрать на нас!!!  Лишь бы мне было хорошо, вот такое мышление нас и погубит....</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>14.12.2012, 22:23</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_99' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_99'>Перевозчикам наплевать на комфорт ( которым и так не блещут- в вагонах холод и грязь, чтобы сесть надо брать место с боем) и безопасность пассажиров, они думают лишь о своей выгоде. Студентам действительно неудобно будет ездить домой, а старикам, больным, семьям с детьми ? Если интервал между электричками 15 минут, в вокзал смысла нет идти, будут замерзать на платформе. а потом штурмовать вагоны, затаптывая слабейших... Руководство не думает о безопасности пассажиров и возможности травм, им суды нужны и огласка на всю стану. Пользуйтесь возможностями электронного правительства, обращайтесь в верха, а так же подключайте депутатов.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 00:23</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_112' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_112'>Интересно, куда смотрят местные власти? Ах, да, они же на электричках ни куда не ездят. Все больше на авто. Им бы необходимо объединиться с администрацией Тоншаевского района, собирать подписи и письмом направить президенту Путину. Я думаю, набралось бы тысячи подписей. Так ведь боятся за свои места... </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 11:55</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_117' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_117'>Уже все что можно в Урень перенесли, теперь и электирчки не будет. Такими темпами Шахунья станет поселком и так уж еле дышит, причем не рабочим поселком, т.к. все предприятия позакрывали, а просто захолустьем. Что делают эти безумные властители. Просто безобразие.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 14:30</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_119' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_119'>Совсем с ума сошли,и так с огромными сумка еле сядешь,а тут еще с пересадкой да в мороз 35 градусный,а если с ребенком грудным и в мороз.Совсем  о нас не думают только о себе!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 17:14</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_120' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_120'>СКОРО ВООБЩЕ ПЕШКОМ ПРИДЕТСЯ ДОБИРАТЬСЯ:АВТО-ДОРОГА УБИТА,ПРОБКИ ПЕРЕД Н.НОВГОРОДОМ 7 ЧАСОВ ВМЕСТО 3 ПРИХОДИТСЯ ЕХАТЬ,ПОСЛЕДНЮЮ ВОЗМОЖНОСТЬ ДОЕХАТЬ БЕСПРЕПЯТСТВЕННО НА ЭЛЕКТРИЧКЕ ХОТЬ И 4 ЧАСА И ТО КАКИЕ ТО ПИ..РЫ РЕШИЛИ "ПОРАДОВАТЬ" ПЕРЕД НОВЫМ ГОДОМ ШАХУНЦЕВ,ОТМЕНЯЮТ<span style='font-size:16px' class='nc_bbcode_size'><span style='color:#FF0000;' class='nc_bbcode_color'><img src='/images/smiles/doh.gif' alt='ооо' class='nc_bbcode_smile_in_text'></span></span> ВОВА ПУТИН </span></p>
+<div class='rd rd2'>
+<div class='left name'>АЛЕКСАНДР</div>
+<div class='view'>15.12.2012, 19:05</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_128' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_128'>Ай, да молодцы  наша власть! Сначала сокращают время в пути: новые поезда скоростные пускают, в грудь себя бьют: вот какие мы! А потом отбирают у людей даже самое необходимое! А что премию получили за нововведение, дали немного людям попользоваться. А потом забирают, чего с нами цацкаться?</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 22:11</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_129' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_129'>Не только шахунцам неудобно такое путешествие. Я часто в Шахунью по делам приезжаю. А теперь, вообще, одним днем не управишься.Какая уж тут экономия рабочего времени. Придется командировку на 3 дня оформлять.<br />
+А где в Урене узловую делать, там же места только на два пути. И те в канавке.Или узловая только для электрички? </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 22:37</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_130' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_130'>Значит до Дзержинска электрички пускать не лень каждые 20 минут, и это в порядке вещей!!!!просто нет слов...Совсем обнаглели, а куда наши местные власти смотрят, всем наплевать на судьбу города вообще, я промолчу уже про чиновников свыше которым Шахунья и  район вообще безразличны во всех отношениях и проблемах, все что можно уже разрушили, остается дело за <br />
+малым и будет вымирающий городишка.Больно и обидно за свою Родину...</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>15.12.2012, 22:48</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_132' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_132'>В России две беды - дураки, издающие приказ, и дороги</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>16.12.2012, 00:17</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_133' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_133'>Обидно за Шахунью!!! Обидно за людей! Или шахунцев уже людьми не считают??? Предлагаю выходить на пути и устраивать забастовку!!! Видимо, только так сейчас можно добиться справедливости в нашем государстве!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Мария</div>
+<div class='view'>16.12.2012, 00:28</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_135' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_135'>Да только и остоеться садиться на пути разбивать полатки и ждать пока не отменят свой дебильный указ!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>16.12.2012, 02:45</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_136' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_136'><B>Самое интересное(ОБИДНОЕ) что нашей Шахунской администрации глубоко НАПЛЕВАТЬ на это и на свой народ!!! Вот в Тоншаево в каждом магозине листовки лежат с анкетами для голосования!!![<span style='font-size:20px' class='nc_bbcode_size'></span>/B]</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>16.12.2012, 02:49</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_137' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_137'>че сума сошли чтоли??? Вы о студентах то подумали???? <br />
+</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>16.12.2012, 11:13</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_138' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_138'>"Е.Ф.Сальникова. Она пояснила, что Шахунья, находясь от Нижнего Новгорода в 240 км, не входит в установленные границы (200 км) пригородной зоны."Вот это вообще смешно!Ничего не могли придумать!Всегда Шахунья входила в пригородную зону,а сейчас вдруг не входит!МЫ ПРОТИВ ЭТОГО!!!!!!!!!!<br />
+</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>16.12.2012, 11:28</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_140' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_140'>конечно, кто часто ездит, это существенно. Ну а мое мнение, что те "бомжевозки" которые ездят в Шахунью, не соответствуют человеческому достоинству. Я уже давно зарекся ездить на этих электричках, только на авто. Вот переезды в Шахунье это да! Теряю ежедневно не менее часа на этом долбанном переезде. Предлагаю поднять и этот вопрос. Собрать подписи, чтобы проложили тонель или построили мост через эту долбанную железную дорогу!<br />
+</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>16.12.2012, 14:26</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_145' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_145'>Тупоголовые!!! что за бред вообще, подумали бы о студентах!!!!! Они и так мотаются туда сюда, да и дома не бывают совсем, а тут ещё в урене столько времени проводить, на дорогу тратить 6 часов!!!<br />
+неужели Станция Шахунья не в состоянии до нижнего электричку гонять????? что ещё придумаете??? смысл в чём??</span></p>
+<div class='rd rd2'>
+<div class='left name'>Барабашка</div>
+<div class='view'>16.12.2012, 20:39</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_146' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_146'>мне интересно, как Шахунья, которая "не в ходит" в пригородную зону может тогда являться частью нижегородской области? кто это может объяснить? вот что то я этого не понимаю...</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>16.12.2012, 20:55</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_151' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_151'>Уважаемые господа, если вас так можно назвать, руководители г. Шахунья, доколе Вы будете молчать и свои карманы набивать? Как вы думаете относиться к граждана города? Вы нас уже в такое положение поставили, долго будите молчать по  поводу отмены электропоездов? Если у вас все в шоколаде, так не надо думать, что и у граждан все хорошо. Вы знате сколько людей в районе  с онкологие? Так поинтересуйтесь?  И все они едут в Нижний,  потомиу что должного лечения нет у нас в больнице. Вы им кислодор перекроите. А от этого заболевания никто не может дать гарантию. Подумайте о людях,  шахунцы хорошие и терпеливые, но и у них закончится скоро терпение.  Имейте совесть и сострадание если вы ее еще не потеряли.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>17.12.2012, 12:49</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_156' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_156'>Все решения принимаются наверху, а не в администрации Нижегородской области. Железная дорога уже 10 лет как частная ( РЖД-то ведь ОАО). Поэтому они и творят всё, чтоб заставить людей силком пользоваться поездами дальнего следования и выжать из них побольше денег</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>17.12.2012, 18:09</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_161' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_161'><B>Кто пишет что 4 часа ехать надо было, то можно ездить на эксперссе. на нем всегда много народа, Киров- Н Н, но к сожалению его тоже отменят, вот кто до кирова ездит, для тех действительно беда....раньше ездили студенты и старики за 50% и 6 часов, а сейчас будут ездить за 1000р на поезде... Вот их реально жалко, а вам 15минут подождать следющую электричку не так уж и трудно..</B></span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>17.12.2012, 22:26</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_165' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_165'>«Электрички отменяются» - такие объявления накануне появились на вокзалах всех станций по веткам Владимир - Тумская, Муром - Волосатая, Ковров - Селиваново, Муром - Вековка и Муром - Навашино. Без железнодорожного сообщения могли одновременно остаться около 1,5 тысячи человек. И это только по подсчетам самого перевозчика, чья статистика формально исходит из количества билетов, покупаемых в кассах, и обычно занижена.<br />
+<br />
+ На деле же несколько тысяч жителей региона в один момент оказались на пороге глобального бедствия. Отмена электричек грозила подорвать весь их налаженный быт, ведь с помощью этого транспорта жители маленьких «станционных» поселков каждый день добираются в районные центры на работу, учебу, в больницы, административные учреждения.<br />
+ ЭТО ВЫПИСКА С САЙТА ГОРОДА МУРОМА. ЯКУНИН ВЕДЕТ НАСТУПЛЕНИЕ ПО ВСЕМ ФРОНТАМ.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 10:32</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_177' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_177'>да ну нафиг!!! фигню придумали какуюто, а как пожилые люди ездить будут, так 4 часа да тут еще и эта пересадка!!!!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>18.12.2012, 15:50</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_197' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_197'>гнобят день ото дня, голосуйте дальше за е*ную россию</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>19.12.2012, 00:55</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_208' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_208'>Самое печальное то, что все наши крики и вопли им до лампочки. </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>19.12.2012, 21:20</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_223' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_223'>Я так думаю, что это начала разгрузки железных дорог от "нерентабельных" пассажирских перевозок, чтобы максимально использовать пути для трансконтинентальных транзитных грузоперевозок по маршруту "Азия - Европа", ведь это НЕИСЧЕРПАЕМЫЙ (в отличие от природных ресурсов) источник прибылей для российских олигархов.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>20.12.2012, 14:43</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_226' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_226'>"Все для народа"Я во лично вожу ребенка в ДОБ каждый месяц на консультацию к врачу которого в нашем городе никогда не бывало. И вот пусть подумают наши чиновники- как ребенка только что согревшегося из одной электрички выгрузить на мороз и ждать другую !!!! Вы вообще там нормальные!!!  Значит если мы простые люди значит наши дети "Щенки"безродные которых можно выбросить на мороз....замерзайте, мол дальше уважаемые россияне" не мытьем дак катаньм "уничтожим всех безродных -выходит так.Спасибо вам дорогие наши чиновнички за заботу вашу о нас простых людях. С новым Вас годом ,дорогие(в кавычках)....Простые граждане гибнущей Шахуньи.(так и утонем в своем болоте).</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>20.12.2012, 17:14</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_228' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_228'>А может до Нижнего на оленях проедем.Не страна а сплошной экстрим.  К нам за опытом будут приезжать из других стран поучиться как выжить в "стране чудес".Шахунь-Урень -Нижний (восьмое чудо света).</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>20.12.2012, 17:26</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_238' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_238'>Даааааа...Умом Россию не понять.Есть же чудики на белом свете и сколько эти эксперименты над людьми будут продолжаться?!Хотя бы одного чиновника поставили бы в рамки простого человека у которого нет денег на личное авто(сел и поехал) вот бы посмотрели на выражение его лица в конце дня после такой"комфортной поездки" и ему бы еще на работу завтра.....все прелести жизни....!Одним словом "научи дурака Богу молиться,лоб расшибет"Только на себя приходиться уповать ,а наше государство только в Москве людей видит ,а мы так -шушара.Куда смотрит Путин когда таких бездарей на большие посты ставят?(Да еще наверно премию отхватили за инициативу усложнить жизнь простому человеку).На мыло таких начальников!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>21.12.2012, 14:05</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_255' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_255'> Оказывается, у В. Якунина есть свой блог. И там он может ответить на вопросы. Далеко не так все просто. Но вывод один: <B>недоплатили (не выполнили обязательства) чиновники, отвечают простые люди! Доколе?...</B>http://v-yakunin.livejournal.com/63721.html?mode=reply<br />
+<br />
+Компенсация выпадающих доходов пригородных компаний<br />
+31 окт, 2012 at 4:35 PM<br />
+<br />
+<br />
+Пригородные пассажирские компании начали судиться с регионами, которые не выполняют своих обязательств по компенсации железнодорожникам убытков (выпадающих доходов) от государственного регулирования тарифов. Есть несколько конкретных примеров – иски к властям Владимирской, Новгородской и Курганской областей в настоящее время уже рассматриваются в судах.<br />
+<br />
+Общая сумма требований по поданным исковым заявлениям составила более 501 млн. руб. Несколько компаний заявляют, что в связи с убыточностью могут сделать это в ближайшее время. Так, в процессе подготовки находится еще ряд исков, в том числе иск ОАО «ЗППК» к Забайкальскому краю на сумму 509,6 млн. руб. Кроме того, по 29 регионам ведется претензионная работа. Общая сумма претензий пригородных компаний к регионам составляет около 6 млрд. рублей.<br />
+<br />
+Претензии железнодорожников совершенно обоснованы. Напомню, что в тех субъектах РФ, где местные власти отказались выполнять свои обязательства по субсидированию пригорода (которые они обязаны выполнять по закону), железнодорожники были вынуждены сократить число электричек или уменьшить их составность, что вызвало естественное недовольство населения и громкий общественный резонанс. Камни полетели в сторону РЖД. Регионы-неплательщики требуют от нас восстановить движение пригородных поездов, но при этом говорят, что денег на покрытие убытков ППК в их бюджете нет.<br />
+<br />
+Мы со своей стороны проводим активную работу по достижению понимания субъектами своих обязательств перед пригородными пассажирскими компаниями. В тех случаях, когда понимания достичь не удалось, и возникла необходимость в судебных разбирательствах. Понятно, что это произошло не от хорошей жизни, но иждивенчество пора прекращать. В любом случае дело будет доведено до логического конца – либо путем переговоров, либо через суды. На днях Арбитражный суд Кемеровской области уже принял положительное решение о взыскании долгов за пригородные перевозки из бюджета области в пользу ОАО «Краспригород»   и обязал выплатить компании 7,28 млн. руб., которые ранее регион компенсировать отказывался.<br />
+<br />
+Еще раз повторяю, что мы искренне стараемся сотрудничать с регионами и поддерживаем местных производителей везде, где можем это делать. Но, как говорится, нельзя одну овцу стричь дважды, поэтому те, кто принимает решения не платить железной дороге, должны нести ответственность за последствия таких решений. В обязанности РЖД не входит обучение чиновников, наша задача – защита экономических интересов компании, которая на 100% является государственной.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>22.12.2012, 18:15</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_261' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_261'>Шахунцы! У нас же есть свой поровоз! осталось только прицепить теплушки как в гражданскую. А что, преступность, беспризорность и детская смертность у нас как в гражданскую войну. Докатились!!! <br />
+А если серьезно, с отменой электрички произойдет ухудшение условий жизни. Мы пострадаем и морально, и материально, и физически. А это уже повод обратиться в транспортную прокуратуру и в суд. Законы, созданные одними людьми могут отменить другие люди.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 12:14</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_264' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_264'>Зарегистрировано в Минюсте РФ 7 августа 2007 г. N 9969<br />
+<br />
+МИНИСТЕРСТВО ТРАНСПОРТА РОССИЙСКОЙ ФЕДЕРАЦИИ<br />
+<br />
+ПРИКАЗ<br />
+от 18 июля 2007 г. N 99<br />
+<br />
+О КРИТЕРИЯХ ОПРЕДЕЛЕНИЯ КАТЕГОРИЙ ПОЕЗДОВ<br />
+ДЛЯ ПЕРЕВОЗКИ ПАССАЖИРОВ В ЗАВИСИМОСТИ ОТ СКОРОСТИ<br />
+ИХ ДВИЖЕНИЯ И РАССТОЯНИЯ СЛЕДОВАНИЯ<br />
+<br />
+В соответствии со статьей 81 Федерального закона от 10 января 2003 г. N 18-ФЗ "Устав железнодорожного транспорта Российской Федерации" (Собрание законодательства Российской Федерации, 2003, N 2, ст. 170; N 28, ст. 2891; 2006, N 50, ст. 5279) приказываю:<br />
+1. Утвердить прилагаемые критерии определения категорий поездов для перевозки пассажиров в зависимости от скорости их движения и расстояния следования.<br />
+2. Признать утратившим силу Приказ Министерства транспорта Российской Федерации от 24 декабря 2004 г. N 50 "О критериях определения категорий поездов для перевозки пассажиров в зависимости от скорости их движения и расстояния следования" (зарегистрирован Минюстом России 16 февраля 2005 г., регистрационный N 6330).<br />
+<br />
+Министр<br />
+И.ЛЕВИТИН<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+ <br />
+Утверждены<br />
+Приказом Минтранса России<br />
+от 18 июля 2007 г. N 99<br />
+<br />
+ <br />
+КРИТЕРИИ<br />
+ОПРЕДЕЛЕНИЯ КАТЕГОРИЙ ПОЕЗДОВ ДЛЯ ПЕРЕВОЗКИ ПАССАЖИРОВ<br />
+В ЗАВИСИМОСТИ ОТ СКОРОСТИ ИХ ДВИЖЕНИЯ<br />
+И РАССТОЯНИЯ СЛЕДОВАНИЯ<br />
+<br />
+ <br />
+1. По расстоянию следования и условиям проезда поезда, предназначенные для перевозки пассажиров (далее - поезда), подразделяются на:<br />
+а) дальние - следующие на расстояние свыше 150 км, в составы которых включаются вагоны с местами для сидения и лежания и которые отвечают требованиям, предъявляемым к проезду в дальнем следовании;<br />
+ <br />
+б) пригородные - следующие на расстояние не более 200 км, состоящие из вагонов с местами для сидения.<br />
+2. Определение категорий поездов в зависимости от скорости их движения производится исходя из маршрутной скорости движения таких поездов, которая определяется как средняя скорость движения таких поездов от начальной до конечной станции маршрута следования.<br />
+3. Величина маршрутной скорости определяется делением общей протяженности маршрута следования поезда (в километрах) на общее время нахождения поезда в пути следования (в часах) с учетом времени всех остановок на железнодорожных станциях для посадки и высадки пассажиров.<br />
+4. По скорости движения поезда подразделяются на:<br />
+а) скоростные - маршрутная скорость движения которых составляет более 91 км/час;<br />
+б) скорые - маршрутная скорость движения которых от 50 до 91 км/час;<br />
+в) пассажирские - маршрутная скорость движения которых не превышает 50 км/час.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>23.12.2012, 12:40</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_277' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_277'>Это демагогия!!! Критерии можно и нужно менять! 50 лет ходили электрички и всех это устраивало. Зачем отменять? Кому вообще это нужно?!</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>24.12.2012, 09:54</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_321' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_321'>дурдом!!!!!!!!!!!!!!!!!как теперь добираться?</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>02.01.2013, 19:21</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_331' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_331'><B><B><B>На следующих выборах голосуйте за любую другую партию, но не за "ЕДИНУЮ РОССИЮ", потому что если так дальше пойдет, то ни к чему хорошему это не приведет. Люди зажрались!!!!((((<br />
+<br />
+А по поводу электрички, можно было бы поступить следующим образом: На каждую поездку создается путевой лист, с присвоенным номером(номером поезда), до уреня это был бы один путевой лист(например номер поезда 607), а после уреня, уже другой путевой(например 608). Если все это грамотно продумать, то можно обойти все наши херовы законы. ИМХО!!!!!<br />
+<br />
+Утверждены<br />
+Приказом Минтранса России<br />
+от 18 июля 2007 г. N 99<br />
+<br />
+Почему то сразу возникает вопрос, почему 5 лет все было нормально, и вот тут на те!!!!! Полюбому стоимость билета увеличиться!!! Идет отмывание денег на Общероссийском уровне!!!!!</B></B></B></span></p>
+<div class='rd rd2'>
+<div class='left name'>Доброделатель</div>
+<div class='view'>07.01.2013, 00:06</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_335' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_335'>Меняем мышление, изучаем расписание поездов и пересаживаемся на поезда! Надо приспосабливаться. Заплатить на 300руб больше, но сохранить время и нервы.</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>08.01.2013, 13:30</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_343' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_343'>в общем,ясно,что ничего уже не изменится.Как бы мы здесь ни кричали.Давайте хоть автобус чтоли требовать беспересадочный.</span></p>
+<div class='rd rd2'>
+<div class='left name'>землячка</div>
+<div class='view'>17.01.2013, 16:34</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_363' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_363'>Ничего не надо требовать. Это такая полоса в нашей с вами жизни. Плетью обуха не перешибешь. Просто перестать за них голосовать. </span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>01.02.2013, 21:20</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><div id='nc_commentID119_270_452' class='blok borderbot p12'>
+<p><span id='nc_commentText119_270_452'>То, что отменили электричку вообще никуда не годится. Совсем о людях не думают. А если попытаться убрать это "руководство", так неизвестно, другие, может, ещё хуже будут. А про то, что некоторые предлагают не голосовать за "Единую Россию" хочется сказать так (если это не прозвучит слишком грубо): "Голосуй-не голосуй, всё равно получишь... то, что на заборе пишут".</span></p>
+<div class='rd rd2'>
+<div class='left name'>Гость</div>
+<div class='view'>09.04.2013, 21:18</div>
+<div class='clear'></div>
+</div>
+<div>  </div>
+</div><p><a href='#' id='nc_commentsReply119_270_0' onclick='nc_commentsObj119_270.Form(0); return false;'>Оставить комментарий</a></p></div></div><!-- /content -->
+			</div>
+        <!--================================ -->
+			<div class='rightcol'>
+        
+				<div class='arxiv'>
+					<h3 class='rd'>Архив новостей</h3>
+					<div class='blok0'><div id='nc_calendar_block'><table width='188' cellpadding='0' cellspacing='0' class='calend_table'><tr valign='top' class='navig_form'>
+<td align='left' class='navig_butt'>
+<img src='/netcat/modules/calendar/images/left-arrow-std.gif' onclick='nc_calendar_generate(24, 5, 2018); return false;' alt='май' title='май' />
+</td>
+<td align='center' class='navig_date'>
+<span class='month_link'><a href='/arhiv/2018/06/'>июнь</a></span>
+<span class='year_link'><a href='/arhiv/2018/'>2018</a></span>
+</td>
+<td align='right' class='navig_butt'>
+<img src='/netcat/modules/calendar/images/right-arrow-std.gif' onclick='nc_calendar_generate(24, 7, 2018); return false;' alt='июль' title='июль' />
+</td>
+</tr><tr><td colspan='3'><table cellpadding='0' cellspacing='0' width='100%' class='days_table'><tr><td align='center' class='days'>пон</td><td align='center' class='days'>втр</td><td align='center' class='days'>срд</td><td align='center' class='days'>чет</td><td align='center' class='days'>пят</td><td align='center' class='days_sun'>суб</td><td align='center' class='days_sun_right'>вск</td></tr><tr><td class='no_day'>&nbsp;</td><td class='no_day'>&nbsp;</td><td class='no_day'>&nbsp;</td><td class='no_day'>&nbsp;</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>1</td><td class='day_sun' align='center' onmouseover='this.className="mouseover_weekend"' onmouseout='this.className="day_sun"'>2</td><td class='day_sun_right' align='center' onmouseover='this.className="mouseover_weekend_s"' onmouseout='this.className="day_sun_right"'>3</td></tr><tr><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>4</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>5</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>6</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>7</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>8</td><td class='day_sun' align='center' onmouseover='this.className="mouseover_weekend"' onmouseout='this.className="day_sun"'>9</td><td class='day_sun_right' align='center' onmouseover='this.className="mouseover_weekend_s"' onmouseout='this.className="day_sun_right"'>10</td></tr><tr><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>11</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>12</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>13</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>14</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>15</td><td class='day_sun' align='center' onmouseover='this.className="mouseover_weekend"' onmouseout='this.className="day_sun"'>16</td><td class='day_sun_right' align='center' onmouseover='this.className="mouseover_weekend_s"' onmouseout='this.className="day_sun_right"'>17</td></tr><tr><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>18</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>19</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>20</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>21</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>22</td><td class='day_sun' align='center' onmouseover='this.className="mouseover_weekend"' onmouseout='this.className="day_sun"'>23</td><td class='day_curr' align='center'>24</td></tr><tr><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>25</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>26</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>27</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>28</td><td class='day' align='center' onmouseover='this.className="mouseover"' onmouseout='this.className="day"'>29</td><td class='day_sun' align='center' onmouseover='this.className="mouseover_weekend"' onmouseout='this.className="day_sun"'>30</td><td class='no_day_sun_right'>&nbsp;</td></tr><tr><td class='no_day'>&nbsp;</td><td class='no_day'>&nbsp;</td><td class='no_day'>&nbsp;</td><td class='no_day'>&nbsp;</td><td class='no_day'>&nbsp;</td><td class='no_day_sun'>&nbsp;</td><td class='no_day_sun_right'>&nbsp;</td></tr></table></td></tr></table></div>
+<input type='hidden' id='calendar_cc' value='118' />
+<input type='hidden' id='calendar_theme' value='3' />
+<input type='hidden' id='calendar_field' value='Date' />
+<input type='hidden' id='calendar_filled' value='' />
+<input type='hidden' id='calendar_querydate' value='' />
+</div>
+				</div>
+
+
+
+				<div class='fotogal'>
+					<h3 class='rd'>фотогалерея</h3>
+					<div class='listalka'>
+                    	<div class='left' id='prev'></div>
+<div id='galery' style='float: left;'>
+
+</div>
+                        <div class='left right2' id='next'></div>
+                        <a href='/fotogalereya/'>смотреть все фотографии</a>
+                    </div>
+				</div>
+
+
+			</div>
+        <!--================================ -->
+			<div class='clear'></div>
+        
+			<div class='katalog'><h4 class='rd'>Каталог организаций</h4><ul><li><a href='/katalog-organizacii/spisok-predprijatij-avariynye/' title='Аварийные'>Аварийные (40)</a></li><li><a href='/katalog-organizacii/spisok-firm-avtotovary/' title='Автотовары'>Автотовары (882)</a></li><li><a href='/katalog-organizacii/spravochnik-firm-bezopasnost/' title='Безопасность'>Безопасность (242)</a></li><li><a href='/katalog-organizacii/informacionnaja-sistema-firm-biznes-uslugi/' title='Бизнес-услуги'>Бизнес-услуги (911)</a></li><li><a href='/katalog-organizacii/informacionnaja-sistema-predprijatij-veterinarija/' title='Ветеринария'>Ветеринария (62)</a></li><li><a href='/katalog-organizacii/spisok-kompanij-gorod/' title='Город'>Город (213)</a></li><li><a href='/katalog-organizacii/spravochnik-firm-gruzoperevozki/' title='Грузоперевозки'>Грузоперевозки (675)</a></li><li><a href='/katalog-organizacii/katalog-uchrezhdenij-kommunalnye/' title='Коммунальные'>Коммунальные (410)</a></li><li><a href='/katalog-organizacii/spisok-kompanij-meditsina/' title='Медицина'>Медицина (971)</a></li><li><a href='/katalog-organizacii/baza-dannyh-predprijatij-metally/' title='Металлы'>Металлы (345)</a></li><li><a href='/katalog-organizacii/katalog-firm-oborudovanie/' title='Оборудование'>Оборудование (1087)</a></li><li><a href='/katalog-organizacii/informacionnaja-sistema-firm-obrazovanie/' title='Образование'>Образование (359)</a></li><li><a href='/katalog-organizacii/informacionnaja-sistema-predprijatij-obuv/' title='Обувь'>Обувь (831)</a></li><li><a href='/katalog-organizacii/baza-dannyh-uchrezhdenij-ofisnaja-tehnika/' title='Офисная техника'>Офисная техника (504)</a></li><li><a href='/katalog-organizacii/spravochnik-predprijatij-poligrafija/' title='Полиграфия'>Полиграфия (545)</a></li><li><a href='/katalog-organizacii/spravochnik-kompanij-produkty-pitanija/' title='Продукты питания'>Продукты питания (395)</a></li><li><a href='/katalog-organizacii/spravochnik-organizacij-razvlechenija/' title='Развлечения'>Развлечения (524)</a></li><li><a href='/katalog-organizacii/spisok-firm-religija/' title='Религия'>Религия (97)</a></li><li><a href='/katalog-organizacii/spisok-kompanij-remont/' title='Ремонт'>Ремонт (1570)</a></li><li><a href='/katalog-organizacii/spisok-firm-svjaz/' title='Связь'>Связь (635)</a></li><li><a href='/katalog-organizacii/katalog-uchrezhdenij-spetsmagaziny/' title='Спецмагазины'>Спецмагазины (435)</a></li><li><a href='/katalog-organizacii/spisok-predprijatij-stroitelnye/' title='Строительные'>Строительные (1464)</a></li><li><a href='/katalog-organizacii/spravochnik-firm-textil/' title='Текстиль'>Текстиль (540)</a></li><li><a href='/katalog-organizacii/informacionnaja-sistema-organizacij-turizm/' title='Туризм'>Туризм (501)</a></li><li><a href='/katalog-organizacii/spisok-kompanij-furnitura/' title='Фурнитура'>Фурнитура (764)</a></li><li><a href='/katalog-organizacii/spravochnik-kompanij-hoztovary/' title='Хозтовары'>Хозтовары (524)</a></li><li><a href='/katalog-organizacii/spisok-predprijatij-elektrotehnika/' title='Электротехника'>Электротехника (464)</a></li></ul></div>
+
+
+
+
+<div style="position: fixed; bottom: 10px; right: 10px; height: 20px; width: 20px;" onclick="$('#mapPag').toggle();"></div><div id="mapPag" style="display: none; clear: both;"> <a href="/map/1.html">1</a>  <a href="/map/2.html">2</a>  <a href="/map/3.html">3</a>  <a href="/map/4.html">4</a>  <a href="/map/5.html">5</a>  <a href="/map/6.html">6</a>  <a href="/map/7.html">7</a>  <a href="/map/8.html">8</a>  <a href="/map/9.html">9</a>  <a href="/map/10.html">10</a>  <a href="/map/11.html">11</a>  <a href="/map/12.html">12</a>  <a href="/map/13.html">13</a> </div>
+<div style='text-align: left;'>
+<strong>ИНН:</strong> 5204000590<br />
+<strong>ОГРН:</strong> 1025200939763
+</div>
+
+<noindex><div class='counter'>
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click' "+
+"target=_blank><img src='//counter.yadro.ru/hit?t11.1;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров за 24"+
+" часа, посетителей за 24 часа и за сегодня' "+
+"border='0' width='88' height='31'><\/a>")
+//--></script><!--/LiveInternet-->
+</div></noindex>
+
+		</div>
+		<!--=========END=========CONTENT=========-->
+	</div>
+</div>
+        
+</body>
+</html>
